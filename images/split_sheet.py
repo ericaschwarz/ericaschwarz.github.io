@@ -28,12 +28,12 @@ for row, direction in enumerate(directions):
         tile = img[y0:y1, x0:x1]
 
         # Save walking frames
-        iio.imwrite(os.path.join(output_folder, f"player_walk_{direction}_{col}.png"), tile)
+        iio.imwrite(os.path.join(output_folder, f"player_walk_{direction}_{(col +1)%4}.png"), tile)
 
         # If it's the left-facing row, create flipped (right-facing) versions
         if direction == 'left':
             flipped = np.fliplr(tile)
-            iio.imwrite(os.path.join(output_folder, f"player_walk_right_{col}.png"), flipped)
+            iio.imwrite(os.path.join(output_folder, f"player_walk_right_{(col +1)%4}.png"), flipped)
 
 
 for row, direction in enumerate(directions):
@@ -43,11 +43,11 @@ for row, direction in enumerate(directions):
         tile = img[y0:y1, x0:x1]
 
         # Save walking frames
-        iio.imwrite(os.path.join(output_folder, f"player_idle_{direction}_{col}.png"), tile)
+        iio.imwrite(os.path.join(output_folder, f"player_idle_{direction}_{(col +1)%4}.png"), tile)
 
         # If it's the left-facing row, create flipped (right-facing) versions
         if direction == 'left':
             flipped = np.fliplr(tile)
-            iio.imwrite(os.path.join(output_folder, f"player_idle_right_{col}.png"), flipped)
+            iio.imwrite(os.path.join(output_folder, f"player_idle_right_{(col +1)%4}.png"), flipped)
 
 print("Done! Tiles saved (right frames auto-flipped).")
