@@ -45,43 +45,99 @@ I have also leveraged machine learning to strengthen clinical decision-making. P
 
 ---
 
-## Future Research Directions
+## Future research
 
-### 1. Multiscale, Multi-Organ Growth and Remodeling for Congenital Heart Defects
-- **Goal:** Couple 3D cardiovascular models to low-dimensional LPNs where both evolve under mechanobiological G&R laws.  
-- **Approach:** Retrospective analysis of clinical pressure, flow, and oxygenation data (via UCSF collaborators) will identify governing G&R parameters in circulation.  
-- **Outcome:** Enable **personalized CHD treatment** by predicting long-term outcomes and organ-level adaptations.
+My future research will create the next generation of multiscale computational cardiovascular models that couple whole-body G&R and cell-signaling networks to patient-specific CFD simulations. This will allow for long-term prediction of outcomes across myriad cardiovascular conditions. My background in biologically informed computational models makes me ideally suited to develop these methods and drive them toward clinical translation.
+
+--- 
+
+## 1. Multiscale, Multi-Organ Growth and Remodeling for Congenital Heart Defects
+
+### Background
+Previous CFD studies of CHDs have focused on how cardiovascular lesions impact local hemodynamics. However, maladaptive outcomes of CHDs are clinically determined on a whole-body level. For example, single-ventricle physiology and its treatment structurally affect the heart and great arteries, but primary complications include exercise intolerance and progressive liver failure.  
+More recently, studies have used LPNs to model this whole-body flow, but they are not predictive of patient behavior over time.
+
+### Approach
+LPNs create a reduced-order circuit analogy of flow. Entire organ systems can be modeled as a series of resistors, capacitors, and inductors, and the heart can be modeled as a capacitor with time-varying elastance (Fig. 1). It has already been established that the properties of these LPN elements depend on the lumped geometries and material properties of the organ systems they represent.  
+
+As the body grows and develops, the parameter values of these lumped systems change as well. While the constrained mixture theory of G&R has been used to describe individual vessels and morphometric vascular trees, it has not yet been integrated into an LPN description of the cardiovascular system.  
+
+I will develop a framework for coupling 3D cardiovascular models to low-dimensional LPNs of whole-body flow where both systems are governed by mechanobiological G&R laws. I will perform a retrospective analysis of pressures, heart rates, oxygen saturations, and blood flows (directly measured, if available, or allometrically calculated, if not) in both healthy and diseased populations by collaborating with clinicians at the UCSF Cardiovascular Research Institute.  
+
+From these trends, I will calculate the best-fit parameters of constrained mixture G&R for each lumped system in the circulation. After establishing this governing behavior, I will couple these LPNs to patient-specific FSG models of cardiovascular lesions and predict long-term outcomes for CHD patients.  
+
+Additionally, gene expression information can also be leveraged to inform G&R behavior. This approach may be particularly relevant in conditions with known genetic origins (e.g., Marfan syndrome, Williams syndrome).
+
+### Outcomes
+This framework will identify mechanisms of exercise intolerance and organ failure in CHD patients on a patient-specific basis. It will enable early identification of patients at risk for adverse outcomes and allow for the creation of personalized treatment plans. Additionally, it will support *in silico* testing of novel CHD treatments, accelerating the clinical translation of emerging therapeutic technologies.
 
 ---
 
-### 2. Multiscale, Multi-Cell Growth and Remodeling for Vascular Grafts
-- **Goal:** Integrate **cell-signaling networks** into FSG models to link drug interventions and tissue remodeling.  
-- **Approach:** Study **macrophage-mediated inflammation** and **smooth muscle remodeling** under various pharmacological treatments (e.g., mTOR inhibitors, angiotensin II antagonists).  
-- **Outcome:** Identify **optimal therapeutic pathways** and delivery schedules to maintain graft patency.
+## 2. Multiscale, Multi-Cell Growth and Remodeling for Vascular Grafts
+
+### Background
+Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels. However, issues maintaining patency in vascular grafts persist. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues and inflammatory responses, particularly macrophage infiltration. The same is true in autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large numbers of patients affected.
+
+### Approach
+To create the next generation of G&R models, I will integrate mechanistic cell-signaling models into my FSG framework (Fig. 2). This will allow for prediction of how both mechanical forces and pharmacological interventions can affect the physiological function of vascular grafts.  
+
+The FSG framework currently relies only on the deformation-dependent material stiffness tensor to assemble the finite element solver tangent matrix, making it appropriate to integrate cell-signaling networks directly into the governing equations for kinematic growth and material properties without having to change the architecture of the finite element solver itself.  
+
+Using the multiscale FSG framework, I will identify optimal targets for drug delivery that selectively inhibit macrophage activity and cell proliferation in vascular grafts while allowing for functional smooth muscle and endothelial cell activity.  
+
+For TEVGs, I will first focus on the effects of angiotensin II receptor antagonists, which have been shown to inhibit pro-inflammatory signaling pathways. For vein grafts, I will focus on the effects of mTOR pathway inhibitors, which are currently used in drug-eluting stents to inhibit cell proliferation after coronary angioplasty.
+
+> Figure 2. Example of a logic-based cell-signaling network used in my postdoctoral research lab to simulate arterial wall behavior.
+
+### Outcomes
+Using this framework, I will identify optimal drug pathways and delivery timings to ensure the patency of vascular grafts. These findings will improve patient health and lower the incidence of corrective surgery necessitated by graft occlusion.  
+
+This work is also highly innovative, as it will yield the first *transcript-to-tissue-to-system* model of evolving vessels.
 
 ---
 
-### 3. Next-Generation Intracranial Aneurysm Prediction
-- **Goal:** Simulate aneurysm evolution by linking oscillatory shear stress to mechanobiological G&R.  
-- **Approach:** Use **FSG simulations** to generate data for **neural operator training**, improving clinical forecasting of aneurysm rupture.  
-- **Outcome:** Provide **predictive, mechanistic tools** to reduce aneurysm-related morbidity and mortality.
+## 3. Next-Generation Intracranial Aneurysm Prediction
+
+### Background
+Intracranial aneurysms arise from weakened areas of the arterial wall in the brain. The rupture of an aneurysm occurs when mechanical forces exceed the strength of the vascular wall. Ruptured intracranial aneurysms carry severe risk with a mortality rate of 45% and a morbidity rate of 25%.  
+
+Because of this, there is intense clinical interest in predicting the growth and rupture of aneurysms. In recent years, considerable effort has been put towards using patient-specific CFD to correlate hemodynamic metrics such as wall shear stress and oscillatory stress to patient outcomes. However, these correlations are not predictive, and there has been limited success in finding thresholds for patient-specific clinical decision-making.
+
+### Approach
+Applying my FSG framework to intracranial aneurysms will make it possible to simulate evolving aneurysm wall composition and material properties in response to patient-specific hemodynamics.  
+
+It has been hypothesized that oscillatory shear stress contributes to aneurysm initiation and progression. Despite this, oscillatory shear stress mediation of G&R has not previously been incorporated into constrained mixture approaches. To address this limitation, I will incorporate the phenomenological response of cells to oscillatory shear stress into the FSG framework.  
+
+This will be a novel application of constrained mixture theory and provide new, predictive insights into mechanisms of intracranial aneurysm growth and rupture. As previously established, simulated data can be used to supplement scarce or incomplete clinical data when training large-data models.  
+
+I will further the clinical impact of this work by training large-data neural operators on these models and using transfer learning to predict outcomes in clinical aneurysm cases.
+
+### Outcomes
+This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also elucidate biomechanical contributors to intracranial aneurysm growth and rupture.
 
 ---
 
 ## Funding
-- **NSF Graduate Research Fellowship** (Ph.D.)  
-- **AHA Predoctoral Fellowship** (Ph.D.)  
-- **NSF ACCESS Resource Award (PI)** (Postdoc)
 
-As an assistant professor, I will pursue **NIH R21 and R01 grants** (NHLBI, NIBIB), and targeted funding from **AHA**, **Children’s Heart Foundation**, and **Marfan Foundation**.  
-I will also mentor students to pursue **NSF, AHA, HHMI, and NIH fellowships**.
+I have an established record of obtaining funding for my research. The first three years of my Ph.D. were funded by an NSF Graduate Research Fellowship. The final portion of my doctoral work was funded by the AHA Predoctoral Fellowship. In my postdoctoral research, I applied for and was approved for an NSF ACCESS resource award as the primary investigator.  
 
-<!-----
+I will support my research aims as an assistant professor by applying for funding mechanisms through the NIH at the NHLBI and NIBIB. I will begin by applying for R21 exploratory grants and then transition to applying for R01 grants for long-term support.  
+
+This research is also appropriate for funding from private institutions such as the AHA, Additional Ventures, the Children’s Heart Foundation, and the Marfan Foundation. Given my success in obtaining funding for doctoral research, I will mentor my students to apply for external fellowships from NSF, AHA, HHMI, and NIH.  
+
+I will additionally apply to NSF ACCESS for resource awards that can supplement the computational resources available through the UC Berkeley High Performance Computing Center.
+
+<!--
 
 ## Collaborations
-At **UC Berkeley**, I will:
-- Collaborate with the **Berkeley Biomechanics Laboratory** (Dr. Shawn Shadden) on cardiovascular fluid dynamics and open-source modeling (SimVascular).  
-- Partner with clinicians at **UCSF’s Cardiovascular Research Institute** to validate computational predictions and enhance clinical translation.-->
+
+At UC Berkeley, I will foster collaborations across research groups to develop and translate my computational modeling research.  
+
+Within the Mechanical Engineering Department, I would be eager to collaborate with groups in the Berkeley Biomechanics Laboratory, which has a strong focus on biological flows, soft tissue biomechanics, and tissue engineering. In particular, Dr. Shawn Shadden has done extremely relevant research on cardiovascular fluid dynamics, and I have previously collaborated with him through his work with my doctoral research group on the open-source simulation suite **SimVascular**.  
+
+Additionally, UC Berkeley’s partnership with **UCSF** provides access to one of the nation’s top medical centers. I would pursue opportunities to collaborate with clinicians in the **UCSF Cardiovascular Research Institute** to advance the translational impact of my research.
+
+-->
 
 ---
 
