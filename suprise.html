@@ -52,6 +52,12 @@ layout: default
     color: #555;           /* icon color */
     touch-action: manipulation;               /* prevents extra tap delays */
     user-select: none;                        /* stops accidental text selection */
+    -webkit-user-select: none;      /* disable text selection */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;    /* disable long-press menu */
+    -webkit-tap-highlight-color: transparent; /* remove flash highlight */
   }
 
   #controls button:active {
