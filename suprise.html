@@ -629,7 +629,8 @@ document.addEventListener("keyup", e => {
 
 // === GLOBAL TOUCH / TAP MOVEMENT ===
 let currentTouch = null;
-let currentDir = null;
+let nextDir = null;     // queued direction to switch into
+let currentDir = null;  // active movement direction
 
 document.addEventListener("pointerdown", handlePageTouchStart);
 document.addEventListener("pointerup", handlePageTouchEnd);
@@ -647,7 +648,7 @@ function handlePageTouchStart(e) {
   if (touchX < 0 || touchY < 0 || touchX > rect.width || touchY > rect.height) return;
 
   currentTouch = { x: touchX, y: touchY };
-  handleTap(touchX, touchY, e);
+  updateDirectionFromTouch(touchX, touchY, e);
 }
 
 function handlePointerMove(e) {
@@ -657,21 +658,21 @@ function handlePointerMove(e) {
   const touchX = e.clientX - rect.left;
   const touchY = e.clientY - rect.top;
 
-  // update stored position
   currentTouch.x = touchX;
   currentTouch.y = touchY;
 
-  // joystick-style: if moving, update direction on the fly
-  if (player.moving) handleTap(touchX, touchY, e);
+  // update intended direction, but don't force immediate turn
+  updateDirectionFromTouch(touchX, touchY, e);
 }
 
 function handlePageTouchEnd(e) {
   currentTouch = null;
+  nextDir = null;
   currentDir = null;
   stopMove();
 }
 
-function handleTap(clickX, clickY, e) {
+function updateDirectionFromTouch(clickX, clickY, e) {
   const playerCenterX = (player.x - camera.x) + tileSize / 2;
   const playerCenterY = (player.y - camera.y) + tileSize / 2;
 
@@ -680,32 +681,32 @@ function handleTap(clickX, clickY, e) {
   const absDx = Math.abs(dx);
   const absDy = Math.abs(dy);
 
-  // Dead zone to prevent jitter when near center
-  if (absDx < 10 && absDy < 10) return;
+  if (absDx < 10 && absDy < 10) return; // dead zone
 
-  // Choose primary and secondary directions
   const moveOptions = absDx > absDy
-    ? [[dx > 0 ? 1 : -1, 0], [0, dy > 0 ? 1 : -1]]  // horizontal first
-    : [[0, dy > 0 ? 1 : -1], [dx > 0 ? 1 : -1, 0]]; // vertical first
+    ? [[dx > 0 ? 1 : -1, 0], [0, dy > 0 ? 1 : -1]]
+    : [[0, dy > 0 ? 1 : -1], [dx > 0 ? 1 : -1, 0]];
 
-  // Try primary then secondary
   for (let [mx, my] of moveOptions) {
     const newX = player.gridX + mx;
     const newY = player.gridY + my;
     if (maze[newY] && maze[newY][newX] === 0) {
-      const newDir = `${mx},${my}`;
-      if (newDir !== currentDir) {
-        currentDir = newDir;
+      const dirKey = `${mx},${my}`;
+      if (!player.moving) {
+        // start moving immediately if idle
+        currentDir = dirKey;
         startMove(mx, my, e);
+      } else {
+        // queue the turn until next tile
+        nextDir = dirKey;
       }
       return;
     }
   }
 
-  // stop if both blocked
+  // stop if no open direction
   stopMove();
 }
-
 // === MOVE HELPERS ===
 function startMove(dx, dy, event) {
   if (event) event.preventDefault();
