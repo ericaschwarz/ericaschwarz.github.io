@@ -32,7 +32,7 @@ I coupled patient-specific CFD simulations with lumped parameter networks (LPNs)
 
 To further this work, I developed a fully 3D fluid-solid-growth (FSG) framework capable of simulating mechanobiologically-driven growth and remodeling (G&R) within a finite element fluid–structure interaction (FSI) solver. This enabled long-term, patient-specific predictions of hemodynamic evolution, wall morphology, tissue composition, and material properties. 
 
-This work increased the clinical relevance of CFD modeling by enabling mechanobiologically motivated studies of vascular evolution in complex domains. I was nationally recognized for this contribution to computational mechanics as a finalist for the Melosh Medal Competition.
+Through this work, I demonstrated the clinical relevance of CFD modeling by enabling mechanobiologically motivated studies of vascular evolution in complex domains. I was nationally recognized for this contribution to computational mechanics as a finalist for the Melosh Medal Competition.
 
 
 ---
