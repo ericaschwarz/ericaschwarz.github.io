@@ -16,17 +16,11 @@ My background in **mechanical engineering, bioengineering, and computer science*
 The **FDA** and other leading medical organizations have recognized computational modeling as key component of accelerating medical innovation. 
 Physics-based simulations of cardiovascular systems are now routinely used to model **hemodynamics, tissue mechanics, and physiology**, but multiscale models are needed to predict **long-term, clinically relevant outcomes** across complex disease states.
 
-Significance: The nascent role of computational modeling in accelerating medical innovation has been
-recognized by leading medical bodies such as the FDA.1 Physics-based computational models of the
-cardiovascular system have been increasingly used to simulate hemodynamics, tissue mechanics, and
-physiology in evolving healthy and diseased states, with documented roles in advancing clinical trials.2 Multiscale
-physical models are now needed to produce comprehensive, impactful predictions for complex clinical scenarios.
-
 ---
 
-## Approach
-I couple **finite-element simulations** of cardiovascular structures with **reduced-order circulation models** to form a multiscale description of cardiovascular flow.  
-These models quantify both local and organ-level hemodynamics and integrate **mechanobiologically-driven G&R** to predict **long-term outcomes** of disease and intervention.
+##Approach
+
+I complete the cell-to-tissue-to-organ pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continues research.
 
 ---
 
