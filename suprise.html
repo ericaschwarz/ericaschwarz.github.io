@@ -468,7 +468,7 @@ function capitalize(s) {
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
-  // Update facing direction immediately
+  // Always face the direction of intended movement
   player.direction =
     dx > 0 ? "right" :
     dx < 0 ? "left"  :
@@ -478,20 +478,27 @@ function movePlayer(dx, dy) {
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
 
-  // Only move if the target tile is open
-  if (maze[newY] && maze[newY][newX] === 0) {
+  const canMove = maze[newY] && maze[newY][newX] === 0;
+
+  if (canMove) {
+    // Move one tile forward
     player.gridX = newX;
     player.gridY = newY;
+    player.moving = true;
   } else {
-    // Can't move into wall: stop walking animation, but keep facing
-    player.moving = false;
+    // Can't move: play walking animation but stay in place
+    player.moving = true;
+
+    // Optionally end the movement loop after a short “bump” duration
     clearInterval(moveInterval);
-    moveInterval = null;
+    moveInterval = setTimeout(() => {
+      player.moving = false; // stop animation after the “attempt”
+    }, 300); // tweak: how long to keep walking in place
   }
 
   checkWin();
 
-  // After finishing this step, apply any queued turn
+  // Apply queued direction after finishing this step
   if (nextDir && nextDir !== currentDir) {
     const [nx, ny] = nextDir.split(",").map(Number);
     currentDir = nextDir;
