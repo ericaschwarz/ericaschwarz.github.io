@@ -468,23 +468,49 @@ function capitalize(s) {
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
+  // Always update facing direction for correct animation
+  player.direction =
+    dx > 0 ? "right" :
+    dx < 0 ? "left"  :
+    dy > 0 ? "down"  :
+    "up";
+
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
 
-  if (maze[newY] && maze[newY][newX] === 0) {
+  // Check if the next tile is open
+  const canMove = maze[newY] && maze[newY][newX] === 0;
+
+  if (canMove) {
+    // Move one tile forward
     player.gridX = newX;
     player.gridY = newY;
   } else {
-    // if blocked, stop immediately
-    stopMove();
-    return;
+    // Blocked — trigger a small "bump" nudge for feedback
+    const bumpDistance = 6; // pixels
+    const targetBumpX = player.x + dx * bumpDistance;
+    const targetBumpY = player.y + dy * bumpDistance;
+
+    // Smooth nudge forward, then return
+    const bumpSpeed = 0.4; // lerp factor (lower = slower)
+    player.x = lerp(player.x, targetBumpX, bumpSpeed);
+    player.y = lerp(player.y, targetBumpY, bumpSpeed);
+
+    setTimeout(() => {
+      // Smoothly return to grid position
+      player.x = lerp(player.x, player.gridX * tileSize, bumpSpeed);
+      player.y = lerp(player.y, player.gridY * tileSize, bumpSpeed);
+    }, 80); // short delay for bump duration
+
+    // Stop move loop — but leave facing direction
+    player.moving = false;
+    clearInterval(moveInterval);
+    moveInterval = null;
   }
 
-  player.direction =
-    dx > 0 ? "right" : dx < 0 ? "left" : dy > 0 ? "down" : "up";
   checkWin();
 
-  // after finishing this step, apply any queued turn
+  // After finishing this step, apply any queued turn
   if (nextDir && nextDir !== currentDir) {
     const [nx, ny] = nextDir.split(",").map(Number);
     currentDir = nextDir;
