@@ -466,7 +466,7 @@ function capitalize(s) {
 }
 
 function movePlayer(dx, dy) {
-  if (gameFrozen) return; // stop movement when frozen
+  if (gameFrozen) return;
 
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
@@ -474,39 +474,24 @@ function movePlayer(dx, dy) {
   if (maze[newY] && maze[newY][newX] === 0) {
     player.gridX = newX;
     player.gridY = newY;
+  } else {
+    // if blocked, stop immediately
+    stopMove();
+    return;
   }
 
   player.direction =
     dx > 0 ? "right" : dx < 0 ? "left" : dy > 0 ? "down" : "up";
   checkWin();
-}
 
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
-
-function typeDialogue(text, callback) {
-  const msg = document.getElementById('winMessage');
-  const choiceBox = document.getElementById('dialogueChoices');
-  msg.textContent = "";
-  msg.classList.add("typing");
-  choiceBox.innerHTML = "";
-
-  let i = 0;
-  const speed = 35; // milliseconds per character
-
-  function typeNext() {
-    if (i < text.length) {
-      msg.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeNext, speed);
-    } else {
-      msg.classList.remove("typing");
-      if (callback) callback();
-    }
+  // after finishing this step, apply any queued turn
+  if (nextDir && nextDir !== currentDir) {
+    const [nx, ny] = nextDir.split(",").map(Number);
+    currentDir = nextDir;
+    nextDir = null;
+    clearInterval(moveInterval);
+    startMove(nx, ny);
   }
-
-  typeNext();
 }
 
 
@@ -707,6 +692,7 @@ function updateDirectionFromTouch(clickX, clickY, e) {
   // stop if no open direction
   stopMove();
 }
+
 // === MOVE HELPERS ===
 function startMove(dx, dy, event) {
   if (event) event.preventDefault();
