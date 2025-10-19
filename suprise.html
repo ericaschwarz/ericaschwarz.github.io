@@ -774,7 +774,7 @@ function updateDirectionFromTouch(clickX, clickY, e) {
   const absDx = Math.abs(dx);
   const absDy = Math.abs(dy);
 
-  if (absDx < 10 && absDy < 10) return; // dead zone
+  if (absDx < 20 && absDy < 20) return; // dead zone
 
   const moveOptions = absDx > absDy
     ? [[dx > 0 ? 1 : -1, 0], [0, dy > 0 ? 1 : -1]]
