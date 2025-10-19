@@ -635,6 +635,8 @@ document.addEventListener("pointerdown", handlePageTouchStart);
 document.addEventListener("pointerup", handlePageTouchEnd);
 document.addEventListener("pointercancel", handlePageTouchEnd);
 
+let currentTouch = null; // stores the last touch position for hold updates
+
 function handlePageTouchStart(e) {
   const target = e.target;
   if (gameFrozen || target.closest("button") || target.closest("a") || target.closest("#dialogueBox")) return;
@@ -644,46 +646,51 @@ function handlePageTouchStart(e) {
   const touchX = e.clientX - rect.left;
   const touchY = e.clientY - rect.top;
 
-  // Ignore touches outside the canvas
+  // Ignore touches completely outside the canvas
   if (touchX < 0 || touchY < 0 || touchX > rect.width || touchY > rect.height) return;
 
+  currentTouch = { x: touchX, y: touchY }; // store touch position
   handleTap(touchX, touchY, e);
+
+  // Tap-and-hold: recheck direction as long as the touch continues
+  moveInterval = setInterval(() => {
+    if (currentTouch) handleTap(currentTouch.x, currentTouch.y, e);
+  }, MOVE_INTERVAL);
 }
 
 function handlePageTouchEnd(e) {
   stopMove();
+  currentTouch = null;
 }
 
 function handleTap(clickX, clickY, e) {
-  // Player center on screen
   const playerCenterX = (player.x - camera.x) + tileSize / 2;
   const playerCenterY = (player.y - camera.y) + tileSize / 2;
 
-  let dx = clickX - playerCenterX;
-  let dy = clickY - playerCenterY;
-
+  const dx = clickX - playerCenterX;
+  const dy = clickY - playerCenterY;
   const absDx = Math.abs(dx);
   const absDy = Math.abs(dy);
 
-  let moveOptions = [];
+  // Primary and secondary move options
+  const moveOptions = absDx > absDy
+    ? [[dx > 0 ? 1 : -1, 0], [0, dy > 0 ? 1 : -1]] // horizontal primary
+    : [[0, dy > 0 ? 1 : -1], [dx > 0 ? 1 : -1, 0]]; // vertical primary
 
-  if (absDx > absDy) {
-    moveOptions.push([dx > 0 ? 1 : -1, 0]);  // horizontal primary
-    moveOptions.push([0, dy > 0 ? 1 : -1]);  // vertical secondary
-  } else {
-    moveOptions.push([0, dy > 0 ? 1 : -1]);  // vertical primary
-    moveOptions.push([dx > 0 ? 1 : -1, 0]);  // horizontal secondary
-  }
-
+  // Try primary first, fallback to secondary if blocked
   for (let [mx, my] of moveOptions) {
     const newX = player.gridX + mx;
     const newY = player.gridY + my;
     if (maze[newY] && maze[newY][newX] === 0) {
       startMove(mx, my, e);
-      break;
+      return;
     }
   }
+
+  // If both blocked, stop moving
+  stopMove();
 }
+
 
 // --- MOVE HELPERS ---
 function startMove(dx, dy, event) {
