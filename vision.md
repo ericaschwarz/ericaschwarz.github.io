@@ -38,11 +38,12 @@ Through this work, I demonstrated the clinical relevance of CFD modeling by enab
 ---
 
 ## Postdoctoral Research
-At **Yale University** with Dr. Jay Humphrey, I extended G&R frameworks by integrating **time-resolved gene expression** data from RNA sequencing into a **constrained mixture model** of pulmonary artery development.  
-This work will be applied to study how **hypoxia** alters pulmonary vascular development in congenital heart defects.
 
-I also applied **machine learning** to improve predictive modeling of aneurysm progression.  
-Using the FSG framework, I generated **synthetic cohorts of aneurysm models** and worked with ML experts to identify **neural operators** capable of forecasting aneurysm growth, establishing a foundation for **transfer learning** from simulated to clinical datasets.
+## Postdoctoral Research
+
+During my work with Dr. Jay Humphrey at Yale, a leader in vascular biomechanics and mechanobiology, I developed a growth and remodeling (G&R) framework that incorporated time-resolved gene expression from RNA sequencing into a constrained mixture model of pulmonary artery development. Further development will use this work to investigate how hypoxia caused by congenital heart defects (CHDs) disrupts pulmonary artery development. 
+
+I have also worked towards leveraging machine learning with computational models to strengthen clinical decision-making. Previously, large-data models of aneurysm progression have been limited by the scarcity of clinical data. I used my fluid-solid-growth (FSG) framework to generate cohorts of clinically relevant aneurysm models and worked with machine learning experts to identify the optimal neural operators for forecasting long-term aneurysm growth. Future work will use this simulated data to train large-data models and then transfer this learning to a smaller set of clinical data, accelerating clinical translation of machine learning tools.
 
 ---
 
