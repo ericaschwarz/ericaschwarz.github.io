@@ -648,9 +648,6 @@ function handlePageTouchStart(e) {
   if (touchX < 0 || touchY < 0 || touchX > rect.width || touchY > rect.height) return;
 
   handleTap(touchX, touchY, e);
-
-  // Tap-and-hold movement (repeat)
-  moveInterval = setInterval(() => handleTap(touchX, touchY, e), MOVE_INTERVAL);
 }
 
 function handlePageTouchEnd(e) {
