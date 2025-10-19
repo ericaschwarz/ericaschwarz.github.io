@@ -145,7 +145,7 @@ layout: default
 
 <div id="gameContainer">
   <div id="dialogueBox">
-  <p id="winMessage">Explore my website using this maze. Solving the maze will take you to a random page. The maze is procedurally generated and will change each time you visit. Enjoy! </p>
+  <p id="winMessage">"Explore my website using this maze. Finding a goal will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!" </p>
   <div id="dialogueChoices"></div>
   </div>
   <canvas id="mazeCanvas" width="380" height="380"></canvas>
@@ -531,6 +531,47 @@ function lerp(a, b, t) {
   return a + (b - a) * t;
 }
 
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function movePlayer(dx, dy) {
+  if (gameFrozen) return;
+
+  // Update facing direction immediately
+  player.direction =
+    dx > 0 ? "right" :
+    dx < 0 ? "left"  :
+    dy > 0 ? "down"  :
+    "up";
+
+  const newX = player.gridX + dx;
+  const newY = player.gridY + dy;
+
+  // Only move if the target tile is open
+  if (maze[newY] && maze[newY][newX] === 0) {
+    player.gridX = newX;
+    player.gridY = newY;
+  } else {
+    // Can't move into wall: stop walking animation, but keep facing
+    player.moving = false;
+    clearInterval(moveInterval);
+    moveInterval = null;
+  }
+
+  checkWin();
+
+  // After finishing this step, apply any queued turn
+  if (nextDir && nextDir !== currentDir) {
+    const [nx, ny] = nextDir.split(",").map(Number);
+    currentDir = nextDir;
+    nextDir = null;
+    clearInterval(moveInterval);
+    startMove(nx, ny);
+  }
+}
+
+
 function typeDialogue(text, callback) {
   const msg = document.getElementById('winMessage');
   const choiceBox = document.getElementById('dialogueChoices');
@@ -595,7 +636,7 @@ function checkWin() {
   } else {
     // Normal message when wandering
     msg.textContent =
-      "Explore my website using this maze. Finding a goal will take you to a unique part of the site.";
+      "Explore my website using this maze. Finding a goal will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!";
     choiceBox.innerHTML = "";
   }
 }
