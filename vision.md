@@ -20,7 +20,7 @@ Physics-based simulations of cardiovascular systems are now routinely used to mo
 
 ## Approach
 
-I complete the cell-to-tissue-to-organ pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continues research.
+I complete the cell-to-tissue-to-organ simulation pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continued research.
 
 ---
 
@@ -41,7 +41,7 @@ Through this work, I demonstrated the clinical relevance of CFD modeling by enab
 
 During my work with Dr. Jay Humphrey at Yale, a leader in vascular biomechanics and mechanobiology, I developed a growth and remodeling (G&R) framework that incorporated time-resolved gene expression from RNA sequencing into a constrained mixture model of pulmonary artery development. Further development will use this work to investigate how hypoxia caused by congenital heart defects (CHDs) disrupts pulmonary artery development. 
 
-I have also leveraged machine learning to strengthen clinical decision-making. Previously, large-data models of certain cardiovascular disease have been limited by the scarcity of clinical data. To address this need in predicting thoracic aortic aneurysm growth, I used my fluid-solid-growth (FSG) framework to generate cohorts of clinically relevant models and worked with machine learning experts to identify the optimal neural operators for forecasting long-term aneurysm growth. Future work will use this simulated data to train large-data models and then transfer this learning to a smaller set of clinical data, accelerating clinical translation of machine learning tools.
+I have also leveraged machine learning to strengthen clinical decision-making. Previously, utilizing large-data models to predict the outcomes of certain cardiovascular disease has been limited by the difficulty of acquiring high fidelity clinical data on which to train them. To address this need in predicting thoracic aortic aneurysm growth, I used my fluid-solid-growth (FSG) framework to generate cohorts of clinically relevant models and worked with machine learning experts to identify the optimal neural operators for forecasting long-term aneurysm growth. Future work will use this simulated data to train large-data models and then transfer this learning to a smaller set of clinical data, accelerating clinical translation of machine learning tools.
 
 ---
 
