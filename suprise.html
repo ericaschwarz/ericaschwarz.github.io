@@ -145,7 +145,7 @@ layout: default
 
 <div id="gameContainer">
   <div id="dialogueBox">
-  <p id="winMessage">"Explore my website using this maze. Finding a goal will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!" </p>
+  <p id="winMessage">"Explore my website using this maze. Finding a waypoint will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!" </p>
   <div id="dialogueChoices"></div>
   </div>
   <canvas id="mazeCanvas" width="380" height="380"></canvas>
@@ -636,7 +636,7 @@ function checkWin() {
   } else {
     // Normal message when wandering
     msg.textContent =
-      "Explore my website using this maze. Finding a goal will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!";
+      "Explore my website using this maze. Finding a waypoint will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!";
     choiceBox.innerHTML = "";
   }
 }
