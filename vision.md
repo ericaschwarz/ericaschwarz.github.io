@@ -26,9 +26,9 @@ I complete the cell-to-tissue-to-organ pipeline using in silico models of cell-s
 
 ## Doctoral Research
 
-I completed my Ph.D. at Stanford University under the supervision of Dr. Alison Marsden, a leader in the field of computational fluid dynamics (CFD). Here, I led a comprehensive analysis of the first U.S. clinical trial evaluating tissue-engineered vascular grafts (TEVGs) for the treatment of congenital heart defects (CHDs). 
+I completed my Ph.D. at **Stanford University** under the supervision of Dr. Alison Marsden, a leader in the field of **computational fluid dynamics** (CFD). Here, I led a comprehensive analysis of the first U.S. clinical trial evaluating tissue-engineered vascular grafts (TEVGs) for the treatment of congenital heart defects (CHDs). 
 
-I coupled patient-specific CFD simulations with lumped parameter networks (LPNs) and identified geometric thresholds for symptomatic behavior (Fig. 1). These insights contributed to the renewal of the clinical trial that allowed for further use of TEVGs to treat CHDs. 
+I coupled patient-specific CFD simulations with **lumped parameter networks** (LPNs) and identified geometric thresholds for symptomatic behavior (Fig. 1). These insights contributed to the renewal of the clinical trial that allowed for further use of TEVGs to treat CHDs. 
 
 To further this work, I developed a fully 3D fluid-solid-growth (FSG) framework capable of simulating mechanobiologically-driven growth and remodeling (G&R) within a finite element fluid–structure interaction (FSI) solver. This enabled long-term, patient-specific predictions of hemodynamic evolution, wall morphology, tissue composition, and material properties. 
 
