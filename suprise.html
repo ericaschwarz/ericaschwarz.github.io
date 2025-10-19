@@ -494,6 +494,34 @@ function movePlayer(dx, dy) {
   }
 }
 
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+function typeDialogue(text, callback) {
+  const msg = document.getElementById('winMessage');
+  const choiceBox = document.getElementById('dialogueChoices');
+
+  msg.textContent = "";
+  msg.classList.add("typing");
+  choiceBox.innerHTML = "";
+
+  let i = 0;
+  const speed = 35; // milliseconds per character
+
+  function typeNext() {
+    if (i < text.length) {
+      msg.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeNext, speed);
+    } else {
+      msg.classList.remove("typing");
+      if (callback) callback();
+    }
+  }
+
+  typeNext();
+}
 
 function checkWin() {
   const msg = document.getElementById('winMessage');
