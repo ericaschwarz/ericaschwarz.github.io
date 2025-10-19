@@ -465,46 +465,41 @@ function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
-  // face immediately for correct animation
+  // Update facing direction immediately
   player.direction =
     dx > 0 ? "right" :
     dx < 0 ? "left"  :
-    dy > 0 ? "down"  : "up";
+    dy > 0 ? "down"  :
+    "up";
 
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
 
-  const canMove = maze[newY] && maze[newY][newX] === 0;
-
-  if (canMove) {
+  // Only move if the target tile is open
+  if (maze[newY] && maze[newY][newX] === 0) {
     player.gridX = newX;
     player.gridY = newY;
-    player.moving = true;  // walking anim
   } else {
-    // keep walking in place when blocked (no interval clear!)
-    player.moving = true;  // shows “trying to move” anim
-    // optional micro-bump for feedback (very small)
-    // const bump = 2;
-    // player.x = lerp(player.x, player.gridX * tileSize + dx * bump, 0.4);
-    // player.y = lerp(player.y, player.gridY * tileSize + dy * bump, 0.4);
+    // Can't move into wall: stop walking animation, but keep facing
+    player.moving = false;
+    clearInterval(moveInterval);
+    moveInterval = null;
   }
 
   checkWin();
 
-  // queued turn (if you’re using the nextDir/currentDir system)
-  if (typeof nextDir === "string" && nextDir !== currentDir) {
+  // After finishing this step, apply any queued turn
+  if (nextDir && nextDir !== currentDir) {
     const [nx, ny] = nextDir.split(",").map(Number);
     currentDir = nextDir;
     nextDir = null;
-    if (moveInterval) clearInterval(moveInterval);
+    clearInterval(moveInterval);
     startMove(nx, ny);
   }
 }
-
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -602,7 +597,6 @@ const dirs = {
   right: [1, 0]
 };
 
-
 // --- BUTTON CONTROLS ---
 document.querySelectorAll("#controls button").forEach(btn => {
   const dir = btn.dataset.dir;
@@ -619,70 +613,38 @@ document.querySelectorAll("#controls button").forEach(btn => {
   btn.addEventListener("pointerleave", stopMove); // if you slide off
 });
 
-
-// === KEYBOARD CONTROLS (priority stack + fallback) ===
-const dirStack = [];    // press order (oldest -> newest)
-let activeDir = null;   // currently applied dir string: "1,0", "0,-1", etc.
-
-const KEY2DIR = {
-  arrowup:    [0, -1], w: [0, -1],
-  arrowdown:  [0,  1], s: [0,  1],
-  arrowleft:  [-1, 0], a: [-1, 0],
-  arrowright: [1,  0], d: [1,  0],
-};
-
-function keyToDirStr(key) {
-  const k = key.toLowerCase();
-  const v = KEY2DIR[k];
-  return v ? `${v[0]},${v[1]}` : null;
-}
-
-function applyActiveDirFromStack(e) {
-  // newest key wins
-  const lastKey = dirStack[dirStack.length - 1];
-  const dirStr = keyToDirStr(lastKey);
-  if (!dirStr) return;
-
-  if (dirStr !== activeDir) {
-    activeDir = dirStr;
-    const [dx, dy] = dirStr.split(",").map(Number);
-    // switch immediately—don’t wait for OS repeat
-    if (moveInterval) clearInterval(moveInterval);
-    startMove(dx, dy, e);
-  }
-}
-
-document.addEventListener("keydown", (e) => {
+// --- KEYBOARD CONTROLS ---
+document.addEventListener("keydown", e => {
   if (gameFrozen) return;
 
-  const dirStr = keyToDirStr(e.key);
-  if (!dirStr) return;
-  e.preventDefault();
+  // Ignore repeated keydown events (we manage hold manually)
+  if (e.repeat) return;
 
-  // move this key to the end (newest)
-  const idx = dirStack.indexOf(e.key.toLowerCase());
-  if (idx !== -1) dirStack.splice(idx, 1);
-  dirStack.push(e.key.toLowerCase());
-
-  applyActiveDirFromStack(e);
-});
-
-document.addEventListener("keyup", (e) => {
-  const k = e.key.toLowerCase();
-  const idx = dirStack.indexOf(k);
-  if (idx !== -1) dirStack.splice(idx, 1);
-
-  if (dirStack.length === 0) {
-    activeDir = null;
-    stopMove();
-    return;
+  let dx = 0, dy = 0;
+  switch (e.key.toLowerCase()) {
+    case "arrowup": case "w": dy = -1; break;
+    case "arrowdown": case "s": dy = 1; break;
+    case "arrowleft": case "a": dx = -1; break;
+    case "arrowright": case "d": dx = 1; break;
+    default: return;
   }
 
-  // fall back to next most recent
-  applyActiveDirFromStack(e);
+  e.preventDefault();
+
+  // Clear any existing movement to allow instant direction switch
+  if (moveInterval) {
+    clearInterval(moveInterval);
+    moveInterval = null;
+  }
+
+  // Move immediately and start continuous movement
+  startMove(dx, dy, e);
 });
 
-
+document.addEventListener("keyup", e => {
+  const keys = ["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"];
+  if (keys.includes(e.key.toLowerCase())) stopMove();
+});
 
 
 // === GLOBAL TOUCH / TAP MOVEMENT ===
