@@ -50,6 +50,8 @@ layout: default
     outline: none;         /* remove outline */
     cursor: pointer;       /* pointer on hover */
     color: #555;           /* icon color */
+    touch-action: manipulation;               /* prevents extra tap delays */
+    user-select: none;                        /* stops accidental text selection */
   }
 
   #controls button:active {
