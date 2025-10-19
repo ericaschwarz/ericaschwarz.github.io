@@ -422,6 +422,8 @@ function updateCamera() {
   camera.y = lerp(camera.y, Math.max(0, Math.min(targetY, maxY)), CAMERA_LERP);
 }
 
+function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
 function animatePlayer() {
   player.frameTimer++;
   if (player.frameTimer >= player.frameInterval) {
