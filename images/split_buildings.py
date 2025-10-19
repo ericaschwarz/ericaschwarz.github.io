@@ -3,7 +3,7 @@ import imageio.v3 as iio
 import os
 
 # === Configuration ===
-input_path = "pixel_buildings.png"      # Path to your 256x256 image
+input_path = "pixel_buildings_2.png"      # Path to your 256x256 image
 output_folder = "."               # Folder to save the 16 blocks
 grid_row_size = 3                 # 4x4 grid
 grid_column_size = 3              # 4x4 grid
