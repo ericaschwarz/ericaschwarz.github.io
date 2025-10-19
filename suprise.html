@@ -604,6 +604,7 @@ const dirs = {
   right: [1, 0]
 };
 
+
 // --- BUTTON CONTROLS ---
 document.querySelectorAll("#controls button").forEach(btn => {
   const dir = btn.dataset.dir;
@@ -620,38 +621,71 @@ document.querySelectorAll("#controls button").forEach(btn => {
   btn.addEventListener("pointerleave", stopMove); // if you slide off
 });
 
-// --- KEYBOARD CONTROLS ---
+
+// === KEYBOARD CONTROLS (priority switching & fallback) ===
+const heldKeys = []; // keeps keys in press order (most recent last)
+
 document.addEventListener("keydown", e => {
   if (gameFrozen) return;
 
-  // Ignore repeated keydown events (we manage hold manually)
-  if (e.repeat) return;
-
-  let dx = 0, dy = 0;
-  switch (e.key.toLowerCase()) {
-    case "arrowup": case "w": dy = -1; break;
-    case "arrowdown": case "s": dy = 1; break;
-    case "arrowleft": case "a": dx = -1; break;
-    case "arrowright": case "d": dx = 1; break;
-    default: return;
-  }
-
+  const key = e.key.toLowerCase();
+  if (!["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"].includes(key)) return;
   e.preventDefault();
 
-  // Clear any existing movement to allow instant direction switch
-  if (moveInterval) {
-    clearInterval(moveInterval);
-    moveInterval = null;
-  }
+  // If key already held, remove it so we can re-add it to the end (for recency)
+  const idx = heldKeys.indexOf(key);
+  if (idx !== -1) heldKeys.splice(idx, 1);
+  heldKeys.push(key);
 
-  // Move immediately and start continuous movement
-  startMove(dx, dy, e);
+  // Use the *most recently pressed* key
+  const [dx, dy] = keyToDir(key);
+
+  // If not moving or direction changed, start / switch movement
+  if (!player.moving) {
+    startMove(dx, dy, e);
+    currentDir = `${dx},${dy}`;
+  } else {
+    const newDir = `${dx},${dy}`;
+    if (newDir !== currentDir) {
+      nextDir = newDir; // queue immediate switch
+      currentDir = newDir;
+      clearInterval(moveInterval);
+      startMove(dx, dy, e);
+    }
+  }
 });
 
 document.addEventListener("keyup", e => {
-  const keys = ["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"];
-  if (keys.includes(e.key.toLowerCase())) stopMove();
+  const key = e.key.toLowerCase();
+  const i = heldKeys.indexOf(key);
+  if (i !== -1) heldKeys.splice(i, 1);
+
+  if (heldKeys.length === 0) {
+    // No keys held → stop
+    stopMove();
+  } else {
+    // Resume last held key's direction
+    const lastKey = heldKeys[heldKeys.length - 1];
+    const [dx, dy] = keyToDir(lastKey);
+    const newDir = `${dx},${dy}`;
+    if (newDir !== currentDir) {
+      currentDir = newDir;
+      clearInterval(moveInterval);
+      startMove(dx, dy);
+    }
+  }
 });
+
+function keyToDir(key) {
+  switch (key) {
+    case "arrowup": case "w": return [0, -1];
+    case "arrowdown": case "s": return [0, 1];
+    case "arrowleft": case "a": return [-1, 0];
+    case "arrowright": case "d": return [1, 0];
+    default: return [0, 0];
+  }
+}
+
 
 
 // === GLOBAL TOUCH / TAP MOVEMENT ===
