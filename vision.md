@@ -18,18 +18,22 @@ Physics-based simulations of cardiovascular systems are now routinely used to mo
 
 ---
 
-##Approach
+## Approach
 
 I complete the cell-to-tissue-to-organ pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continues research.
 
 ---
 
 ## Doctoral Research
-During my Ph.D. at **Stanford University** with Dr. Alison Marsden, I led a detailed analysis of the first U.S. **clinical trial of tissue-engineered vascular grafts (TEVGs)** for congenital heart defects.  
-I coupled **patient-specific CFD** with **lumped parameter networks (LPNs)** to identify geometric thresholds for symptomatic behavior — insights that informed clinical trial renewal.
 
-I later developed a **3D fluid–solid–growth (FSG)** framework capable of simulating mechanobiologically-driven G&R within a **finite element FSI solver**, enabling prediction of changing hemodynamics, wall morphology, and material properties.  
-This work increased the clinical relevance of CFD and earned recognition as a **Melosh Medal finalist** for outstanding research in computational mechanics.
+I completed my Ph.D. at Stanford University under the supervision of Dr. Alison Marsden, a leader in the field of computational fluid dynamics (CFD). Here, I led a comprehensive analysis of the first U.S. clinical trial evaluating tissue-engineered vascular grafts (TEVGs) for the treatment of congenital heart defects (CHDs). 
+
+I coupled patient-specific CFD simulations with lumped parameter networks (LPNs) and identified geometric thresholds for symptomatic behavior (Fig. 1). These insights contributed to the renewal of the clinical trial that allowed for further use of TEVGs to treat CHDs. 
+
+To further this work, I developed a fully 3D fluid-solid-growth (FSG) framework capable of simulating mechanobiologically-driven growth and remodeling (G&R) within a finite element fluid–structure interaction (FSI) solver. This enabled long-term, patient-specific predictions of hemodynamic evolution, wall morphology, tissue composition, and material properties. 
+
+This work increased the clinical relevance of CFD modeling by enabling mechanobiologically motivated studies of vascular evolution in complex domains. I was nationally recognized for this contribution to computational mechanics as a finalist for the Melosh Medal Competition.
+
 
 ---
 
