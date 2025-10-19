@@ -465,15 +465,15 @@ function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
-  // Always face the direction of intended movement
+  // face immediately for correct animation
   player.direction =
     dx > 0 ? "right" :
     dx < 0 ? "left"  :
-    dy > 0 ? "down"  :
-    "up";
+    dy > 0 ? "down"  : "up";
 
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
@@ -481,32 +481,30 @@ function movePlayer(dx, dy) {
   const canMove = maze[newY] && maze[newY][newX] === 0;
 
   if (canMove) {
-    // Move one tile forward
     player.gridX = newX;
     player.gridY = newY;
-    player.moving = true;
+    player.moving = true;  // walking anim
   } else {
-    // Can't move: play walking animation but stay in place
-    player.moving = true;
-
-    // Optionally end the movement loop after a short “bump” duration
-    clearInterval(moveInterval);
-    moveInterval = setTimeout(() => {
-      player.moving = false; // stop animation after the “attempt”
-    }, 300); // tweak: how long to keep walking in place
+    // keep walking in place when blocked (no interval clear!)
+    player.moving = true;  // shows “trying to move” anim
+    // optional micro-bump for feedback (very small)
+    // const bump = 2;
+    // player.x = lerp(player.x, player.gridX * tileSize + dx * bump, 0.4);
+    // player.y = lerp(player.y, player.gridY * tileSize + dy * bump, 0.4);
   }
 
   checkWin();
 
-  // Apply queued direction after finishing this step
-  if (nextDir && nextDir !== currentDir) {
+  // queued turn (if you’re using the nextDir/currentDir system)
+  if (typeof nextDir === "string" && nextDir !== currentDir) {
     const [nx, ny] = nextDir.split(",").map(Number);
     currentDir = nextDir;
     nextDir = null;
-    clearInterval(moveInterval);
+    if (moveInterval) clearInterval(moveInterval);
     startMove(nx, ny);
   }
 }
+
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -622,69 +620,68 @@ document.querySelectorAll("#controls button").forEach(btn => {
 });
 
 
-// === KEYBOARD CONTROLS (priority switching & fallback) ===
-const heldKeys = []; // keeps keys in press order (most recent last)
+// === KEYBOARD CONTROLS (priority stack + fallback) ===
+const dirStack = [];    // press order (oldest -> newest)
+let activeDir = null;   // currently applied dir string: "1,0", "0,-1", etc.
 
-document.addEventListener("keydown", e => {
-  if (gameFrozen) return;
+const KEY2DIR = {
+  arrowup:    [0, -1], w: [0, -1],
+  arrowdown:  [0,  1], s: [0,  1],
+  arrowleft:  [-1, 0], a: [-1, 0],
+  arrowright: [1,  0], d: [1,  0],
+};
 
-  const key = e.key.toLowerCase();
-  if (!["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"].includes(key)) return;
-  e.preventDefault();
+function keyToDirStr(key) {
+  const k = key.toLowerCase();
+  const v = KEY2DIR[k];
+  return v ? `${v[0]},${v[1]}` : null;
+}
 
-  // If key already held, remove it so we can re-add it to the end (for recency)
-  const idx = heldKeys.indexOf(key);
-  if (idx !== -1) heldKeys.splice(idx, 1);
-  heldKeys.push(key);
+function applyActiveDirFromStack(e) {
+  // newest key wins
+  const lastKey = dirStack[dirStack.length - 1];
+  const dirStr = keyToDirStr(lastKey);
+  if (!dirStr) return;
 
-  // Use the *most recently pressed* key
-  const [dx, dy] = keyToDir(key);
-
-  // If not moving or direction changed, start / switch movement
-  if (!player.moving) {
+  if (dirStr !== activeDir) {
+    activeDir = dirStr;
+    const [dx, dy] = dirStr.split(",").map(Number);
+    // switch immediately—don’t wait for OS repeat
+    if (moveInterval) clearInterval(moveInterval);
     startMove(dx, dy, e);
-    currentDir = `${dx},${dy}`;
-  } else {
-    const newDir = `${dx},${dy}`;
-    if (newDir !== currentDir) {
-      nextDir = newDir; // queue immediate switch
-      currentDir = newDir;
-      clearInterval(moveInterval);
-      startMove(dx, dy, e);
-    }
-  }
-});
-
-document.addEventListener("keyup", e => {
-  const key = e.key.toLowerCase();
-  const i = heldKeys.indexOf(key);
-  if (i !== -1) heldKeys.splice(i, 1);
-
-  if (heldKeys.length === 0) {
-    // No keys held → stop
-    stopMove();
-  } else {
-    // Resume last held key's direction
-    const lastKey = heldKeys[heldKeys.length - 1];
-    const [dx, dy] = keyToDir(lastKey);
-    const newDir = `${dx},${dy}`;
-    if (newDir !== currentDir) {
-      currentDir = newDir;
-      clearInterval(moveInterval);
-      startMove(dx, dy);
-    }
-  }
-});
-
-function keyToDir(key) {
-  switch (key) {
-    case "arrowup": case "w": return [0, -1];
-    case "arrowdown": case "s": return [0, 1];
-    case "arrowleft": case "a": return [-1, 0];
-    case "arrowright": case "d": return [1, 0];
-    default: return [0, 0];
   }
 }
+
+document.addEventListener("keydown", (e) => {
+  if (gameFrozen) return;
+
+  const dirStr = keyToDirStr(e.key);
+  if (!dirStr) return;
+  e.preventDefault();
+
+  // move this key to the end (newest)
+  const idx = dirStack.indexOf(e.key.toLowerCase());
+  if (idx !== -1) dirStack.splice(idx, 1);
+  dirStack.push(e.key.toLowerCase());
+
+  applyActiveDirFromStack(e);
+});
+
+document.addEventListener("keyup", (e) => {
+  const k = e.key.toLowerCase();
+  const idx = dirStack.indexOf(k);
+  if (idx !== -1) dirStack.splice(idx, 1);
+
+  if (dirStack.length === 0) {
+    activeDir = null;
+    stopMove();
+    return;
+  }
+
+  // fall back to next most recent
+  applyActiveDirFromStack(e);
+});
+
 
 
 
