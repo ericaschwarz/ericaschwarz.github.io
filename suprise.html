@@ -647,17 +647,17 @@ function handlePageTouchStart(e) {
   // Ignore touches outside the canvas
   if (touchX < 0 || touchY < 0 || touchX > rect.width || touchY > rect.height) return;
 
-  handleTap(touchX, touchY);
+  handleTap(touchX, touchY, e);
 
   // Tap-and-hold movement (repeat)
-  moveInterval = setInterval(() => handleTap(touchX, touchY), MOVE_INTERVAL);
+  moveInterval = setInterval(() => handleTap(touchX, touchY, e), MOVE_INTERVAL);
 }
 
 function handlePageTouchEnd(e) {
   stopMove();
 }
 
-function handleTap(clickX, clickY) {
+function handleTap(clickX, clickY, e) {
   // Player center on screen
   const playerCenterX = (player.x - camera.x) + tileSize / 2;
   const playerCenterY = (player.y - camera.y) + tileSize / 2;
