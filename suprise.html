@@ -17,6 +17,10 @@ layout: default
   }
   canvas {
     margin-top: 40px;
+    touch-action: none;       /* Prevent scrolling or zooming */
+    -webkit-user-select: none; /* Prevent text selection on iOS */
+    -webkit-touch-callout: none; /* Disable long-press popup on iOS */
+}
   }
   #gameContainer {
     display: flex;
@@ -165,7 +169,7 @@ layout: default
 const canvas = document.getElementById('mazeCanvas');
 const ctx = canvas.getContext('2d');
 
-const tileSize = 40;
+const tileSize = 80;
 const viewWidth = canvas.width;
 const viewHeight = canvas.height;
 const viewCols = viewWidth / tileSize;
