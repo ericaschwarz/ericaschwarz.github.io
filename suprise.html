@@ -244,11 +244,43 @@ function generateMaze(rows, cols, startX = null, startY = null, endX = null, end
   };
 }
 
+class WinObject {
+  constructor(x, y, name, targetURL, dialogue) {
+    this.x = x;
+    this.y = y;
+    this.name = name;          // e.g., "solver", "teaching"
+    this.targetURL = targetURL;
+    this.dialogue = dialogue;
+  }
+}
+
+
 
 const { maze, start, end } = generateMaze(21, 21);
 const rows = maze.length;
 const cols = maze[0].length;
 const goal = end;
+
+// --- Define site pages and create goal objects ---
+const sitePages = [
+  { name: "solver",       url: "/research/solver",       dialogue: "You discovered the Solver Room!" },
+  { name: "translation",  url: "/research/translation",  dialogue: "You found the Translation Chamber!" },
+  { name: "multiscale",   url: "/research/multiscale",   dialogue: "You uncovered the Multiscale Archive!" },
+  { name: "publications", url: "/publications",          dialogue: "A library of knowledge stands before you!" },
+  { name: "vision",       url: "/vision",                dialogue: "You gaze into the Vision Hall." },
+  { name: "teaching",     url: "/teaching",              dialogue: "You step into the Teaching Garden." },
+  { name: "cv",           url: "/cv",                    dialogue: "You uncover the Scholar’s Record." },
+  { name: "contact",      url: "/contact",               dialogue: "You arrive at the Communication Gate!" }
+];
+
+const winObjects = sitePages.map(page => {
+  let x, y;
+  do {
+    x = Math.floor(Math.random() * cols);
+    y = Math.floor(Math.random() * rows);
+  } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
+  return new WinObject(x, y, page.name, page.url, page.dialogue);
+});
 
 // === Player setup ===
 let player = {
@@ -278,9 +310,11 @@ function loadFrames(prefix, count) {
 }
 
 // --- Auto-load all sprite images dynamically ---
+// --- Load all sprites dynamically and call callback when ready ---
 function loadImages(callback) {
   const images = {};
 
+  // === Environment tiles ===
   const baseTypes = ['tree', 'rock', 'floor'];
   const shapes = [
     'isolated',
@@ -291,46 +325,68 @@ function loadImages(callback) {
     'cross'
   ];
 
+  // === Player sprites ===
   const actions = ['idle', 'walk'];
   const directions = ['up', 'down', 'left', 'right'];
   const frameCount = 4; // 0–3
 
-  const extras = ['goal.png'];
+  // === Site-specific goals ===
+  // Uses same order as sitePages (define sitePages before this)
+  const goalNames = [
+    'solver',
+    'translation',
+    'multiscale',
+    'publications',
+    'vision',
+    'teaching',
+    'cv',
+    'contact'
+  ];
 
-  // Generate all player image filenames automatically
+  // === Collect all file paths ===
+  const allPaths = [];
+
+  // Environment
+  for (const type of baseTypes) {
+    for (const shape of shapes) {
+      allPaths.push(`${type}_${shape}.png`);
+    }
+  }
+
+  // Player
   for (const action of actions) {
     for (const dir of directions) {
       for (let i = 0; i < frameCount; i++) {
-        extras.push(`player_${action}_${dir}_${i}.png`);
+        allPaths.push(`player_${action}_${dir}_${i}.png`);
       }
     }
   }
-  // Build file list
-  const allPaths = [];
 
-  baseTypes.forEach(type => {
-    shapes.forEach(shape => {
-      allPaths.push(`${type}_${shape}.png`);
-    });
-  });
+  // Generic goal + page-specific goals
+  allPaths.push('goal.png');
+  for (const name of goalNames) {
+    allPaths.push(`goal_${name}.png`);
+  }
 
-  allPaths.push(...extras);
-
+  // === Load all images ===
   let loaded = 0;
   const total = allPaths.length;
 
-  allPaths.forEach(name => {
-    const img = new Image();
-    img.src = `/images/${name}`;
-    img.onload = () => {
-      loaded++;
-      if (loaded === total) callback();
-    };
-    const key = name.replace(/\.(svg|png)$/i, ''); // e.g. tree_corner_rd
-    images[key] = img;
-  });
+  function checkDone() {
+    loaded++;
+    if (loaded === total) callback();
+  }
 
-  // expose images globally so drawMaze can use it
+  for (const filename of allPaths) {
+    const img = new Image();
+    img.src = `/images/${filename}`;
+    img.onload = checkDone;
+    img.onerror = checkDone; // still continue if missing file
+    const key = filename.replace(/\.(svg|png)$/i, ''); // e.g. "goal_solver"
+    images[key] = img;
+  }
+
+  // Expose globally
   window.images = images;
 }
 
@@ -445,6 +501,7 @@ function drawMaze() {
   const offsetX = -camera.x + startCol * tileSize;
   const offsetY = -camera.y + startRow * tileSize;
 
+  // Draw terrain
   for (let y = startRow; y < endRow; y++) {
     for (let x = startCol; x < endCol; x++) {
       const key = wallSprites[y]?.[x];
@@ -456,50 +513,17 @@ function drawMaze() {
     }
   }
 
-  const drawX = goal.x * tileSize - camera.x;
-  const drawY = goal.y * tileSize - camera.y;
-  ctx.drawImage(images['goal'], drawX, drawY, tileSize, tileSize);
-}
-
-function capitalize(s) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
-function movePlayer(dx, dy) {
-  if (gameFrozen) return;
-
-  // Update facing direction immediately
-  player.direction =
-    dx > 0 ? "right" :
-    dx < 0 ? "left"  :
-    dy > 0 ? "down"  :
-    "up";
-
-  const newX = player.gridX + dx;
-  const newY = player.gridY + dy;
-
-  // Only move if the target tile is open
-  if (maze[newY] && maze[newY][newX] === 0) {
-    player.gridX = newX;
-    player.gridY = newY;
-  } else {
-    // Can't move into wall: stop walking animation, but keep facing
-    player.moving = false;
-    clearInterval(moveInterval);
-    moveInterval = null;
-  }
-
-  checkWin();
-
-  // After finishing this step, apply any queued turn
-  if (nextDir && nextDir !== currentDir) {
-    const [nx, ny] = nextDir.split(",").map(Number);
-    currentDir = nextDir;
-    nextDir = null;
-    clearInterval(moveInterval);
-    startMove(nx, ny);
+  // Draw all page goals
+  for (const obj of winObjects) {
+    const drawX = obj.x * tileSize - camera.x;
+    const drawY = obj.y * tileSize - camera.y;
+    const spriteKey = `goal_${obj.name}`;
+    const sprite = images[spriteKey] || images['goal'];
+    if (sprite) ctx.drawImage(sprite, drawX, drawY, tileSize, tileSize);
   }
 }
+
+
 
 function lerp(a, b, t) {
   return a + (b - a) * t;
@@ -534,12 +558,18 @@ function checkWin() {
   const msg = document.getElementById('winMessage');
   const choiceBox = document.getElementById('dialogueChoices');
 
-  // Check grid coords and prevent retrigger
-  if (!hasWon && player.gridX === goal.x && player.gridY === goal.y) {
+  if (hasWon || gameFrozen) return;
+
+  // Check if player stands on any goal
+  const found = winObjects.find(obj =>
+    player.gridX === obj.x && player.gridY === obj.y
+  );
+
+  if (found) {
     hasWon = true;
     gameFrozen = true;
 
-    typeDialogue("You solved the maze!\nExplore my website?", () => {
+    typeDialogue(`${found.dialogue}\nWould you like to enter?`, () => {
       choiceBox.innerHTML = `
         <button class="dialogue-btn" id="yesBtn">Yes</button>
         <button class="dialogue-btn" id="noBtn">No</button>
@@ -549,37 +579,25 @@ function checkWin() {
       const noBtn = document.getElementById("noBtn");
 
       yesBtn.onclick = () => {
-        const sitePages = [
-          "/research/solver",
-          "/research/translation",
-          "/research/multiscale",
-          "/publications",
-          "/vision",
-          "/teaching",
-          "/cv",
-          "/contact"
-        ];
-        // Pick a random page from the list
-        const randomIndex = Math.floor(Math.random() * sitePages.length);
-        const randomPage = sitePages[randomIndex];
-        window.location.href = randomPage;
+        window.location.href = found.targetURL;
       };
 
       noBtn.onclick = () => {
         typeDialogue("You decide to keep exploring the maze.", () => {
           choiceBox.innerHTML = "";
           gameFrozen = false;
-          hasWon = false; // allow re-trigger
+          hasWon = false;
         });
       };
     });
-  } 
-  else if (!hasWon) {
-    // Only log when not at goal
-    msg.textContent = "Explore my website using this maze. Solving the maze will take you to a random page. The maze is procedurally generated and will change each time you visit. Enjoy!";
+  } else {
+    // Normal message when wandering
+    msg.textContent =
+      "Explore my website using this maze. Finding a goal will take you to a unique part of the site.";
     choiceBox.innerHTML = "";
   }
 }
+
 
 
 
