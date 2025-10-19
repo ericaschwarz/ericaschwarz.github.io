@@ -20,7 +20,7 @@ Physics-based simulations of cardiovascular systems are now routinely used to mo
 
 ## Approach
 
-I complete the cell-to-tissue-to-organ pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continues research.
+I complete the cell-to-tissue-to-organ simulation pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continued research.
 
 ---
 
