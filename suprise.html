@@ -468,7 +468,7 @@ function capitalize(s) {
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
-  // Always update facing direction for correct animation
+  // Update facing direction immediately
   player.direction =
     dx > 0 ? "right" :
     dx < 0 ? "left"  :
@@ -478,31 +478,12 @@ function movePlayer(dx, dy) {
   const newX = player.gridX + dx;
   const newY = player.gridY + dy;
 
-  // Check if the next tile is open
-  const canMove = maze[newY] && maze[newY][newX] === 0;
-
-  if (canMove) {
-    // Move one tile forward
+  // Only move if the target tile is open
+  if (maze[newY] && maze[newY][newX] === 0) {
     player.gridX = newX;
     player.gridY = newY;
   } else {
-    // Blocked — trigger a small "bump" nudge for feedback
-    const bumpDistance = 6; // pixels
-    const targetBumpX = player.x + dx * bumpDistance;
-    const targetBumpY = player.y + dy * bumpDistance;
-
-    // Smooth nudge forward, then return
-    const bumpSpeed = 0.4; // lerp factor (lower = slower)
-    player.x = lerp(player.x, targetBumpX, bumpSpeed);
-    player.y = lerp(player.y, targetBumpY, bumpSpeed);
-
-    setTimeout(() => {
-      // Smoothly return to grid position
-      player.x = lerp(player.x, player.gridX * tileSize, bumpSpeed);
-      player.y = lerp(player.y, player.gridY * tileSize, bumpSpeed);
-    }, 80); // short delay for bump duration
-
-    // Stop move loop — but leave facing direction
+    // Can't move into wall: stop walking animation, but keep facing
     player.moving = false;
     clearInterval(moveInterval);
     moveInterval = null;
