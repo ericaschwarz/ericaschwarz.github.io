@@ -361,7 +361,7 @@ function placeBuilding(maze, x, y) {
 
   // Door
   const doorX = x + Math.floor(width / 2);
-  const doorY = y + height - 1;
+  const doorY = y + height ;
   maze[doorY][doorX] = 0;
 
   return { x: doorX, y: doorY };
@@ -610,19 +610,19 @@ function drawMaze() {
   }
 
   // --- Draw buildings ---
+  // --- Draw buildings ---
   for (const obj of winObjects) {
+    const buildingSprite = images[`goal_${obj.name}`];
+    if (!buildingSprite) continue;
 
-    const drawX = obj.x * tileSize - camera.x - tileSize;  // door is centered bottom
-    const drawY = obj.y * tileSize - camera.y - tileSize * 2;
+    const buildingWidth = tileSize * BUILDING_HEIGHT;   // building spans 2 tiles horizontally
+    const buildingHeight = tileSize * BUILDING_WIDTH;  // and 3 vertically
 
-    const buildingWidth = tileSize * 3;
-    const buildingHeight = tileSize * 2;
+    // Align bottom-center of sprite with the door tile (obj.x, obj.y)
+    const drawX = obj.x * tileSize - camera.x - (buildingWidth / 2) + (tileSize / 2);
+    const drawY = obj.y * tileSize - camera.y - (buildingHeight - tileSize);
 
-    const spriteKey = `goal_${obj.name}`;
-    const sprite = images[spriteKey] || images['goal'];
-    if (sprite) ctx.drawImage(sprite, drawX, drawY, tileSize, tileSize);
-
-    ctx.drawImage(sprite, drawX, drawY, buildingWidth, buildingHeight);
+    ctx.drawImage(buildingSprite, drawX, drawY, buildingWidth, buildingHeight);
   }
 }
 
