@@ -76,7 +76,7 @@ layout: default
   padding: 10px 16px;
   margin-top: 20px;
   font-family: 'Press Start 2P', monospace;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   color: #000;
   box-shadow: 4px 4px 0 #333;
@@ -140,7 +140,7 @@ layout: default
   border-radius: 4px;
   padding: 4px 10px;
   font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
   box-shadow: 2px 2px 0 #333;
   transition: all 0.1s ease-in-out;
@@ -157,7 +157,7 @@ layout: default
 
 <div id="gameContainer">
   <div id="dialogueBox">
-  <p id="winMessage">Explore my website using this maze. Finding a waypoint will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!</p>
+  <p id="winMessage">Explore my website using this maze. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!</p>
   <div id="dialogueChoices"></div>
   </div>
   <canvas id="mazeCanvas" width="300" height="300"></canvas>
@@ -648,7 +648,7 @@ function checkWin() {
   } else {
     // Normal message when wandering
     msg.textContent =
-      "Explore my website using this maze. Finding a waypoint will take you to a unique part of the site. The maze is procedurally generated and will change each time you visit. Enjoy!";
+      "Explore my website using this maze. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!";
     choiceBox.innerHTML = "";
   }
 }
