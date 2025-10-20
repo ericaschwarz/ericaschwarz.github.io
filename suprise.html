@@ -354,14 +354,15 @@ function placeBuilding(maze, x, y) {
     }
   }
 
-  //Fill the building footprint as solid
-  for (let j = 0; j < height; j++) {
-    for (let i = 0; i < width; i++) {
+  //Clear the plaza (1-tile border around building)
+  for (let j = -1; j <= height; j++) {
+    for (let i = -1; i <= width; i++) {
       if (maze[y + j] && maze[y + j][x + i] !== undefined) {
-        maze[y + j][x + i] = 0;
+        maze[y + j][x + i] = 1;
       }
     }
   }
+
 
   //Door (bottom-center tile)
   const doorX = x + Math.floor(width / 2);
