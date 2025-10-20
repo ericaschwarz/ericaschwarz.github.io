@@ -47,7 +47,7 @@ I have also leveraged machine learning to strengthen clinical decision-making. P
 
 ## Future research
 
-My future research will create the next generation of multiscale computational cardiovascular models that couple whole-body G&R and cell-signaling networks to patient-specific CFD simulations. This will allow for long-term prediction of outcomes across myriad cardiovascular conditions. My background in biologically informed computational models makes me ideally suited to develop these methods and drive them toward clinical translation.
+While my previous research has focusced on direct correlation of gene expression to constituent production, there exists huge potential in expanding the capabilities of such cell-to-tissue coupling, particularly by expanding this network into mechanosensativity and exogenic factors, such as pharmaceuticals. This research will lead to additional capability to recommend pharacological interventions based on measured patient-specific geometries and hemodynamics and, eventually, biomarkers that endicate patient-specific cell-signalling network gains. In addition to patient-specific clinical predictions, this will also expand the ability to create sythetic datasets to aid in large data models that can lower by an order of magnitude the cost of transfer learning these models to the clinical settings. While these will be the primary directions of future research, such simulation frameworks have the potential to create strong collaborations in medical uncertainty quantification and biological insights to cardiovascular behavior. Beginning stages of this future work will focus on particular cardiovascular applications in congenital heart defects, engineered graft development, and aneurysm prediction.
 
 --- 
 
