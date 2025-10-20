@@ -785,13 +785,14 @@ function updateDirectionFromTouch(clickX, clickY, e) {
     const newY = player.gridY + my;
     if (maze[newY] && maze[newY][newX] === 0) {
       const dirKey = `${mx},${my}`;
-      if (!player.moving) {
-        // start moving immediately if idle
+      if (player.moving) {
+        if (nextDir !== dirKey && currentDir !== dirKey) {
+          nextDir = dirKey;
+        }
+      } else {
+        // --- start movement only if idle
         currentDir = dirKey;
         startMove(mx, my, e);
-      } else {
-        // queue the turn until next tile
-        nextDir = dirKey;
       }
       return;
     }
