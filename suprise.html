@@ -610,13 +610,12 @@ function drawMaze() {
   }
 
   // --- Draw buildings ---
-  // --- Draw buildings ---
   for (const obj of winObjects) {
     const buildingSprite = images[`goal_${obj.name}`];
     if (!buildingSprite) continue;
 
-    const buildingWidth = tileSize * BUILDING_HEIGHT;   // building spans 2 tiles horizontally
-    const buildingHeight = tileSize * BUILDING_WIDTH;  // and 3 vertically
+    const buildingWidth = tileSize * BUILDING_WIDTH;   // building spans 2 tiles horizontally
+    const buildingHeight = tileSize * BUILDING_HEIGHT;  // and 3 vertically
 
     // Align bottom-center of sprite with the door tile (obj.x, obj.y)
     const drawX = obj.x * tileSize - camera.x - (buildingWidth / 2) + (tileSize / 2);
