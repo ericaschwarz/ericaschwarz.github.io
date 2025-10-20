@@ -345,6 +345,14 @@ function placeBuilding(maze, x, y) {
   const width = BUILDING_WIDTH;
   const height = BUILDING_HEIGHT;
 
+  for (let j = -1; j <= height; j++) {
+    for (let i = -1; i <= width; i++) {
+      if (maze[y + j] && maze[y + j][x + i] !== undefined) {
+        maze[y + j][x + i] = 1;
+      }
+    }
+  }
+  
   //Clear the plaza (1-tile border around building)
   for (let j = -1; j <= height; j++) {
     for (let i = -1; i <= width; i++) {
@@ -354,14 +362,6 @@ function placeBuilding(maze, x, y) {
     }
   }
 
-  //Clear the plaza (1-tile border around building)
-  for (let j = -1; j <= height; j++) {
-    for (let i = -1; i <= width; i++) {
-      if (maze[y + j] && maze[y + j][x + i] !== undefined) {
-        maze[y + j][x + i] = 1;
-      }
-    }
-  }
 
 
   //Door (bottom-center tile)
