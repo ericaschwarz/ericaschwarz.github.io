@@ -191,6 +191,8 @@ function randOdd(max) {
   return Math.min(r, max - 2);
 }
 
+
+
 // === Random Maze Generation ===
 function generateMaze(rows, cols, startX = null, startY = null, endX = null, endY = null) {
   const maze = Array.from({ length: rows }, () => Array(cols).fill(1));
@@ -231,49 +233,30 @@ function generateMaze(rows, cols, startX = null, startY = null, endX = null, end
     maze[0][j] = maze[rows - 1][j] = 1;
   }
 
-  // === Randomize or assign goal ===
-  if (endX === null || endY === null) {
-    const openCells = [];
-    for (let y = 1; y < rows - 1; y++) {
-      for (let x = 1; x < cols - 1; x++) {
-        if (maze[y][x] === 0 && !(x === startX && y === startY)) {
-          openCells.push({ x, y });
-        }
-      }
-    }
-    const goal = openCells[Math.floor(Math.random() * openCells.length)];
-    endX = goal.x;
-    endY = goal.y;
-  }
-
-  // Ensure goal tile is open
-  maze[endY][endX] = 0;
-
+  // === Return base maze and start ===
   return {
     maze,
-    start: { x: startX, y: startY },
-    end: { x: endX, y: endY }
+    start: { x: startX, y: startY }
   };
 }
 
+// === Building WinObject Class ===
 class WinObject {
   constructor(x, y, name, targetURL, dialogue) {
     this.x = x;
     this.y = y;
-    this.name = name;          // e.g., "solver", "teaching"
+    this.name = name;
     this.targetURL = targetURL;
     this.dialogue = dialogue;
   }
 }
 
-
-
-const { maze, start, end } = generateMaze(21, 21);
+// === Initialize Maze and Goals ===
+const { maze, start } = generateMaze(21, 21);
 const rows = maze.length;
 const cols = maze[0].length;
-const goal = end;
 
-// --- Define site pages and create goal objects ---
+// --- Define site pages (goals) ---
 const sitePages = [
   { name: "solver",       url: "/research/solver",       dialogue: "You discovered the Solver Room!" },
   { name: "translation",  url: "/research/translation",  dialogue: "You found the Translation Chamber!" },
@@ -285,14 +268,50 @@ const sitePages = [
   { name: "contact",      url: "/contact",               dialogue: "You arrive at the Communication Gate!" }
 ];
 
-const winObjects = sitePages.map(page => {
-  let x, y;
-  do {
-    x = Math.floor(Math.random() * cols);
-    y = Math.floor(Math.random() * rows);
-  } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
-  return new WinObject(x, y, page.name, page.url, page.dialogue);
-});
+// --- Building placement helpers ---
+function canPlaceBuilding(maze, x, y, width, height) {
+  const rows = maze.length;
+  const cols = maze[0].length;
+
+  // Require that all building + plaza tiles are open
+  for (let j = -1; j < height + 1; j++) {
+    for (let i = -1; i < width + 1; i++) {
+      const nx = x + i;
+      const ny = y + j;
+      if (nx < 1 || ny < 1 || nx >= cols - 1 || ny >= rows - 1) return false;
+      if (maze[ny][nx] !== 0) return false; // must be open
+    }
+  }
+  return true;
+}
+
+function placeBuilding(maze, x, y) {
+  const width = 2;
+  const height = 3;
+
+  // Ensure area is clear
+  for (let j = -1; j < height + 1; j++) {
+    for (let i = -1; i < width + 1; i++) {
+      maze[y + j][x + i] = 0;
+    }
+  }
+
+  // Door
+  const doorX = x + Math.floor(width / 2);
+  const doorY = y + height - 1;
+  maze[doorY][doorX] = 0;
+
+  return { x: doorX, y: doorY };
+}
+
+// === Optionally: set end goal to first building door ===
+const goal = { x: winObjects[0].x, y: winObjects[0].y };
+
+// === Done ===
+// You now have: maze, start, goal, and winObjects (each a building)
+console.log("Maze generated:", maze);
+console.log("Start:", start);
+console.log("WinObjects:", winObjects);
 
 // === Player setup ===
 let player = {
@@ -527,13 +546,20 @@ function drawMaze() {
     }
   }
 
-  // Draw all page goals
+  // --- Draw buildings ---
   for (const obj of winObjects) {
-    const drawX = obj.x * tileSize - camera.x;
-    const drawY = obj.y * tileSize - camera.y;
+
+    const drawX = obj.x * tileSize - camera.x - tileSize;  // door is centered bottom
+    const drawY = obj.y * tileSize - camera.y - tileSize * 2;
+
+    const buildingWidth = tileSize * 2;
+    const buildingHeight = tileSize * 3;
+
     const spriteKey = `goal_${obj.name}`;
     const sprite = images[spriteKey] || images['goal'];
     if (sprite) ctx.drawImage(sprite, drawX, drawY, tileSize, tileSize);
+
+    ctx.drawImage(buildingSprite, drawX, drawY, buildingWidth, buildingHeight);
   }
 }
 

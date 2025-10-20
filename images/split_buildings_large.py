@@ -3,10 +3,10 @@ import imageio.v3 as iio
 import os
 
 # === Configuration ===
-input_path = "pixel_buildings_4.png"      # Path to your 256x256 image
+input_path = "buildings_large.png"      # Path to your 256x256 image
 output_folder = "."               # Folder to save the 16 blocks
-grid_row_size = 3                 # 4x4 grid
-grid_column_size = 3              # 4x4 grid
+grid_row_size = 8                 # 4x4 grid
+grid_column_size = 1              # 4x4 grid
 tile_size = 64                    # Each tile will be 64x64 pixels
 
 
@@ -18,8 +18,7 @@ goalNames = [
     'vision',
     'teaching',
     'cv',
-    'contact',
-    'teaching'
+    'contact'
   ]
 
 # === Create output directory if it doesn't exist ===
@@ -36,10 +35,10 @@ directions = ['down', 'left', 'up']
 
 k = 0
 # === Split and save ===
-for row in range(3):
-    for col in range(3):
-        y0, y1 = row * tile_size, (row + 1) * tile_size
-        x0, x1 = col * tile_size, (col + 1) * tile_size
+for row in range(grid_row_size):
+    for col in range(grid_column_size):
+        y0, y1 = row * (tile_size * 2), (row + 1) * (tile_size * 2)
+        x0, x1 = col * (tile_size * 3), (col + 1) * (tile_size * 3)
         tile = img[y0:y1, x0:x1]
 
         # Save walking frames
