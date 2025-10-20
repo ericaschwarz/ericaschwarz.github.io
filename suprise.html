@@ -561,8 +561,8 @@ function drawMaze() {
     const drawX = obj.x * tileSize - camera.x - tileSize;  // door is centered bottom
     const drawY = obj.y * tileSize - camera.y - tileSize * 2;
 
-    const buildingWidth = tileSize * 2;
-    const buildingHeight = tileSize * 3;
+    const buildingWidth = tileSize * 3;
+    const buildingHeight = tileSize * 2;
 
     const spriteKey = `goal_${obj.name}`;
     const sprite = images[spriteKey] || images['goal'];
