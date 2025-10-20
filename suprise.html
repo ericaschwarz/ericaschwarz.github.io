@@ -268,14 +268,46 @@ const sitePages = [
   { name: "contact",      url: "/contact",               dialogue: "You arrive at the Communication Gate!" }
 ];
 
-const winObjects = sitePages.map(page => {
-  let x, y;
-  do {
-    x = Math.floor(Math.random() * cols);
-    y = Math.floor(Math.random() * rows);
-  } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
-  return new WinObject(x, y, page.name, page.url, page.dialogue);
-});
+const winObjects = [];
+const width = 2, height = 3;
+
+for (const page of sitePages) {
+  let placed = false;
+  let tries = 0;
+
+  while (!placed && tries < 200) {
+    const bx = Math.floor(Math.random() * (cols - width - 2));
+    const by = Math.floor(Math.random() * (rows - height - 2));
+
+    if (canPlaceBuilding(maze, bx, by, width, height)) {
+      // this is where placeBuilding() gets called
+      const door = placeBuilding(maze, bx, by);
+
+      // Create WinObject at the door tile
+      winObjects.push(new WinObject(
+        door.x,
+        door.y,
+        page.name,
+        page.url,
+        page.dialogue
+      ));
+
+      placed = true;
+    }
+
+    tries++;
+  }
+
+  // Fallback: random open tile if no spot found
+  if (!placed) {
+    let x, y;
+    do {
+      x = Math.floor(Math.random() * cols);
+      y = Math.floor(Math.random() * rows);
+    } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
+    winObjects.push(new WinObject(x, y, page.name, page.url, page.dialogue));
+  }
+}
 
 // --- Building placement helpers ---
 function canPlaceBuilding(maze, x, y, width, height) {
@@ -299,8 +331,8 @@ function placeBuilding(maze, x, y) {
   const height = 2;
 
   // Ensure area is clear
-  for (let j = -1; j < height + 3; j++) {
-    for (let i = -1; i < width + 3; i++) {
+  for (let j = -1; j < height + 1; j++) {
+    for (let i = -1; i < width + 1; i++) {
       maze[y + j][x + i] = 0;
     }
   }
