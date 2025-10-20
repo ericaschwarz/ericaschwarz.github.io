@@ -299,8 +299,8 @@ function placeBuilding(maze, x, y) {
   const height = 2;
 
   // Ensure area is clear
-  for (let j = -1; j < height + 1; j++) {
-    for (let i = -1; i < width + 1; i++) {
+  for (let j = -1; j < height + 3; j++) {
+    for (let i = -1; i < width + 3; i++) {
       maze[y + j][x + i] = 0;
     }
   }
@@ -362,7 +362,7 @@ function loadImages(callback) {
     'corner_ur', 'corner_rd', 'corner_dl', 'corner_lu',
     'vertical', 'horizontal',
     't_leftopen', 't_upopen', 't_rightopen', 't_downopen',
-    'cross'
+    'cross', 'full'
   ];
 
   // === Player sprites ===
