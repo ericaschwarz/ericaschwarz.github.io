@@ -14,6 +14,8 @@ base_types = {
     "floor": (200, 180, 140, 255)  # tan
 }
 
+
+
 # Connection shape names (16 total)
 shapes = [
     "isolated",
@@ -21,7 +23,7 @@ shapes = [
     "corner_ur", "corner_rd", "corner_dl", "corner_lu",
     "vertical", "horizontal",
     "t_leftopen", "t_upopen", "t_rightopen", "t_downopen",
-    "cross"
+    "cross", 'full'
 ]
 
 player_shapes = [
@@ -116,6 +118,7 @@ def pattern_for_shape(shape, color, size):
     y, x = np.indices((h, w))
     mod = (x + y) % 8  # basic diagonal stripes
     overlay = np.zeros_like(arr[..., 0])
+    mask = np.ones_like(arr[..., 1])
 
     half = 36 // 2
     overlay[(x * y) % 11 < 6] = 20
@@ -152,8 +155,6 @@ def pattern_for_shape(shape, color, size):
         mask = ((abs(x - cx) < half) | ((abs(y - cy) < half) & (x < cx)))
     elif "end_right" in shape:
         mask = ((abs(x - cx) < half) | ((abs(y - cy) < half) & (x > cx)))
-    else:  # isolated or other
-        mask = ((abs(x - cx) < half) & (abs(y - cy) < half))
 
     overlay[mask] = 40
 
