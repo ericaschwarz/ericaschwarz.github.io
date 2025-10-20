@@ -269,17 +269,18 @@ const sitePages = [
 ];
 
 const winObjects = [];
-const width = 3, height = 2;
+const BUILDING_WIDTH = 3;  // tiles
+const BUILDING_HEIGHT = 2; // tiles
 
 for (const page of sitePages) {
   let placed = false;
   let tries = 0;
 
   while (!placed && tries < 200) {
-    const bx = Math.floor(Math.random() * (cols - width - 2));
-    const by = Math.floor(Math.random() * (rows - height - 2));
+    const bx = Math.floor(Math.random() * (cols - BUILDING_WIDTH - 2));
+    const by = Math.floor(Math.random() * (rows - BUILDING_HEIGHT - 2));
 
-    if (canPlaceBuilding(maze, bx, by, width, height, winObjects)) {
+    if (canPlaceBuilding(maze, bx, by, BUILDING_WIDTH, BUILDING_HEIGHT, winObjects)) {
       // this is where placeBuilding() gets called
       const door = placeBuilding(maze, bx, by);
 
@@ -348,8 +349,8 @@ function canPlaceBuilding(maze, x, y, width, height, winObjects = []) {
 }
 
 function placeBuilding(maze, x, y) {
-  const width = 3;
-  const height = 2;
+  const width = BUILDING_WIDTH;
+  const height = BUILDING_HEIGHT;
 
   // Ensure area is clear
   for (let j = -1; j < height + 1; j++) {
