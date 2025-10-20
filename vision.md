@@ -54,8 +54,7 @@ My long-term research program will extend cell-to-tissue simulation coupling to 
 ## 1. Multiscale, Multi-Organ Growth and Remodeling for Congenital Heart Defects
 
 ### Background
-Previous CFD studies of CHDs have focused on how cardiovascular lesions impact local hemodynamics. However, maladaptive outcomes of CHDs are clinically determined on a whole-body level. For example, single-ventricle physiology and its treatment structurally affect the heart and great arteries, but primary complications include exercise intolerance and progressive liver failure.  
-More recently, studies have used LPNs to model this whole-body flow, but they are not predictive of patient behavior over time.
+Previous computational studies of congenital heart diseases (CHDs) have focused on how cardiovascular lesions impact local hemodynamics. However, maladaptive outcomes of CHDs are clinically determined on a whole-body level. A salient example of this is single-ventricle physiology. While the primary outcome of its treatment, the Fontan procedure, is the direct impact on local hemodynamics, prominent sequelae include maladaptive remodeling of the liver, lungs, and heart that may lead to liver failure, high pulmonary resistance, and exercise intolerance. More recently, studies have used lumped parameter networks (LPNs) to model this whole-body flow, which includes organ-level hemodynamics, but they are not predictive of patient adaptation over time.
 
 ### Approach
 LPNs create a reduced-order circuit analogy of flow. Entire organ systems can be modeled as a series of resistors, capacitors, and inductors, and the heart can be modeled as a capacitor with time-varying elastance (Fig. 1). It has already been established that the properties of these LPN elements depend on the lumped geometries and material properties of the organ systems they represent.  
