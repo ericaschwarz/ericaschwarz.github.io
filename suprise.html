@@ -268,6 +268,15 @@ const sitePages = [
   { name: "contact",      url: "/contact",               dialogue: "You arrive at the Communication Gate!" }
 ];
 
+const winObjects = sitePages.map(page => {
+  let x, y;
+  do {
+    x = Math.floor(Math.random() * cols);
+    y = Math.floor(Math.random() * rows);
+  } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
+  return new WinObject(x, y, page.name, page.url, page.dialogue);
+});
+
 // --- Building placement helpers ---
 function canPlaceBuilding(maze, x, y, width, height) {
   const rows = maze.length;
@@ -303,6 +312,9 @@ function placeBuilding(maze, x, y) {
 
   return { x: doorX, y: doorY };
 }
+
+// === Optionally: set end goal to first building door ===
+const goal = { x: winObjects[0].x, y: winObjects[0].y };
 
 // === Done ===
 // You now have: maze, start, goal, and winObjects (each a building)
