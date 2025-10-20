@@ -353,12 +353,6 @@ function placeBuilding(maze, x, y) {
     }
   }
 
-  for (let j = -1; j <= height; j++) {
-    for (let i = -1; i <= width; i++) {
-      maze[y + j][x + i] = 1;
-    }
-  }
-
   //Door (bottom-center tile)
   const doorX = x + Math.floor(width / 2);
   const doorY = y + height - 1; // bottom row of building
