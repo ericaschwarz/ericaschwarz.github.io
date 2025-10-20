@@ -568,7 +568,7 @@ function drawMaze() {
     const sprite = images[spriteKey] || images['goal'];
     if (sprite) ctx.drawImage(sprite, drawX, drawY, tileSize, tileSize);
 
-    ctx.drawImage(buildingSprite, drawX, drawY, buildingWidth, buildingHeight);
+    ctx.drawImage(sprite, drawX, drawY, buildingWidth, buildingHeight);
   }
 }
 
