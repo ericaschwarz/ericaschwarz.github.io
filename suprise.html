@@ -314,15 +314,16 @@ function canPlaceBuilding(maze, x, y, width, height) {
   const rows = maze.length;
   const cols = maze[0].length;
 
-  // Require that all building + plaza tiles are open
-  for (let j = -1; j < height + 1; j++) {
-    for (let i = -1; i < width + 1; i++) {
-      const nx = x + i;
-      const ny = y + j;
-      if (nx < 1 || ny < 1 || nx >= cols - 1 || ny >= rows - 1) return false;
-      if (maze[ny][nx] !== 0) return false; // must be open
-    }
-  }
+  // Compute door (bottom-center)
+  const doorX = x + Math.floor(width / 2);
+  const doorY = y + height - 1;
+
+  // Door must be on open path
+  if (!maze[doorY] || maze[doorY][doorX] !== 0) return false;
+
+  // Plaza area must stay inside maze bounds (not touch solid border)
+  if (x - 1 < 1 || y - 1 < 1 || x + width >= cols - 1 || y + height >= rows - 1) return false;
+
   return true;
 }
 
