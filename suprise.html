@@ -301,14 +301,7 @@ for (const page of sitePages) {
 
   // Fallback: random open tile if no spot found
   if (!placed) {
-    let x, y;
-    do {
-      x = Math.floor(Math.random() * cols);
-      y = Math.floor(Math.random() * rows);
-    } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
-    winObjects.push(new WinObject(x, y, page.name, page.url, page.dialogue));
-
-    console.log("Couldn't place building!", maze);
+    console.log("Couldn't place building!", page.name);
   }
 }
 
