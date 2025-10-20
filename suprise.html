@@ -252,7 +252,7 @@ class WinObject {
 }
 
 // === Initialize Maze and Goals ===
-const { maze, start } = generateMaze(21, 21);
+const { maze, start } = generateMaze(25, 25);
 const rows = maze.length;
 const cols = maze[0].length;
 
@@ -355,7 +355,7 @@ function placeBuilding(maze, x, y) {
   // Ensure area is clear
   for (let j = -1; j < height + 1; j++) {
     for (let i = -1; i < width + 1; i++) {
-      maze[y + j][x + i] = 0;
+      maze[y + j][x + i] = 1;
     }
   }
 
