@@ -347,8 +347,8 @@ function placeBuilding(maze, x, y) {
 
 
   //Clear the plaza (1-tile border around building)
-  for (let j = -1; j <= height; j++) {
-    for (let i = -1; i <= width; i++) {
+  for (let j = -1; j <= width; j++) {
+    for (let i = -1; i <= height; i++) {
       if (maze[y + j] && maze[y + j][x + i] !== undefined) {
         maze[y + j][x + i] = 0;
       }
@@ -356,8 +356,8 @@ function placeBuilding(maze, x, y) {
   }
 
 
-  for (let j = -1; j <= height; j++) {
-    for (let i = -1; i <= width; i++) {
+  for (let j = -1; j <= width; j++) {
+    for (let i = -1; i <= height; i++) {
       if (maze[y + j] && maze[y + j][x + i] !== undefined) {
         maze[y + j][x + i] = 1;
       }
