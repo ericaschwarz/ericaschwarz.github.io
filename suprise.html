@@ -547,6 +547,12 @@ function capitalize(s) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+
+let currentDir = null;   // string like "1,0" or null
+let nextDir = null;      // queued turn once per tile
+let holdDir = null;      // direction implied by a held input (pointer or key)
+let moveInterval = null; // if you used press-and-hold repeat; otherwise omit
+
 function movePlayer(dx, dy) {
   if (gameFrozen) return;
 
@@ -658,7 +664,6 @@ function checkWin() {
 
 // Movement speed (ms per step)
 const MOVE_INTERVAL = 300;
-let moveInterval = null;
 let gameFrozen = false;
 let hasWon = false;
 
@@ -722,8 +727,6 @@ document.addEventListener("keyup", e => {
 
 // === GLOBAL TOUCH / TAP MOVEMENT ===
 let currentTouch = null;
-let nextDir = null;     // queued direction to switch into
-let currentDir = null;  // active movement direction
 
 document.addEventListener("pointerdown", handlePageTouchStart);
 document.addEventListener("pointerup", handlePageTouchEnd);
@@ -812,10 +815,13 @@ function startMove(dx, dy, event) {
   moveInterval = setInterval(() => movePlayer(dx, dy), MOVE_INTERVAL);
 }
 
+
 function stopMove() {
   player.moving = false;
-  clearInterval(moveInterval);
-  moveInterval = null;
+  currentDir = null;
+  nextDir = null;
+  // critically: kill any repeating loops
+  if (moveInterval) { clearInterval(moveInterval); moveInterval = null; }
 }
 
 
