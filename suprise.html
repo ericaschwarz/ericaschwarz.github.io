@@ -279,7 +279,7 @@ for (const page of sitePages) {
     const bx = Math.floor(Math.random() * (cols - width - 2));
     const by = Math.floor(Math.random() * (rows - height - 2));
 
-    if (canPlaceBuilding(maze, bx, by, width, height)) {
+    if (canPlaceBuilding(maze, bx, by, width, height, winObjects)) {
       // this is where placeBuilding() gets called
       const door = placeBuilding(maze, bx, by);
 
@@ -306,11 +306,13 @@ for (const page of sitePages) {
       y = Math.floor(Math.random() * rows);
     } while (maze[y][x] !== 0 || (x === start.x && y === start.y));
     winObjects.push(new WinObject(x, y, page.name, page.url, page.dialogue));
+
+    console.log("Couldn't place building!", maze);
   }
 }
 
 // --- Building placement helpers ---
-function canPlaceBuilding(maze, x, y, width, height) {
+function canPlaceBuilding(maze, x, y, width, height, winObjects = []) {
   const rows = maze.length;
   const cols = maze[0].length;
 
@@ -323,6 +325,24 @@ function canPlaceBuilding(maze, x, y, width, height) {
 
   // Plaza area must stay inside maze bounds (not touch solid border)
   if (x - 1 < 1 || y - 1 < 1 || x + width >= cols - 1 || y + height >= rows - 1) return false;
+
+  for (const obj of winObjects) {
+  // Define the occupied area of this candidate (including 1-tile border)
+  const ax1 = x - 1;
+  const ay1 = y - 1;
+  const ax2 = x + width;
+  const ay2 = y + height;
+
+  // Define the occupied area of the existing building (including its own plaza)
+  const bx1 = obj.x - width - 1;   // approximate: 1 tile buffer around door position
+  const by1 = obj.y - height - 2;  // one above building top (door is bottom-center)
+  const bx2 = obj.x + width;       // right edge
+  const by2 = obj.y + 1;           // bottom edge (door row)
+
+  const overlap = !(ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
+  if (overlap) return false;
+}
+
 
   return true;
 }
