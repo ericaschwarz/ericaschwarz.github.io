@@ -5,970 +5,157 @@ layout: default
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<style>
- section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 20px;
-  }
-  canvas {
-    margin-top: 40px;
-    touch-action: none;       /* Prevent scrolling or zooming */
-    -webkit-user-select: none; /* Prevent text selection on iOS */
-    -webkit-touch-callout: none; /* Disable long-press popup on iOS */
-}
-  }
-  #gameContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  #controls {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .row {
-    display: flex;
-    justify-content: center;
-    margin: 2px 0;
-  }
-
-  #controls button {
-    font-size: 48px;      /* adjust icon size */
-    margin: 1px;
-    background: none;      /* remove background */
-    border: none;          /* remove border */
-    outline: none;         /* remove outline */
-    cursor: pointer;       /* pointer on hover */
-    color: #555;           /* icon color */
-    touch-action: manipulation;               /* prevents extra tap delays */
-    user-select: none;                        /* stops accidental text selection */
-    -webkit-user-select: none;      /* disable text selection */
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;    /* disable long-press menu */
-    -webkit-tap-highlight-color: transparent; /* remove flash highlight */
-  }
-
-  #controls button:active {
-    color: #333;           /* optional pressed effect */
-  }
-  #controls button:hover {
-    color: #333;           /* optional pressed effect */
-  }
-
-  #dialogueBox {
-  width: 275px;
-  min-height: 120px;
-  background-color: #f8f8f8;
-  border: 4px solid #000;
-  border-radius: 8px;
-  padding: 5px 8px;
-  margin-top: 20px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #000;
-  box-shadow: 4px 4px 0 #333;
-  text-align: left;
-  position: relative;
-}
-
-#dialogueBox::before {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 4px;
-  background: #000;
-  border-radius: 2px;
-}
-
-#mazeCanvas {
-  border: 4px solid #000;
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 #333;
-  background-color: #dcdcdc; /* subtle background to match Game Boy vibe */
-}
-
-#winMessage {
-  margin: 0;
-  white-space: pre-line;
-  min-height: 40px;
-}
-
-.typing {
-  position: relative;
-}
-
-.typing::after {
-  content: "";
-  display: inline-block;
-  width: 2px;
-  height: 1em;
-  background: #000;
-  vertical-align: text-bottom;
-  margin-left: 2px;
-  animation: blinkCursor 0.8s steps(2, start) infinite;
-}
-
-@keyframes blinkCursor {
-  to { border-color: transparent; }
-}
-
-#dialogueChoices {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-
-.dialogue-btn {
-  background: #fff;
-  border: 2px solid #000;
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 12px;
-  cursor: pointer;
-  box-shadow: 2px 2px 0 #333;
-  transition: all 0.1s ease-in-out;
-}
-
-.dialogue-btn:hover {
-  background: #dcdcdc;
-  transform: translateY(-2px);
-}
-
-</style>
+  <meta charset="UTF-8">
+  <title>Surprise</title>
+  <style>
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 20px;
+    }
+    canvas {
+      margin-top: 40px;
+      touch-action: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    #gameContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    #controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      margin: 2px 0;
+    }
+    #controls button {
+      font-size: 48px;
+      margin: 1px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #555;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #controls button:active,
+    #controls button:hover {
+      color: #333;
+    }
+    #dialogueBox {
+      width: 275px;
+      min-height: 120px;
+      background-color: #f8f8f8;
+      border: 4px solid #000;
+      border-radius: 8px;
+      padding: 5px 8px;
+      margin-top: 20px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #000;
+      box-shadow: 4px 4px 0 #333;
+      text-align: left;
+      position: relative;
+    }
+    #dialogueBox::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 4px;
+      background: #000;
+      border-radius: 2px;
+    }
+    #mazeCanvas {
+      border: 4px solid #000;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 #333;
+      background-color: #dcdcdc;
+    }
+    #winMessage {
+      margin: 0;
+      white-space: pre-line;
+      min-height: 40px;
+    }
+    .typing::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #000;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: blinkCursor 0.8s steps(2, start) infinite;
+    }
+    @keyframes blinkCursor {
+      to { border-color: transparent; }
+    }
+    #dialogueChoices {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .dialogue-btn {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #333;
+      transition: all 0.1s ease-in-out;
+    }
+    .dialogue-btn:hover {
+      background: #dcdcdc;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
 <body>
 
-<div id="gameContainer">
-  <div id="dialogueBox">
-  <p id="winMessage">Explore my website. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!</p>
-  <div id="dialogueChoices"></div>
-  </div>
-  <canvas id="mazeCanvas" width="300" height="300"></canvas>
-  <div id="controls">
-    <div class="row">
-      <button data-dir="up"><i class="fas fa-circle-up"></i></button>
+  <div id="gameContainer">
+    <div id="dialogueBox">
+      <p id="winMessage">Explore my website. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!</p>
+      <div id="dialogueChoices"></div>
     </div>
-    <div class="row">
-      <button data-dir="left"><i class="fas fa-circle-left"></i></button>
-      <button data-dir="down"><i class="fas fa-circle-down"></i></button>
-      <button data-dir="right"><i class="fas fa-circle-right"></i></button>
+
+    <canvas id="mazeCanvas" width="300" height="300"></canvas>
+
+    <div id="controls">
+      <div class="row">
+        <button data-dir="up"><i class="fas fa-circle-up"></i></button>
+      </div>
+      <div class="row">
+        <button data-dir="left"><i class="fas fa-circle-left"></i></button>
+        <button data-dir="down"><i class="fas fa-circle-down"></i></button>
+        <button data-dir="right"><i class="fas fa-circle-right"></i></button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-const canvas = document.getElementById('mazeCanvas');
-const ctx = canvas.getContext('2d');
-
-const tileSize = 40;
-const viewWidth = canvas.width;
-const viewHeight = canvas.height;
-const viewCols = viewWidth / tileSize;
-const viewRows = viewHeight / tileSize;
-const PLAYER_LERP = 0.8;  // between 0.3–0.6 makes motion snappier
-const CAMERA_LERP = 0.2;  // higher = snappier camera follow
-const MOVE_LERP = 0.6;  // higher = snappier camera follow
-
-function randOdd(max) {
-  let r = Math.floor(Math.random() * (max / 2)) * 2 + 1;
-  return Math.min(r, max - 2);
-}
-
-
-
-// === Random Maze Generation ===
-function generateMaze(rows, cols, startX = null, startY = null, endX = null, endY = null) {
-  const maze = Array.from({ length: rows }, () => Array(cols).fill(1));
-
-  // === Randomize start position if not provided ===
-  if (startX === null || startY === null) {
-    startX = Math.floor(Math.random() * ((cols - 2) / 2)) * 2 + 1; // odd positions for better carving
-    startY = Math.floor(Math.random() * ((rows - 2) / 2)) * 2 + 1;
-  }
-
-  maze[startY][startX] = 0;
-
-  // === Depth-First Carving ===
-  function carve(x, y) {
-    const dirs = [
-      [0, -2], [2, 0], [0, 2], [-2, 0]
-    ];
-    dirs.sort(() => Math.random() - 0.5);
-
-    for (const [dx, dy] of dirs) {
-      const nx = x + dx;
-      const ny = y + dy;
-      if (ny > 0 && ny < rows - 1 && nx > 0 && nx < cols - 1 && maze[ny][nx] === 1) {
-        maze[y + dy / 2][x + dx / 2] = 0;
-        maze[ny][nx] = 0;
-        carve(nx, ny);
-      }
-    }
-  }
-
-  carve(startX, startY);
-
-  // === Keep outer walls solid ===
-  for (let i = 0; i < rows; i++) {
-    maze[i][0] = maze[i][cols - 1] = 1;
-  }
-  for (let j = 0; j < cols; j++) {
-    maze[0][j] = maze[rows - 1][j] = 1;
-  }
-
-  // === Return base maze and start ===
-  return {
-    maze,
-    start: { x: startX, y: startY }
-  };
-}
-
-// === Building WinObject Class ===
-class WinObject {
-  constructor(x, y, name, targetURL, dialogue) {
-    this.x = x;
-    this.y = y;
-    this.name = name;
-    this.targetURL = targetURL;
-    this.dialogue = dialogue;
-  }
-}
-
-// === Initialize Maze and Goals ===
-const { maze, start } = generateMaze(31, 31);
-const rows = maze.length;
-const cols = maze[0].length;
-
-// --- Define site pages (goals) ---
-const sitePages = [
-  { name: "solver",       url: "/research/solver",       dialogue: "You discovered the Solver Room!" },
-  { name: "translation",  url: "/research/translation",  dialogue: "You found the Translation Chamber!" },
-  { name: "multiscale",   url: "/research/multiscale",   dialogue: "You uncovered the Multiscale Archive!" },
-  { name: "publications", url: "/publications",          dialogue: "A library of knowledge stands before you!" },
-  { name: "vision",       url: "/vision",                dialogue: "You gaze into the Vision Hall." },
-  { name: "teaching",     url: "/teaching",              dialogue: "You step into the Teaching Garden." },
-  { name: "cv",           url: "/cv",                    dialogue: "You uncover the Scholar’s Record." },
-  { name: "contact",      url: "/contact",               dialogue: "You arrive at the Communication Gate!" }
-];
-
-const winObjects = [];
-const BUILDING_WIDTH = 3;  // tiles
-const BUILDING_HEIGHT = 2; // tiles
-
-for (const page of sitePages) {
-  let placed = false;
-  let tries = 0;
-
-  while (!placed && tries < 200) {
-    const bx = Math.floor(Math.random() * (cols - BUILDING_WIDTH - 2));
-    const by = Math.floor(Math.random() * (rows - BUILDING_HEIGHT - 2));
-
-    if (canPlaceBuilding(maze, bx, by, BUILDING_WIDTH, BUILDING_HEIGHT, winObjects)) {
-      // this is where placeBuilding() gets called
-      const door = placeBuilding(maze, bx, by);
-
-      // Create WinObject at the door tile
-      winObjects.push(new WinObject(
-        door.x,
-        door.y,
-        page.name,
-        page.url,
-        page.dialogue
-      ));
-
-      placed = true;
-    }
-
-    tries++;
-  }
-
-  // Fallback: random open tile if no spot found
-  if (!placed) {
-    console.log("Couldn't place building!", page.name);
-  }
-}
-
-// --- Building placement helpers ---
-function canPlaceBuilding(maze, x, y, width, height, winObjects = []) {
-  const rows = maze.length;
-  const cols = maze[0].length;
-
-  // Compute door (bottom-center)
-  const doorX = x + Math.floor(width / 2);
-  const doorY = y + height - 1;
-
-  // Door must be on open path
-  if (!maze[doorY] || maze[doorY][doorX] !== 0) return false;
-
-  // Plaza area must stay inside maze bounds (not touch solid border)
-  if (x - 1 < 1 || y - 1 < 1 || x + width >= cols - 1 || y + height >= rows - 1) return false;
-
-  for (const obj of winObjects) {
-  // Define the occupied area of this candidate (including 1-tile border)
-  const ax1 = x - 1;
-  const ay1 = y - 1;
-  const ax2 = x + width;
-  const ay2 = y + height;
-
-  // Define the occupied area of the existing building (including its own plaza)
-  const bx1 = obj.x - width - 1;   // approximate: 1 tile buffer around door position
-  const by1 = obj.y - height - 2;  // one above building top (door is bottom-center)
-  const bx2 = obj.x + width;       // right edge
-  const by2 = obj.y + 1;           // bottom edge (door row)
-
-  const overlap = !(ax2 < bx1 || ax1 > bx2 || ay2 < by1 || ay1 > by2);
-  if (overlap) return false;
-}
-
-
-  return true;
-}
-
-function placeBuilding(maze, x, y) {
-  const width = BUILDING_WIDTH;
-  const height = BUILDING_HEIGHT;
-
-
-  //Clear the plaza (1-tile border around building)
-  for (let j = -1; j <= height; j++) {
-    for (let i = -1; i <= width; i++) {
-      maze[y + j][x + i] = 0;
-    }
-  }
-
-  for (let j = 0; j < height; j++) {
-    for (let i = 0; i < width; i++) {
-      maze[y + j][x + i] = 2;
-    }
-  }
-
-  //Door (bottom-center tile)
-  const doorX = x + Math.floor(width / 2);
-  const doorY = y + height - 1; // bottom row of building
-  maze[doorY][doorX] = 0;
-
-  return { x: doorX, y: doorY };
-}
-
-// === Optionally: set end goal to first building door ===
-const goal = { x: winObjects[0].x, y: winObjects[0].y };
-
-// === Done ===
-// You now have: maze, start, goal, and winObjects (each a building)
-console.log("Maze generated:", maze);
-console.log("Start:", start);
-console.log("WinObjects:", winObjects);
-
-// === Player setup ===
-let player = {
-  gridX: start.x,
-  gridY: start.y,
-  x: 1 * tileSize,
-  y: 1 * tileSize,
-  direction: 'down',
-  moving: false,
-  frame: 0,
-  frameTimer: 0,
-  frameInterval: 4,
-  animations: {}
-};
-
-let camera = { x: start.x, y: start.y };
-
-// Load animation frames
-function loadFrames(prefix, count) {
-  const frames = [];
-  for (let i = 0; i < count; i++) {
-    const img = new Image();
-    img.src = `/images/${prefix}_${i}.svg`;
-    frames.push(img);
-  }
-  return frames;
-}
-
-// --- Auto-load all sprite images dynamically ---
-// --- Load all sprites dynamically and call callback when ready ---
-function loadImages(callback) {
-  const images = {};
-
-  // === Environment tiles ===
-  const baseTypes = ['tree', 'rock', 'floor'];
-  const shapes = [
-    'isolated',
-    'end_up', 'end_right', 'end_down', 'end_left',
-    'corner_ur', 'corner_rd', 'corner_dl', 'corner_lu',
-    'vertical', 'horizontal',
-    't_leftopen', 't_upopen', 't_rightopen', 't_downopen',
-    'cross', 'full'
-  ];
-
-  // === Player sprites ===
-  const actions = ['idle', 'walk'];
-  const directions = ['up', 'down', 'left', 'right'];
-  const frameCount = 4; // 0–3
-
-  // === Site-specific goals ===
-  // Uses same order as sitePages (define sitePages before this)
-  const goalNames = [
-    'solver',
-    'translation',
-    'multiscale',
-    'publications',
-    'vision',
-    'teaching',
-    'cv',
-    'contact'
-  ];
-
-  // === Collect all file paths ===
-  const allPaths = [];
-
-  // Environment
-  for (const type of baseTypes) {
-    for (const shape of shapes) {
-      allPaths.push(`${type}_${shape}.png`);
-    }
-  }
-
-  // Player
-  for (const action of actions) {
-    for (const dir of directions) {
-      for (let i = 0; i < frameCount; i++) {
-        allPaths.push(`player_${action}_${dir}_${i}.png`);
-      }
-    }
-  }
-
-  // Generic goal + page-specific goals
-  allPaths.push('goal.png');
-  for (const name of goalNames) {
-    allPaths.push(`goal_${name}.png`);
-  }
-
-  // === Load all images ===
-  let loaded = 0;
-  const total = allPaths.length;
-
-  function checkDone() {
-    loaded++;
-    if (loaded === total) callback();
-  }
-
-  for (const filename of allPaths) {
-    const img = new Image();
-    img.src = `/images/${filename}`;
-    img.onload = checkDone;
-    img.onerror = checkDone; // still continue if missing file
-    const key = filename.replace(/\.(svg|png)$/i, ''); // e.g. "goal_solver"
-    images[key] = img;
-  }
-
-  // Expose globally
-  window.images = images;
-}
-
-// --- Build wall sprite map with random wall types ---
-const wallSprites = Array.from({ length: rows }, () =>
-  Array.from({ length: cols }, () => '')
-);
-
-// After randomization, assign proper sprite per tile
-for (let y = 0; y < rows; y++) {
-  for (let x = 0; x < cols; x++) {
-    if (maze[y][x] === 1 || maze[y][x] === 2) {
-      // WALL TILE
-      const baseType = maze[y][x] === 1 ? 'tree' : 'rock';
-      const shape = getEnvironmentSprite(x, y, maze, true);
-      wallSprites[y][x] = `${baseType}_${shape}`;
-    } else if (maze[y][x] === 0) {
-      // FLOOR TILE
-      const shape = getEnvironmentSprite(x, y, maze, false);
-      wallSprites[y][x] = `floor_${shape}`;
-    }
-  }
-}
-
-function updateCamera() {
-  const targetX = player.x + tileSize / 2 - viewWidth / 2;
-  const targetY = player.y + tileSize / 2 - viewHeight / 2;
-  const maxX = cols * tileSize - viewWidth;
-  const maxY = rows * tileSize - viewHeight;
-
-  // Smooth follow
-  camera.x = lerp(camera.x, Math.max(0, Math.min(targetX, maxX)), CAMERA_LERP);
-  camera.y = lerp(camera.y, Math.max(0, Math.min(targetY, maxY)), CAMERA_LERP);
-}
-
-function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
-
-function animatePlayer() {
-  player.frameTimer++;
-  if (player.frameTimer >= player.frameInterval) {
-    player.frameTimer = 0;
-    const animKey = player.moving
-      ? 'walk' + capitalize(player.direction)
-      : 'idle' + capitalize(player.direction);
-    const frames = player.animations[animKey];
-    if (frames) player.frame = (player.frame + 1) % frames.length;
-  }
-}
-
-function drawPlayer() {
-  const animKey = player.moving
-    ? 'walk' + capitalize(player.direction)
-    : 'idle' + capitalize(player.direction);
-  const frames = player.animations[animKey];
-  if (!frames) return;
-
-  const frameIndex = player.frame % frames.length;
-  const frame = frames[frameIndex];
-
-  const drawX = player.x - camera.x;
-  const drawY = player.y - camera.y;
-  ctx.drawImage(frame, drawX, drawY, tileSize, tileSize);
-}
-
-// --- Bitmask-based tile selection ---
-function getEnvironmentSprite(x, y, maze , isFloor = true) {
-  const dirs = [
-    { dx: 0, dy: -1, bit: 1 }, // up
-    { dx: 1, dy: 0, bit: 2 },  // right
-    { dx: 0, dy: 1, bit: 4 },  // down
-    { dx: -1, dy: 0, bit: 8 }  // left
-  ];
-
-  let mask = 0;
-  for (let { dx, dy, bit } of dirs) {
-    const nx = x + dx, ny = y + dy;
-    const neighborIsWall = maze[ny] && maze[ny][nx] > 0;
-
-    // If it's a floor tile, invert the logic
-    if (isFloor ? !neighborIsWall : neighborIsWall) {
-      mask |= bit;
-    }
-  }
-
-  const mapping = {
-    0:  'isolated',
-    1:  'end_down',
-    2:  'end_left',
-    4:  'end_up',
-    8:  'end_right',
-    3:  'corner_ur',
-    6:  'corner_rd',
-    12: 'corner_dl',
-    9:  'corner_lu',
-    5:  'vertical',
-    10: 'horizontal',
-    7:  't_leftopen',
-    11: 't_upopen',
-    13: 't_rightopen',
-    14: 't_downopen',
-    15: 'cross'
-  };
-  return mapping[mask] || 'isolated';
-}
-
-function drawMaze() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  updateCamera();
-
-  const startCol = Math.floor(camera.x / tileSize);
-  const endCol = Math.ceil((camera.x + viewWidth) / tileSize);
-  const startRow = Math.floor(camera.y / tileSize);
-  const endRow = Math.ceil((camera.y + viewHeight) / tileSize);
-  const offsetX = -camera.x + startCol * tileSize;
-  const offsetY = -camera.y + startRow * tileSize;
-
-  // Draw terrain
-  for (let y = startRow; y < endRow; y++) {
-    for (let x = startCol; x < endCol; x++) {
-      const key = wallSprites[y]?.[x];
-      if (key && images[key]) {
-        const drawX = (x - startCol) * tileSize + offsetX;
-        const drawY = (y - startRow) * tileSize + offsetY;
-        ctx.drawImage(images[key], drawX, drawY, tileSize, tileSize);
-      }
-    }
-  }
-
-  // --- Draw buildings ---
-  for (const obj of winObjects) {
-    const buildingSprite = images[`goal_${obj.name}`];
-    if (!buildingSprite) continue;
-
-    const buildingWidth = tileSize * BUILDING_WIDTH;   // building spans 2 tiles horizontally
-    const buildingHeight = tileSize * BUILDING_HEIGHT;  // and 3 vertically
-
-    // Align bottom-center of sprite with the door tile (obj.x, obj.y)
-    const drawX = obj.x * tileSize - camera.x - (buildingWidth / 2) + (tileSize / 2);
-    const drawY = obj.y * tileSize - camera.y - (buildingHeight - tileSize);
-
-    ctx.drawImage(buildingSprite, drawX, drawY, buildingWidth, buildingHeight);
-  }
-}
-
-
-
-function lerp(a, b, t) {
-  return a + (b - a) * t;
-}
-
-function capitalize(s) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
-
-let currentDir = null;   // string like "1,0" or null
-let nextDir = null;      // queued turn once per tile
-let holdDir = null;      // direction implied by a held input (pointer or key)
-let moveInterval = null; // if you used press-and-hold repeat; otherwise omit
-
-function movePlayer(dx, dy) {
-  if (gameFrozen) return;
-
-  // Update facing direction immediately
-  player.direction =
-    dx > 0 ? "right" :
-    dx < 0 ? "left"  :
-    dy > 0 ? "down"  :
-    "up";
-
-  const newX = player.gridX + dx;
-  const newY = player.gridY + dy;
-
-  // Only move if the target tile is open
-  if (maze[newY] && maze[newY][newX] === 0) {
-    player.gridX = newX;
-    player.gridY = newY;
-  } else {
-    // Can't move into wall: stop walking animation, but keep facing
-    player.moving = false;
-    clearInterval(moveInterval);
-    moveInterval = null;
-  }
-
-  checkWin();
-
-  // After finishing this step, apply any queued turn
-  if (nextDir && nextDir !== currentDir) {
-    const [nx, ny] = nextDir.split(",").map(Number);
-    currentDir = nextDir;
-    nextDir = null;
-    clearInterval(moveInterval);
-    startMove(nx, ny);
-  }
-}
-
-
-function typeDialogue(text, callback) {
-  const msg = document.getElementById('winMessage');
-  const choiceBox = document.getElementById('dialogueChoices');
-
-  msg.textContent = "";
-  msg.classList.add("typing");
-  choiceBox.innerHTML = "";
-
-  let i = 0;
-  const speed = 35; // milliseconds per character
-
-  function typeNext() {
-    if (i < text.length) {
-      msg.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeNext, speed);
-    } else {
-      msg.classList.remove("typing");
-      if (callback) callback();
-    }
-  }
-
-  typeNext();
-}
-
-function checkWin() {
-  const msg = document.getElementById('winMessage');
-  const choiceBox = document.getElementById('dialogueChoices');
-
-  if (hasWon || gameFrozen) return;
-
-  // Check if player stands on any goal
-  const found = winObjects.find(obj =>
-    player.gridX === obj.x && player.gridY === obj.y
-  );
-
-  if (found) {
-    hasWon = true;
-    gameFrozen = true;
-
-    typeDialogue(`${found.dialogue}\nWould you like to enter?`, () => {
-      choiceBox.innerHTML = `
-        <button class="dialogue-btn" id="yesBtn">Yes</button>
-        <button class="dialogue-btn" id="noBtn">No</button>
-      `;
-
-      const yesBtn = document.getElementById("yesBtn");
-      const noBtn = document.getElementById("noBtn");
-
-      yesBtn.onclick = () => {
-        window.location.href = found.targetURL;
-      };
-
-      noBtn.onclick = () => {
-        typeDialogue("You decide to keep exploring the maze.", () => {
-          choiceBox.innerHTML = "";
-          gameFrozen = false;
-          hasWon = false;
-        });
-      };
-    });
-  } else {
-    // Normal message when wandering
-    msg.textContent =
-      "Explore my website. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!";
-    choiceBox.innerHTML = "";
-  }
-}
-
-
-
-
-// Movement speed (ms per step)
-const MOVE_INTERVAL = 300;
-let gameFrozen = false;
-let hasWon = false;
-
-// Mapping of direction names to (dx, dy)
-const dirs = {
-  up: [0, -1],
-  down: [0, 1],
-  left: [-1, 0],
-  right: [1, 0]
-};
-
-// --- BUTTON CONTROLS ---
-document.querySelectorAll("#controls button").forEach(btn => {
-  const dir = btn.dataset.dir;
-  const [dx, dy] = dirs[dir];
-
-  // Start moving while pressed/touched
-  btn.addEventListener("pointerdown", e => {
-    if (gameFrozen) return; // block input while dialogue active
-    startMove(dx, dy, e);
-  });
-
-  // Stop moving when released or finger lifted
-  btn.addEventListener("pointerup", stopMove);
-  btn.addEventListener("pointerleave", stopMove); // if you slide off
-});
-
-// --- KEYBOARD CONTROLS ---
-document.addEventListener("keydown", e => {
-  if (gameFrozen) return;
-
-  // Ignore repeated keydown events (we manage hold manually)
-  if (e.repeat) return;
-
-  let dx = 0, dy = 0;
-  switch (e.key.toLowerCase()) {
-    case "arrowup": case "w": dy = -1; break;
-    case "arrowdown": case "s": dy = 1; break;
-    case "arrowleft": case "a": dx = -1; break;
-    case "arrowright": case "d": dx = 1; break;
-    default: return;
-  }
-
-  e.preventDefault();
-
-  // Clear any existing movement to allow instant direction switch
-  if (moveInterval) {
-    clearInterval(moveInterval);
-    moveInterval = null;
-  }
-
-  // Move immediately and start continuous movement
-  startMove(dx, dy, e);
-});
-
-document.addEventListener("keyup", e => {
-  const keys = ["arrowup", "arrowdown", "arrowleft", "arrowright", "w", "a", "s", "d"];
-  if (keys.includes(e.key.toLowerCase())) stopMove();
-});
-
-
-// === GLOBAL TOUCH / TAP MOVEMENT ===
-let currentTouch = null;
-
-document.addEventListener("pointerdown", handlePageTouchStart);
-document.addEventListener("pointerup", handlePageTouchEnd);
-document.addEventListener("pointercancel", handlePageTouchEnd);
-document.addEventListener("pointermove", handlePointerMove);
-
-function handlePageTouchStart(e) {
-  const target = e.target;
-  if (gameFrozen || target.closest("button") || target.closest("a") || target.closest("#dialogueBox")) return;
-  e.preventDefault();
-
-  const rect = canvas.getBoundingClientRect();
-  const touchX = e.clientX - rect.left;
-  const touchY = e.clientY - rect.top;
-  if (touchX < 0 || touchY < 0 || touchX > rect.width || touchY > rect.height) return;
-
-  currentTouch = { x: touchX, y: touchY };
-  updateDirectionFromTouch(touchX, touchY, e);
-}
-
-function handlePointerMove(e) {
-  if (!currentTouch) return;
-
-  const rect = canvas.getBoundingClientRect();
-  const touchX = e.clientX - rect.left;
-  const touchY = e.clientY - rect.top;
-
-  currentTouch.x = touchX;
-  currentTouch.y = touchY;
-
-  // update intended direction, but don't force immediate turn
-  updateDirectionFromTouch(touchX, touchY, e);
-}
-
-function handlePageTouchEnd(e) {
-  currentTouch = null;
-  nextDir = null;
-  currentDir = null;
-  stopMove();
-}
-
-function updateDirectionFromTouch(clickX, clickY, e) {
-  const playerCenterX = (player.x - camera.x) + tileSize / 2;
-  const playerCenterY = (player.y - camera.y) + tileSize / 2;
-
-  const dx = clickX - playerCenterX;
-  const dy = clickY - playerCenterY;
-  const absDx = Math.abs(dx);
-  const absDy = Math.abs(dy);
-
-  if (absDx < 20 && absDy < 20) return; // dead zone
-
-  const moveOptions = absDx > absDy
-    ? [[dx > 0 ? 1 : -1, 0], [0, dy > 0 ? 1 : -1]]
-    : [[0, dy > 0 ? 1 : -1], [dx > 0 ? 1 : -1, 0]];
-
-  for (let [mx, my] of moveOptions) {
-    const newX = player.gridX + mx;
-    const newY = player.gridY + my;
-    if (maze[newY] && maze[newY][newX] === 0) {
-      const dirKey = `${mx},${my}`;
-      if (player.moving) {
-        if (nextDir !== dirKey && currentDir !== dirKey) {
-          nextDir = dirKey;
-        }
-      } else {
-        // --- start movement only if idle
-        currentDir = dirKey;
-        startMove(mx, my, e);
-      }
-      return;
-    }
-  }
-
-  // stop if no open direction
-  stopMove();
-}
-
-// === MOVE HELPERS ===
-function startMove(dx, dy, event) {
-  if (event) event.preventDefault();
-  if (moveInterval) clearInterval(moveInterval);
-
-  player.moving = true;
-  movePlayer(dx, dy); // move once immediately
-  moveInterval = setInterval(() => movePlayer(dx, dy), MOVE_INTERVAL);
-}
-
-
-function stopMove() {
-  player.moving = false;
-  currentDir = null;
-  nextDir = null;
-  // critically: kill any repeating loops
-  if (moveInterval) { clearInterval(moveInterval); moveInterval = null; }
-}
-
-
-
-let lastFrameTime = 0;
-const FRAME_INTERVAL = 1000 / 24; // ~45 FPS target
-
-function gameLoop(timestamp) {
-  if (timestamp - lastFrameTime >= FRAME_INTERVAL) {
-    lastFrameTime = timestamp;
-
-    // Smooth player pixel movement
-    const targetPX = player.gridX * tileSize;
-    const targetPY = player.gridY * tileSize;
-    player.x = lerp(player.x, targetPX, MOVE_LERP);
-    player.y = lerp(player.y, targetPY, MOVE_LERP);
-
-    // Smooth camera in sync with player
-    const targetCamX = targetPX + tileSize / 2 - viewWidth / 2;
-    const targetCamY = targetPY + tileSize / 2 - viewHeight / 2;
-    const maxX = cols * tileSize - viewWidth;
-    const maxY = rows * tileSize - viewHeight;
-    camera.x = lerp(camera.x, Math.max(0, Math.min(targetCamX, maxX)), MOVE_LERP);
-    camera.y = lerp(camera.y, Math.max(0, Math.min(targetCamY, maxY)), MOVE_LERP);
-
-    animatePlayer();
-    drawMaze();
-    drawPlayer();
-  }
-
-  requestAnimationFrame(gameLoop);
-}
-
-loadImages(() => {
-  // === Define player animations here ===
-  const directions = ["up", "down", "left", "right"];
-  const actions = ["idle", "walk"];
-  const frameCount = 4; // 0–3
-
-  player.animations = {};
-
-  for (const action of actions) {
-    for (const dir of directions) {
-      const key = `${action}${dir.charAt(0).toUpperCase() + dir.slice(1)}`; // e.g. walkUp
-      player.animations[key] = [];
-
-      for (let i = 0; i < frameCount; i++) {
-        const name = `player_${action}_${dir}_${i}`;
-        player.animations[key].push(images[name]);
-      }
-    }
-  }
-
-  drawMaze();
-  drawPlayer();
-  gameLoop();
-});
-
-</script>
+  <!-- Only this one line runs your entire modular game -->
+  <script type="module" src="/scripts/main.js"></script>
 
 </body>
 </html>
