@@ -3,7 +3,7 @@ import imageio.v3 as iio
 import os
 
 # === Configuration ===
-input_path = "buildings_large.png"      # Path to your 256x256 image
+input_path = "buildings_large_2.png"      # Path to your 256x256 image
 output_folder = "."               # Folder to save the 16 blocks
 grid_row_size = 8                 # 4x4 grid
 grid_column_size = 1              # 4x4 grid
@@ -11,14 +11,15 @@ tile_size = 64                    # Each tile will be 64x64 pixels
 
 
 goalNames = [
-    'solver',
-    'translation',
-    'multiscale',
-    'publications',
+    'cv',
     'vision',
     'teaching',
-    'cv',
-    'contact'
+    'publications',
+    'translation',
+    'teaching',
+    'solver',
+    'contact',
+    'multiscale'
   ]
 
 # === Create output directory if it doesn't exist ===
@@ -37,7 +38,7 @@ k = 0
 # === Split and save ===
 for row in range(grid_row_size):
     for col in range(grid_column_size):
-        y0, y1 = row * (tile_size * 2), (row + 1) * (tile_size * 2)
+        y0, y1 = row * (tile_size * 3), (row + 1) * (tile_size * 3)
         x0, x1 = col * (tile_size * 3), (col + 1) * (tile_size * 3)
         tile = img[y0:y1, x0:x1]
 

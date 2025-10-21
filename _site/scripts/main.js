@@ -8,7 +8,8 @@ import { TILE_SIZE } from './config.js';
 import { setupInputHandlers } from './input.js';
 import { typeDialogue, checkWin } from './ui.js';
 import { startMove, stopMove } from './movement.js';
-import { drawMaze, drawPlayer } from './renderer.js';
+import { drawScene } from './renderer.js';
+
 
 let gameFrozen = false;
 let hasWon = false;
@@ -76,8 +77,7 @@ loadImages(() => {
     player.updatePosition();
     camera.update(player.x, player.y, canvas.width, canvas.height, maze[0].length, maze.length, TILE_SIZE);
   }, () => {
-    drawMaze(ctx, maze, camera, wallSprites, winObjects);
     player.animate();
-    player.draw(ctx, camera);
+    drawScene(ctx, maze, camera, wallSprites, winObjects, player);
   });
 });

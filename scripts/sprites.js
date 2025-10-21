@@ -53,7 +53,6 @@ export function loadImages(callback) {
   }
 
   // Generic goal + page-specific goals
-  allPaths.push('goal.png');
   for (const name of goalNames) {
     allPaths.push(`goal_${name}.png`);
   }
