@@ -16,10 +16,10 @@ goalNames = [
     'teaching',
     'publications',
     'translation',
-    'teaching',
     'solver',
     'contact',
-    'multiscale'
+    'multiscale',
+    'solver'
   ]
 
 # === Create output directory if it doesn't exist ===

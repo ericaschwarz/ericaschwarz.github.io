@@ -66,7 +66,7 @@ export function checkWin(player, winObjects, setGameFrozen, setHasWon, isGameFro
     });
   } else {
     msg.textContent =
-      "Explore the maze to find waypoints that lead to new pages.";
+      "Explore my website. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!";
     choiceBox.innerHTML = "";
   }
 }

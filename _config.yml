@@ -36,8 +36,8 @@ navigation:
     link: /cv
   - name: Contact
     link: /contact
-  - name: Suprise me!
-    link: /suprise
+  - name: Surprise me!
+    link: /surprise
 
 # Social media
 social_links:
