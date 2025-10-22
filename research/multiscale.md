@@ -11,28 +11,26 @@ I have used **multiscale physics-based simulations** based on interpretable biol
 
 ### Research Pathway
 
-Marsden lab - uncertainty quanitfication/physics-based machine learning. Cell-signalling networks. Incorporating RNA sequencing and machine learning techniques.
-
-Research began with **robust FSG solvers and predictive frameworks** (2023–2024), then progressed to **machine learning-driven identification of cellular and biomechanical drivers** (2024–2025), enabling cross-scale prediction of cardiovascular outcomes.  
+Research began with **robust FSG solvers and predictive frameworks** (2023–2024), then progressed to **machine learning-driven identification of cellular and biomechanical** drivers of disease (2024–2025), enabling cross-scale prediction of cardiovascular outcomes.  
 
 ### Selected Publications
 
 - **Postnatal Pulmonary Artery Development From Transcript to Tissue**  
   **Schwarz, E. L.**, Ramachandra, A. B., Yeung, N., Manning, E. P., Weiss, D., & Humphrey, J. D. (2025)  
-  *bioRxiv, Under Review at JRSI*  
-  [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12157632/)
+  *bioRxiv, Under Review at Journal of The Royal Society Interface*  
+  [Link](https://doi.org/10.1101/2025.06.03.657639)
 
 - **Mechanisms Driving Thoracic Aortic Aneurysm Stability**  
   **Schwarz, E. L.**, Cao, Q., Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)  
-  *bioRxiv, Submitted to BMMB*  
-  [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12157632/)
+  *bioRxiv, Submitted to Biomechanics and Modeling in Mechanobiology*  
+  [Link](https://doi.org/10.1101/2025.10.20.683467)
 
 - **Neural Operators for Forecasting Thoracic Aortic Aneurysm Growth and Rupture**  
   **Schwarz, E. L.**, Li, D. S., C. W. Means, R., Assi, & Humphrey, J. D. (2025)  
-  *bioRxiv, In Preperation*  
-  [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12157632/)
+  *In Preperation*  
+  [Link](/multiscale)
 
 - **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**  
   Han, J., Kong, D., **Schwarz, E. L.**, Takaesu, F., Lee, S., Kim, C., Yang, E., Park, M., Kim, E., Kim, W., Ramachandra, A. B., Manning, E. P., Humphrey, J. D., Park, H., & Davis, M. (2025)  
-  *bioRxiv*  
-  [Link](https://www.biorxiv.org/content/10.1101/2025.10.08.681286.abstract)
+  *bioRxiv, Under Review at Circulation Research*  
+  [Link](https://www.biorxiv.org/content/10.1101/2025.10.08.681286)

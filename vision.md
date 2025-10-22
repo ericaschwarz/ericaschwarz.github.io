@@ -132,8 +132,6 @@ Within the Mechanical Engineering Department, I would be eager to collaborate wi
 
 Additionally, UC Berkeley’s partnership with **UCSF** provides access to one of the nation’s top medical centers. I would pursue opportunities to collaborate with clinicians in the **UCSF Cardiovascular Research Institute** to advance the translational impact of my research.
 
--->
-
 ---
 
 ## Selected References
@@ -144,3 +142,5 @@ Additionally, UC Berkeley’s partnership with **UCSF** provides access to one o
 5. Schwarz, E. L., *et al.* “Postnatal Pulmonary Artery Development from Transcript to Mechanics.” *In preparation* (2024).  
 6. Schwarz, E. L., *et al.* “Optimal neural operators for forecasting thoracic aortic aneurysm growth.” *In preparation* (2025).  
 7. Irons, L., Latorre, M., & Humphrey, J. D. “From transcript to tissue: multiscale modeling from cell signaling to matrix remodeling.” *Annals of Biomedical Engineering* (2021).
+
+-->

@@ -7,7 +7,29 @@ layout: default
 
 ---
 
-### Selected Works
+### Selected Preprints
+
+- **Postnatal Pulmonary Artery Development From Transcript to Tissue**  
+  **Schwarz, E. L.**, Ramachandra, A. B., Yeung, N., Manning, E. P., Weiss, D., & Humphrey, J. D. (2025)  
+  *bioRxiv, Under Review at Journal of The Royal Society Interface*  
+  [Link](https://doi.org/10.1101/2025.06.03.657639)
+
+- **Mechanisms Driving Thoracic Aortic Aneurysm Stability**  
+  **Schwarz, E. L.**, Cao, Q., Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)  
+  *bioRxiv, Submitted to Biomechanics and Modeling in Mechanobiology*  
+  [Link](https://doi.org/10.1101/2025.10.20.683467)
+
+- **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**
+  Han, J., Kong, D., **Schwarz, E. L.**, Takaesu, F., Lee, S., Kim, C., Yang, E., Park, M., Kim, E., Kim, W., Ramachandra, A. B., Manning, E. P., Humphrey, J. D., Park, H., & Davis, M.  
+  *bioRxiv, Under Review at Circulation Research*  
+  [Link](https://doi.org/10.1101/2025.10.08.681286)
+
+- **Neural Operators for Forecasting Thoracic Aortic Aneurysm Growth and Rupture**  
+  **Schwarz, E. L.**, Li, D. S., C. W. Means, R., Assi, & Humphrey, J. D. (2025)  
+  *In Preparation*  
+  [Link](/publications)
+
+### Selected Publications 
 
 - **Multiphysics Simulations of a Bioprinted Pulsatile Fontan Conduit**  
   Hu, Z., Herrmann, J. E., **Schwarz, E. L.**, Gerosa, F. M., Emuna, N., Humphrey, J. D., Feinberg, A. W., Hsia, T., Skylar-Scott, M. A., & Marsden, A. L. (2025)  
@@ -19,19 +41,9 @@ layout: default
   *JACC: Basic to Translational Science*  
   [Link](https://www.sciencedirect.com/science/article/pii/S2452302X25000658)
 
-- **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**  
-  Han, J., Kong, D., **Schwarz, E. L.**, Takaesu, F., Lee, S., Kim, C., Yang, E., Park, M., Kim, E., Kim, W., Ramachandra, A. B., Manning, E. P., Humphrey, J. D., Park, H., & Davis, M. (2025)  
-  *bioRxiv*  
-  [Link](https://www.biorxiv.org/content/10.1101/2025.10.08.681286.abstract)
-
-- **Postnatal Pulmonary Artery Development From Transcript to Tissue**  
-  **Schwarz, E. L.**, Ramachandra, A. B., Yeung, N., Manning, E. P., Weiss, D., & Humphrey, J. D. (2025)  
-  *bioRxiv*  
-  [Link](https://pmc.ncbi.nlm.nih.gov/articles/PMC12157632/)
-
 - **Tissue Engineered Vascular Grafts Are Resistant to the Formation of Dystrophic Calcification**  
   Turner, M. E., Blum, K. M., Watanabe, T., **Schwarz, E. L.**, Nabavinia, M., Leland, J. T., Villarreal, D. J., Schwartzman, W. E., Chou, T., Baker, P. B., Matsumura, G., Krishnamurthy, R., Yates, A. R., Hor, K. N., Humphrey, J. D., Marsden, A. L., Stacy, M. R., Shinoka, T., & Breuer, C. K. (2024)  
-  *Nature communications*  
+  *Nature Communications*  
   [Link](https://www.nature.com/articles/s41467-024-46431-4)
 
 - **FSGe: A Fast and Strongly-coupled 3D Fluid–Solid-Growth Interaction Method**  
