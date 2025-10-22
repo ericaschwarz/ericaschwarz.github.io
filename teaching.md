@@ -82,6 +82,16 @@ These courses bridge mechanical engineering and bioengineering, equipping studen
 
 ---
 
+## Community and Service  
+
+As a graduate student, I served as **Advocacy Chair for the Stanford Biomedical Association for the Interest of Minority Students**, where I organized forums for students to raise issues affecting underrepresented communities and developed programming to address these concerns. My term focused on expanding spaces for queer students on campus, including the creation of inclusive facilities within lab spaces. I also supported initiatives to promote student mental health, such as hosting a campus psychological services open house and a student mental health forum. In addition, I worked to advocate for women in STEM by mentoring high school students through summer research programs and organizing outreach activities for Girls Who Code. In my final year of graduate school, I served as a **student volunteer on the Bioengineering Graduate Admissions Committee**, where I helped advocate for applicants from underrepresented and non-traditional backgrounds.  
+
+As a postdoctoral associate at Yale, I have continued to build a diverse and inclusive academic environment. I am an active **committee member of the Yale Postdoctoral Association**, organizing monthly community and networking events that promote inclusion and connection within the postdoctoral community. I also volunteer as a postdoctoral mentor for **Women and Gender Minorities in Science at Yale**, meeting monthly with my graduate student mentee to provide guidance and support through academic challenges.  
+
+I look forward to building support for a rich research environment as a assistant professor. I will collaborate with affinity groups that support women and underrepresented minorities in research. This will include serving as a faculty mentor in organizations such as **Society of Women Engineers** and **summer research programs for underrepresented minorities in science**. I will also host a regular speaking series on **academic pathways** with a focus on supporting **sustainable mental health** of students and researchers.
+
+---
+
 ## Summary  
 
 Feedback from both students and professional teaching staff demonstrates my ability to create safe, inclusive learning environments while empowering students to achieve both technical and project-based excellence. My demonstrated mentorship, evidenced by the publication of peer-reviewed journal articles authored by my mentees and the acceptance of my mentees into top-tier graduate programs and industry positions, underscores my capacity to instruct students at the faculty level and mentor the next generation of researchers and innovators.
