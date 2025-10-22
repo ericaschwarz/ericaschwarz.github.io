@@ -17,7 +17,7 @@ layout: default
       padding: 20px;
     }
     canvas {
-      margin-top: 40px;
+      margin-top: 20px;
       touch-action: none;
       -webkit-user-select: none;
       -webkit-touch-callout: none;
@@ -60,7 +60,7 @@ layout: default
       color: #333;
     }
     #dialogueBox {
-      width: 275px;
+      width: 274px;
       min-height: 120px;
       background-color: #f8f8f8;
       border: 4px solid #000;
@@ -74,17 +74,6 @@ layout: default
       box-shadow: 4px 4px 0 #333;
       text-align: left;
       position: relative;
-    }
-    #dialogueBox::before {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 4px;
-      background: #000;
-      border-radius: 2px;
     }
     #mazeCanvas {
       border: 4px solid #000;
@@ -140,7 +129,7 @@ layout: default
       <div id="dialogueChoices"></div>
     </div>
 
-    <canvas id="mazeCanvas" width="300" height="300"></canvas>
+    <canvas id="mazeCanvas" width="290" height="290"></canvas>
 
     <div id="controls">
       <div class="row">
