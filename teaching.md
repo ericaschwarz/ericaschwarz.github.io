@@ -46,19 +46,15 @@ As part of this process, I received formal observation and feedback from the Poo
 
 ## Mentoring Experience  
 
-Mentorship allows provides the opportunity .... as well as create scientists who actively contribute to the research community.
+Mentorship provides an opportunity to advance research by cultivating the next generation of innovators and scholars who will actively contribute to scientific discovery. As a graduate student and postdoctoral researcher, I have been the primary mentor for four undergraduates and three graduate students. I tailored my mentorship approach to each mentee, integrating their unique backgrounds, skills, and future goals to foster their development as independent researchers.  
 
-For each of these mentees, I synthesized their unique backgrounds, skills, and future goals to inform my approach to mentorship.  
+To support this, I led supplemental technical workshops on coding, mathematical modeling, and academic writing to ensure each mentee started their research experience with strong foundational skills. This allowed all mentees to excel in their work regardless of their starting skill level.  
 
-is a critically important part of research. Throughout my time as a graduate student and post-doctoral researcher, I have been the primary mentor for four undergraduates and three graduate students. 
+My ability to provide quality mentorship to diverse mentees is illustrated by my work with two undergraduate students. These undergraduates began working with me through individual summer programs, one of which focused on serving underrepresented minorities in STEM. After their initial summer projects, I continued to mentor them for three years on an independent research project, which they published in a peer-reviewed journal as first and second authors respectively.  
 
-To support this, I organized and led supplemental technical workshops on coding, mathematical modeling, and academic writing to ensure each mentee started their research experience with strong foundational skills. This allowed all mentees to excel regardless of their starting skill level.  
+One of these students, a first-generation college student, sought to attend medical school after his undergraduate education. To support this goal, I provided mentorship on scholarship resources, aided in the preparation of application materials, and wrote letters of recommendation that spoke to his skills and persistence as a biomedical researcher. He was accepted to several medical schools and matriculated last fall. Since then, he has continued participating in research at his institution. 
 
-My ability to provide mentorship to diverse mentees is illustrated by my work with two undergraduate students. These undergraduates began working with me through individual summer programs, one of which focused on serving underrepresented minorities in STEM. After their initial summer projects, I continued to mentor them for three years on an independent research project, which they published in a peer-reviewed journal as first and second authors respectively.  
-
-One of these students, a first-generation college student, sought to attend medical school after his undergraduate education. To aid him in this goal, I provided mentorship on scholarship resources, aided in the preparation of application materials, and wrote letters of recommendation that spoke to his skills and persistence as a biomedical researcher. He was accepted to several medical schools and matriculated last fall. Since then, he has continued participating in research at his institution. 
-
-At UC Berkeley, I will continue to provide strong mentorship both within my research group and in the wider university environment. This will include serving as a faculty mentor for organizations such as the **Society of Women Engineers** and conducting outreach to prospective students through summer programs and recruitment events.
+As an assistant professor, I will continue to provide strong mentorship both within my research group and in the wider university environment. I plan to serve as a faculty mentor for organizations such as the **Society of Women Engineers** and to engage prospective students through summer programs and recruitment events.
 
 ---
 
@@ -66,28 +62,26 @@ At UC Berkeley, I will continue to provide strong mentorship both within my rese
 
 I have a rigorous interdisciplinary background in mechanical engineering, computer science, and biomedical engineering. As such, I am uniquely positioned to teach classes at the intersection of mechanical engineering and biological sciences.  
 
-At UC Berkeley, this would include core classes in the Mechanical Engineering Department, such as:  
-- **ME 260:** Advanced Fluid Mechanics  
-- **ME 280A:** Introduction to the Finite Element Method  
-- **ME C213:** Fluid Mechanics of Biological Systems  
+As an assistant professor, this will include core classes in the Mechanical and Biomedical Engineering Departments, such as:  
+-  Solid Mechanics of Living Tissues 
+-  Introduction to Finite Element Analysis
+-  Fluid Dynamics of Biological Systems  
 
-I would also be enthusiastic to develop new courses that strengthen the mechanobiology instruction at UC Berkeley, focusing on how fluid dynamics and mechanotransduction influence health and disease:  
+I will also develop new courses that strengthen each department, focusing on how fluid dynamics and mechanotransduction influence health and disease:  
 
-1. **Cardiovascular Fluid Dynamics**  
-   Graduate-level course on modeling blood flow in deformable vessels. Covers 3D flow equations, lumped parameter models, and biomechanics of the circulatory system. Integrates application-based lectures providing overviews of cardiovascular diseases.  
+1. ### Cardiovascular Fluid Dynamics  
+This graduate-level course will focus on methods for modeling blood flow in deformable vessels. It will cover three-dimensional equations of flow, particularly the incompressible form of the Navier–Stokes equations applicable to cardiovascular systems. Lectures will then move through reduced-order formulations, integrating discussions of Poiseuille flow and lumped parameter networks. Technical lectures will be integrated with application-based discussions, providing an overview of cardiovascular diseases and identifying appropriate use cases for different formulations of governing fluid dynamics equations. Emphasis will be placed on application-based learning, with example problems drawn from recent research articles that demonstrate the practical applications of discussed principles. This pedagogical approach will empower students to translate core mechanical engineering concepts to real-world problems.
 
-2. **Clinical Translation of In Silico Cardiovascular Data**  
-   Graduate-level course examining how mechanical forces influence the development of living systems, including bone, blood vessels, and skin. Covers kinematic growth theory, constrained mixture theory, and cell-signaling models.  
+2. ### Mechanics of Growth and Remodeling  
+This graduate-level course will examine how mechanical forces influence the development and adaptation of living systems, encompassing biological tissues including bone, blood vessels, and skin. The course will cover leading theories of biological growth, including kinematic growth theory and constrained mixture theory, drawing on fundamental principles of fluid dynamics, solid mechanics, and linear elasticity. Extended methods such as cell-signaling models will also be introduced, connecting molecular mechanisms to tissue-level mechanical behavior. Through this integration, students will gain a deeper understanding of how mechanical and biological processes interact to guide growth and remodeling in health and disease.
 
-   This course will be distinct from physics-based machine learning classes as the goal is not to use neural network tools to produce the simulations (although these topics will be addressed), rather it is to 
+3. ### In Silico Datasets for Clinical Machine Learning
+This graduate-level course will introduce students to the development and use of in silico datasets for training and validating neural operators. Students will learn how to design computational experiments and generate high-fidelity simulation data that can be integrated with clinical datasets to create predictive models. The course will combine lectures on physics-based simulations and neural operator design with illustrative assignments focused on cardiovascular applications. By the end of the course, students will be able to build machine learning models that combine in silico and in vivo data for applications in engineering and medicine. *Note:* This course will not focus on physics-informed machine learning, which embeds governing physical equations into the neural network itself. Instead, it will emphasize how in silico data generated from physics-based simulations can amplify the power and interpretability of machine learning in the clinical setting.
 
-3. **Computational Modeling of Tissue Engineering**  
-   Graduate-level course focused on modeling and optimizing key stages of the tissue engineering process, including bioreactor flow, dynamic tissue conditioning, and in vivo development modeling.  
-
-These classes sit at the intersection of mechanical engineering and bioengineering while imparting robust technical and research skills that benefit students across both disciplines.  
+These courses bridge mechanical engineering and bioengineering, equipping students with strong technical foundations that connect to topics in emerging fields.
 
 ---
 
 ## Summary  
 
-Feedback from both students and professional teaching staff demonstrates that I am able to create a safe, inclusive learning environment that supports both technical mastery and project-based excellence. My record of mentorship—evidenced by mentees’ peer-reviewed publications and acceptance into top-level graduate and professional programs—demonstrates my ability to serve as a faculty-level research mentor and instructor.
+Feedback from both students and professional teaching staff demonstrates my ability to create safe, inclusive learning environments while empowering students to achieve both technical and project-based excellence. My demonstrated mentorship, evidenced by the publication of peer-reviewed journal articles authored by my mentees and the acceptance of my mentees into top-tier graduate programs and industry positions, underscores my capacity to instruct students at the faculty level and mentor the next generation of researchers and innovators.
