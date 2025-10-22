@@ -86,6 +86,7 @@ These courses bridge mechanical engineering and bioengineering, equipping studen
 
 Feedback from both students and professional teaching staff demonstrates my ability to create safe, inclusive learning environments while empowering students to achieve both technical and project-based excellence. My demonstrated mentorship, evidenced by the publication of peer-reviewed journal articles authored by my mentees and the acceptance of my mentees into top-tier graduate programs and industry positions, underscores my capacity to instruct students at the faculty level and mentor the next generation of researchers and innovators.
 
+---
 
 <figure style="max-width: 100%; margin: auto;">
   <a href="/assets/class_1.jpg" target="_blank">
