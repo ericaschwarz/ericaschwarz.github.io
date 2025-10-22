@@ -85,3 +85,27 @@ These courses bridge mechanical engineering and bioengineering, equipping studen
 ## Summary  
 
 Feedback from both students and professional teaching staff demonstrates my ability to create safe, inclusive learning environments while empowering students to achieve both technical and project-based excellence. My demonstrated mentorship, evidenced by the publication of peer-reviewed journal articles authored by my mentees and the acceptance of my mentees into top-tier graduate programs and industry positions, underscores my capacity to instruct students at the faculty level and mentor the next generation of researchers and innovators.
+
+
+<figure style="max-width: 100%; margin: auto;">
+  <a href="/assets/class_1.jpg" target="_blank">
+  <img src="/assets/class_1.jpg" alt="Class" style="width:100%; border-radius:5px;">
+   </a>
+  <figcaption style="text-align:center;"><em>Presenting academic career pathways for senior students in the Yale University Biomedical Engineering Department's senior seminar.</em></figcaption>
+</figure>
+  
+<br>
+
+---
+
+<figure style="max-width: 100%; margin: auto;">
+  <a href="/assets/presentation_1.jpg" target="_blank">
+  <img src="/assets/presentation_1.jpg" alt="Presentation" style="width:100%; border-radius:5px;">
+   </a>
+  <figcaption style="text-align:center;"><em>Presenting at the 2022 Single Ventricle Investigator's Meeting.</em></figcaption>
+</figure>
+  
+<br>
+
+
+---
