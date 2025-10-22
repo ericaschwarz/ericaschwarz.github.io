@@ -6,7 +6,7 @@
 
 Teaching excellence is critical to fostering a strong academic research environment. By connecting theory to practical problem solving, I aim to empower students to address pressing challenges across research and industry. I also believe that equitable and inclusive teaching practices strengthen scientific training by allowing diverse perspectives to drive discovery and by giving educators a framework to develop effective, modern pedagogy.
 
-As an assistant professor, I will apply this philosophy in fundamental mechanical engineering courses and expand the mechanical engineering curriculum to more deeply encompass the intersection between mechanical engineering and biological sciences. I will include topics in artificial intelligence at this intersection, ensuring that students in this program are prepared to address complex, multidisciplinary problems in the modern era.
+As an assistant professor, I will apply this philosophy in fundamental mechanical engineering courses and expand the curriculum to more deeply encompass the intersection between mechanical engineering and biological sciences. I will include topics in artificial intelligence at this intersection, ensuring that students in this program are prepared to address complex, multidisciplinary problems in the modern era.
 
 ---
 
