@@ -42,6 +42,13 @@ As part of this process, I received formal observation and feedback from the Poo
 
 > “Erica gave students positive feedback when they asked questions, which created a comfortable environment. It was also clear that Erica used student questions as a kind of informal feedback for her own teaching.”  
 
+<figure style="max-width: 100%; margin: auto;">
+  <a href="/assets/class_1.jpg" target="_blank">
+  <img src="/assets/class_1.jpg" alt="Class" style="width:100%; border-radius:5px;">
+   </a>
+  <figcaption style="text-align:center;"><em>Presenting academic career pathways for senior students in the Yale University Biomedical Engineering Department's senior seminar.</em></figcaption>
+</figure>
+
 ---
 
 ## Mentoring Experience  
@@ -99,24 +106,10 @@ Feedback from both students and professional teaching staff demonstrates my abil
 ---
 
 <figure style="max-width: 100%; margin: auto;">
-  <a href="/assets/class_1.jpg" target="_blank">
-  <img src="/assets/class_1.jpg" alt="Class" style="width:100%; border-radius:5px;">
-   </a>
-  <figcaption style="text-align:center;"><em>Presenting academic career pathways for senior students in the Yale University Biomedical Engineering Department's senior seminar.</em></figcaption>
-</figure>
-  
-<br>
-
----
-
-<figure style="max-width: 100%; margin: auto;">
   <a href="/assets/presentation_1.jpg" target="_blank">
   <img src="/assets/presentation_1.jpg" alt="Presentation" style="width:100%; border-radius:5px;">
    </a>
   <figcaption style="text-align:center;"><em>Presenting at the 2022 Single Ventricle Investigator's Meeting.</em></figcaption>
 </figure>
-  
-<br>
-
 
 ---
