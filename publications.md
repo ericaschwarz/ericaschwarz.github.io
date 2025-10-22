@@ -19,7 +19,7 @@ layout: default
   *bioRxiv, Submitted to Biomechanics and Modeling in Mechanobiology*  
   [Link](https://doi.org/10.1101/2025.10.20.683467)
 
-- **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**
+- **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**  
   Han, J., Kong, D., **Schwarz, E. L.**, Takaesu, F., Lee, S., Kim, C., Yang, E., Park, M., Kim, E., Kim, W., Ramachandra, A. B., Manning, E. P., Humphrey, J. D., Park, H., & Davis, M.  
   *bioRxiv, Under Review at Circulation Research*  
   [Link](https://doi.org/10.1101/2025.10.08.681286)
