@@ -11,7 +11,7 @@ I have used **multiscale physics-based simulations** based on interpretable biol
 
 ### Research Pathway
 
-Research began with **robust FSG solvers and predictive frameworks** (2023–2024), then progressed to **machine learning-driven identification of cellular and biomechanical** drivers of disease (2024–2025), enabling cross-scale prediction of cardiovascular outcomes.  
+This research began with **robust FSG solvers and predictive frameworks** (2023–2024), then progressed to **machine learning-driven identification of cellular and biomechanical** drivers of disease (2024–2025), enabling cross-scale prediction of cardiovascular outcomes.  
 
 ### Selected Publications
 
