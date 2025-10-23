@@ -110,12 +110,19 @@ I will further the clinical impact of this work by training large-data neural op
 ### Outcomes
 This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also elucidate biomechanical contributors to intracranial aneurysm growth and rupture.
 
-<figure style="max-width: 90%; margin: auto;">
+<figure style="max-width: 90%; margin: auto; background-color: white; border-radius: 10px; padding: 10px;">
   <a href="/assets/figure-01.svg" target="_blank">
-  <img src="/assets/figure-01.svg" alt="Diagram of aneurysms" style="width:100%; border-radius:10px;">
-   </a>
-  <figcaption style="text-align:center;"><em> Different insult types contributing to disease progression can result in similar pre-aneurysmal lesions at intermediate times. Despite these initial geometrical similarities, continued progression can result in different outcomes, depending on the underlying mechanisms of insult.</em></figcaption>
+    <img src="/assets/figure-01.svg" alt="Diagram of aneurysms" style="width:100%; border-radius:10px; background-color:white;">
+  </a>
+  <figcaption style="text-align:center; margin-top:8px;">
+    <em>
+      Different insult types contributing to disease progression can result in similar pre-aneurysmal lesions at intermediate times. 
+      Despite these initial geometrical similarities, continued progression can result in different outcomes, 
+      depending on the underlying mechanisms of insult.
+    </em>
+  </figcaption>
 </figure>
+
   
 <br>
 
