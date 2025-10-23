@@ -51,7 +51,7 @@ My long-term research program will extend cell-to-tissue simulation coupling to 
 
 --- 
 
-## 1. Multiscale, Multi-Organ Growth and Remodeling for Congenital Heart Defects
+## 1. Predcting Outcomes in Congenital Heart Defect Patients through Multiscale, Multi-Organ Growth and Remodeling
 
 ### Background
 Computational fluid dynamics (CFD) studies of heart diseases have primarily centered around cardiovascular lesions and how they impact local hemodynamics. However, maladaptive outcomes of cardiovascular disease are clinically determined on a whole-body level. A salient example of this is are congenital heart defects such as single-ventricle physiology. While the primary outcome of single-ventricle physiology treatment, the Fontan procedure, is the direct impact on local hemodynamics, prominent sequelae include maladaptive remodeling of the liver, lungs, and heart that may lead to liver failure, pulmonary hypertension, and exercise intolerance. More recently, studies have used lumped parameter networks (LPNs) to model this whole-body flow, which includes organ-level hemodynamics, but they are not predictive of patient adaptation over time.
@@ -68,10 +68,10 @@ This framework will identify mechanisms of exercise intolerance and organ failur
 
 ---
 
-## 2. Multiscale, Multi-Cell Growth and Remodeling for Vascular Grafts
+## 2. Identifying Pharmacological Targets in Vascular Grafts through Multiscale, Multi-Cell Growth and Remodeling
 
 ### Background
-Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels. However, issues maintaining patency in vascular grafts persist. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues and inflammatory responses, particularly macrophage infiltration. The same is true in autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large numbers of patients affected.
+Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels. However, issues maintaining patency in vascular grafts persist. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues and inflammatory responses, particularly macrophage infiltration. The same is true in autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large numbers of patients affected. Many of the initiators of intimal hyperplasia and inflammation that account for this narrowing arise at the cellular level and are driven by inflammatory signaling pathways. A primary way of mediating these responses is anti-inflammatory drugs, an approach that can be combined with cardiovascular devices such as drug-eluting stents. However, these solutions are incomplete and still have a high rate of narrowing requiring reoperation. This demonstrates the need to better understand how pharmacological interventions interact with biomechanical drivers of growth and remodeling. To address this gap, I will develop a multiscale framework that links cell-signaling to tissue-level macroscopic growth and remodeling behavior, with the ultimate goal being to identify novel pharmocological targets in grafts utilized in distinct areas.
 
 ### Approach
 To create the next generation of G&R models, I will integrate mechanistic cell-signaling models into my FSG framework (Fig. 2). This will allow for prediction of how both mechanical forces and pharmacological interventions can affect the physiological function of vascular grafts.  
