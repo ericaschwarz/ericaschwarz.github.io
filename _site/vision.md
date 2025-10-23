@@ -2,6 +2,28 @@
 
 ---
 
+<style>
+summary {
+  font-weight: 700;
+  font-size: 1.5em;        /* ≈ ## heading size */
+  cursor: pointer;
+  line-height: 1.2;
+  color: #267CB9;
+  margin-bottom: 0.5em;
+}
+summary:hover {
+  color: #069;
+}
+.summary-sub {
+  display: block;
+  font-size: 0.8em;               /* same as normal body text */
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+</style>
+
+
 ## Vision
 
 Cardiovascular disease is the leading cause of death in the United States. Many biomedical advancements have deepened our understanding of vascular biology, including the use of **RNA-sequencing** to identify changes in gene expression that both cause and are caused by disease. Despite this, translating these findings into clinically actionable models that can guide patient-specific treatment plans has yet to be accomplished. This gap exists because it is difficult to bridge how cellular-level behavior alters tissue-level mechanics and affects whole-body cardiovascular performance. I will lead research that integrates multiscale data-- from molecular and cellular measurements to organ-scale mechanics-- into cardiovascular models that will generate **actionable predictions** of human-scale cardiovascular outcomes and identify the biomechanical drivers of disease.
@@ -24,7 +46,14 @@ I complete the cell-to-tissue-to-organ simulation pipeline using in silico model
 
 ---
 
-## Doctoral Research
+
+<details>
+  <summary>
+  <span class="summary-title">Doctoral Research</span><br>
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div markdown="1">
 
 I completed my Ph.D. at **Stanford University** under the supervision of Dr. Alison Marsden, a leader in the field of **computational fluid dynamics** (CFD). Here, I led a comprehensive analysis of the first U.S. clinical trial evaluating tissue-engineered vascular grafts (TEVGs) for the treatment of congenital heart defects (CHDs). 
 
@@ -34,14 +63,28 @@ To further this work, I developed a fully 3D fluid-solid-growth (FSG) framework 
 
 Through this work, I demonstrated the clinical relevance of CFD modeling by enabling mechanobiologically motivated studies of vascular evolution in complex domains. I was nationally recognized for this contribution to computational mechanics as a finalist for the Melosh Medal Competition.
 
+  </div>
+
+</details>
 
 ---
 
-## Postdoctoral Research
+
+<details>
+  <summary>
+  <span class="summary-title">Postdoctoral Research</span><br>
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div markdown="1">
 
 During my work with Dr. Jay Humphrey at Yale, a leader in vascular biomechanics and mechanobiology, I developed a growth and remodeling (G&R) framework that incorporated time-resolved gene expression from RNA sequencing into a constrained mixture model of pulmonary artery development. Further development will use this work to investigate how hypoxia caused by congenital heart defects (CHDs) disrupts pulmonary artery development. 
 
 I have also leveraged machine learning to strengthen clinical decision-making. Previously, utilizing large-data models to predict the outcomes of certain cardiovascular disease has been limited by the difficulty of acquiring high fidelity clinical data on which to train them. To address this need in predicting thoracic aortic aneurysm growth, I used my fluid-solid-growth (FSG) framework to generate cohorts of clinically relevant models and worked with machine learning experts to identify the optimal neural operators for forecasting long-term aneurysm growth. Future work will use this simulated data to train large-data models and then transfer this learning to a smaller set of clinical data, accelerating clinical translation of machine learning tools.
+
+  </div>
+
+</details>
 
 ---
 
@@ -51,54 +94,87 @@ My long-term research program will extend cell-to-tissue simulation coupling to 
 
 --- 
 
-## 1. Multiscale, Multi-Organ Growth and Remodeling for Congenital Heart Defects
+<details>
+  <summary>
+
+  <span class="summary-title">1. Predcting Outcomes in Congenital Heart Defect Patients through Multiscale, Multi-Organ Growth and Remodeling</span><br>
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div markdown="1">
 
 ### Background
-Previous computational fluid dynamics (CFD) studies of heart diseases have primarily focused on how cardiovascular lesions impact local hemodynamics. However, maladaptive outcomes of cardiovascular disease are clinically determined on a whole-body level. A salient example of this is are congenital heart defects such as single-ventricle physiology. While the primary outcome of single-ventricle physiology treatment, the Fontan procedure, is the direct impact on local hemodynamics, prominent sequelae include maladaptive remodeling of the liver, lungs, and heart that may lead to liver failure, pulmonary hypertension, and exercise intolerance. More recently, studies have used lumped parameter networks (LPNs) to model this whole-body flow, which includes organ-level hemodynamics, but they are not predictive of patient adaptation over time.
+Computational fluid dynamics (CFD) studies of heart diseases have primarily centered around cardiovascular lesions and how they impact local hemodynamics. However, maladaptive outcomes of cardiovascular disease are clinically determined on a whole-body level. A salient example of this is are congenital heart defects such as single-ventricle physiology. While the primary outcome of single-ventricle physiology treatment, the Fontan procedure, is the direct impact on local hemodynamics, prominent sequelae include maladaptive remodeling of the liver, lungs, and heart that may lead to liver failure, pulmonary hypertension, and exercise intolerance. More recently, studies have used lumped parameter networks (LPNs) to model this whole-body flow, which includes organ-level hemodynamics, but they are not predictive of patient adaptation over time.
 
 ### Approach
-Lumped-parameter networks (LPNs) are capable of representing whole-body cardiovascular behavior at high computational efficiency through reducing the order of the flow via a circuit analogy. The properties of these LPN elements depend directly on the geometries and material properties of the organ systems they represent, providing an opening for patient-specific configuration. However, little work has been done in expanding the predictive capabilities of LPNs by integrating growth and remodeling behavior directly into the LPN elements, which would represent how the body grows and develops in response to the mechanobiological perterbations casued by cardiovascular lesions.  
+Lumped-parameter networks (LPNs) are capable of representing whole-body cardiovascular behavior at high computational efficiency through reducing the order of the flow via a circuit analogy. The properties of these LPN elements depend directly on the geometries and material properties of the organ systems they represent with the capacity for patient-specific parameterization. However, they are typically used as static representations of cardiovascular behavior at a single point and time and do not account for how the lumped parameters will adapt under their cardiovascular load. I propose expanding the predictive capabilities of LPNs by integrating growth and remodeling behavior directly into the LPN elements, which would represent how the body grows and develops in response to the mechanobiological perterbations casued by cardiovascular lesions.  
 
-Utilizing the low-dimensional properties of LPNs to model whole-body flow and integrating phenomological growth and remodeling trends (similar to those governing constrained mixture theory) will allow the parameters of the system to predict how measures of cardiovascular performance on the organ-scale will develop over time. This will transform static representations of whole-body performance to a dynamic system capable of accounting for how disruptions to a system sub-block propogates to changes throughout the body.
+Utilizing the low-dimensional properties of LPNs to model whole-body flow and integrating phenomological growth and remodeling trends (similar to those governing constrained mixture theory) the forecasting of organ-scale cardiovascular performance will develop over time. This will transform static representations of whole-body performance to a dynamic system capable of accounting for how disruptions to a system sub-block propogates to changes throughout the body.
 
 This integration provides a rich opportunity for ongoing collaboration with clinicians. Novel quantification of growth and remodeling behavior can be formed from population-level data, including trends in pressures, heart rates, oxygen saturations, and blood flows (directly measured, if available, or allometrically calculated, if not). While integration of clinical data can be limited by the inconsistancy of record keeping, particularly in pediatric diseases, leveraging a large population of data from both healthy and diseased patients will allow trends in growth and remodeling behavior to appear overall. These trends will inform the best-fit parameters of constrained mixture G&R for each lumped system in the circulation. After establishing this governing behavior, coupling of LPNs to 3D models of cardiovascular lesions will allow the prediction of how specific geometries will affect the overall trajectory of disease. Additionally, gene expression information can also be leveraged to inform G&R behavior. This approach may be particularly relevant in conditions with known genetic origins (e.g., Marfan syndrome, Williams syndrome).
 
 ### Outcomes
-This framework will identify mechanisms of exercise intolerance and organ failure and enaable early identification of patients at risk for adverse outcomes. Initial investigations will identify mechanisms of liver disease and pulmonary hypertension in congenital heart defect patients, but such a system can be expanded to other pathways of investigation where there is known system-level affects of local hemodynamics that evolve over time, such as aortic coarctation (where local hemodynamics of the aorta cause adverse cardiac remodeling).
+This framework will identify mechanisms of exercise intolerance and organ failure and enable early identification of patients at risk for adverse outcomes. Initial investigations will identify mechanisms of liver disease and pulmonary hypertension in congenital heart defect patients, but such a system can be expanded to other pathways of investigation where there is known system-level affects of local hemodynamics that evolve over time, such as aortic coarctation (where local hemodynamics of the aorta cause adverse cardiac remodeling).
+
+  </div>
+
+</details>
 
 ---
 
-## 2. Multiscale, Multi-Cell Growth and Remodeling for Vascular Grafts
+<details>
+  <summary>
+
+  <span class="summary-title">2. Identifying Pharmacological Targets in Vascular Grafts through Multiscale, Multi-Cell Growth and Remodeling</span><br>
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div markdown="1">
 
 ### Background
-Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels. However, issues maintaining patency in vascular grafts persist. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues and inflammatory responses, particularly macrophage infiltration. The same is true in autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large numbers of patients affected.
+Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels, but maintaining patency remains a major challenge. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues, such as altered wall shear stress, and inflammatory responses, particularly macrophage infiltration. The same is true for autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large number of patients affected.  
+
+Many of the initiators of intimal hyperplasia and inflammation that account for this narrowing arise at the cellular level and are driven by inflammatory signaling pathways that regulate smooth muscle proliferation and matrix deposition. Current therapies rely on anti-inflammatory drugs, an approach that can be combined with cardiovascular devices such as drug-eluting stents. However, these solutions are incomplete, and recurrent narrowing frequently necessitates reoperation.
+
+To better understand how pharmacological interventions interact with biomechanical drivers of growth and remodeling, I will develop a multiscale framework that links cell-signaling dynamics to tissue-level remodeling behavior, with the ultimate goal of identifying novel pharmacological targets in vascular grafts.
 
 ### Approach
-To create the next generation of G&R models, I will integrate mechanistic cell-signaling models into my FSG framework (Fig. 2). This will allow for prediction of how both mechanical forces and pharmacological interventions can affect the physiological function of vascular grafts.  
+I will develop a multiscale growth and remodeling (G&R) framework that couples mechanistic cell-signaling models with the fluid–structure–growth (FSG) solver to predict how pharmacological and mechanical factors jointly influence vascular graft adaptation (Fig. 2). This framework will enable quantitative predictions of how targeted interventions alter cellular activity, extracellular matrix turnover, and overall graft function.
 
-The FSG framework currently relies only on the deformation-dependent material stiffness tensor to assemble the finite element solver tangent matrix, making it appropriate to integrate cell-signaling networks directly into the governing equations for kinematic growth and material properties without having to change the architecture of the finite element solver itself.  
+Because the FSG framework assembles its tangent matrix from the deformation-dependent stiffness tensor, it can integrate new governing equations for kinematic growth and material property evolution from cell-signaling networks without altering the architecture of the finite element solver itself. This will allow me to leverage existing solvers and focus my approach on developing new cell-signaling pathways of interest. Recent studies have created models of macrophage and smooth muscle behavior, two critical classes of cells responsible for graft occlusion, and linked their dynamics to exogenous input. I will expand these classes to include other cell types implicated in inflammation and intimal hyperplasia including endothelial cells and additional macrophage phenotypes. These models will initially be built based on published data, but will expand to incorporate new data gathered with experimental collaborators.
 
-Using the multiscale FSG framework, I will identify optimal targets for drug delivery that selectively inhibit macrophage activity and cell proliferation in vascular grafts while allowing for functional smooth muscle and endothelial cell activity.  
-
-For TEVGs, I will first focus on the effects of angiotensin II receptor antagonists, which have been shown to inhibit pro-inflammatory signaling pathways. For vein grafts, I will focus on the effects of mTOR pathway inhibitors, which are currently used in drug-eluting stents to inhibit cell proliferation after coronary angioplasty.
-
-> Figure 2. Example of a logic-based cell-signaling network used in my postdoctoral research lab to simulate arterial wall behavior.
+Using this multiscale framework, I will identify optimal targets for drug delivery that selectively inhibit macrophage activity and excessive cell proliferation in vascular grafts while preserving functional smooth muscle and endothelial cell activity. I will apply this model to two representative contexts: (i) TEVGs, focusing on the effects of angiotensin II receptor antagonists, which have been shown to inhibit pro-inflammatory signaling pathways, and (ii) autologous vein grafts for CABG, focusing on mTOR pathway inhibitors, which are currently used in drug-eluting stents to inhibit cell proliferation after coronary angioplasty.
 
 ### Outcomes
-Using this framework, I will identify optimal drug pathways and delivery timings to ensure the patency of vascular grafts. These findings will improve patient health and lower the incidence of corrective surgery necessitated by graft occlusion.  
+Using this framework, I will predict optimal drug pathways, delivery timings, and dosage strengths to promote the long-term patency of vascular grafts. This will improve patient health and lower the incidence of surgical revisions necessitated by graft occlusion. This work is also highly innovative as, together with my broader research portfolio, it will yield the first *transcript-to-tissue-to-system* model of evolving vessels.
+  </div>
 
-This work is also highly innovative, as it will yield the first *transcript-to-tissue-to-system* model of evolving vessels.
+</details>
 
 ---
 
-## 3. Next-Generation Intracranial Aneurysm Prediction
+<details open>
+  <summary>
+
+  <span class="summary-title">3. Forecasting Intracranial Aneurysm Growth and Rupture through Integrating Machine Learning and In Silico Model Datasets</span><br>
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div markdown="1">
+
 
 ### Background
 Intracranial aneurysms arise from weakened areas of the arterial wall in the brain. The rupture of an aneurysm occurs when mechanical forces exceed the strength of the vascular wall. Ruptured intracranial aneurysms carry severe risk with a mortality rate of 45% and a morbidity rate of 25%.  
 
-Because of this, there is intense clinical interest in predicting the growth and rupture of aneurysms. In recent years, considerable effort has been put towards using patient-specific CFD to correlate hemodynamic metrics such as wall shear stress and oscillatory stress to patient outcomes. However, these correlations are not predictive, and there has been limited success in finding thresholds for patient-specific clinical decision-making.
+Because of this, there is intense clinical interest in predicting the growth and rupture of intracranial aneurysms. In recent years, considerable effort has been put towards using patient-specific CFD to correlate hemodynamic metrics such as wall shear stress and oscillatory stress to patient outcomes. However, these correlations are not predictive, and there has been limited success in finding thresholds for patient-specific clinical decision-making. Researchers have also turned to large data models as another method of predicting outcomes. However, obtaining precision results is hampered by the scarcity of high-fidelity clinical data. High resolution imaging, flow, and tissue information that would increase predictive power are rarely available at sufficient scale for neural network training.
+
+To address these limitations and enable the next generation of predictive aneurysm models, I will integrate physics-based growth and remodeling simulations with large-data neural operators. By coupling hemodynamic and biomechanical drivers of aneurysm formation, growth, and rupture, these simulations will create rich datasets for neural network training. Transfer learning can then link simulated and clinical data, increasing predictive accuracy while reducing the need for extensive clinical data.
 
 ### Approach
+
 Applying my FSG framework to intracranial aneurysms will make it possible to simulate evolving aneurysm wall composition and material properties in response to patient-specific hemodynamics.  
 
 It has been hypothesized that oscillatory shear stress contributes to aneurysm initiation and progression. Despite this, oscillatory shear stress mediation of G&R has not previously been incorporated into constrained mixture approaches. To address this limitation, I will incorporate the phenomenological response of cells to oscillatory shear stress into the FSG framework.  
@@ -108,8 +184,32 @@ This will be a novel application of constrained mixture theory and provide new, 
 I will further the clinical impact of this work by training large-data neural operators on these models and using transfer learning to predict outcomes in clinical aneurysm cases.
 
 ### Outcomes
+
+This work will produce a novel artificial learning framework that utilizes physics-based aneurysm simulation as training data. This contrasts with other approaches, such as physics-based neural networks, that seek to integrate physical governing equations into the neural network itself. This approach is powerful because it seeks to utilize the same format of data as expected from clinical inputs, but allows for expanded training possibilities. As applications for artificial intelligence continue to be adapted to the clinical setting, this is an important approach to quantify and develop.
+
+Because the FSG simulations will allow for interpretable integration of specific hypothesis of aneurysm formation and progression, this framework will also allow for uncovering hypothetical drivers of aneurysmal disease. This will provide biomechanical insights and also recommend areas for experimental investigation.
+
 This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also elucidate biomechanical contributors to intracranial aneurysm growth and rupture.
 
+<figure style="max-width: 90%; margin: auto; background-color: white; border-radius: 10px; padding: 10px;">
+  <a href="/assets/figure-01.svg" target="_blank">
+    <img src="/assets/figure-01.svg" alt="Diagram of aneurysms" style="width:100%; border-radius:10px; background-color:white;">
+  </a>
+  <figcaption style="text-align:center; margin-top:8px;">
+    <em>
+      Different insult types contributing to disease progression can result in similar pre-aneurysmal lesions at intermediate times. Despite these initial geometrical similarities, continued progression can result in different outcomes, 
+      depending on the underlying mechanisms of insult.
+    </em>
+  </figcaption>
+</figure>
+
+  
+<br>
+
+
+  </div>
+
+</details>
 ---
 
 ## Funding
@@ -120,7 +220,7 @@ I will support my research aims as an assistant professor by applying for fundin
 
 This research is also appropriate for funding from private institutions such as the AHA, Additional Ventures, the Children’s Heart Foundation, and the Marfan Foundation. Given my success in obtaining funding for doctoral research, I will mentor my students to apply for external fellowships from NSF, AHA, HHMI, and NIH.  
 
-I will additionally apply to NSF ACCESS for resource awards that can supplement the computational resources available through the UC Berkeley High Performance Computing Center.
+I will additionally apply to NSF ACCESS for resource awards that can supplement the computational resources available through the university high performance computing center.
 
 <!--
 
@@ -132,8 +232,6 @@ Within the Mechanical Engineering Department, I would be eager to collaborate wi
 
 Additionally, UC Berkeley’s partnership with **UCSF** provides access to one of the nation’s top medical centers. I would pursue opportunities to collaborate with clinicians in the **UCSF Cardiovascular Research Institute** to advance the translational impact of my research.
 
--->
-
 ---
 
 ## Selected References
@@ -144,3 +242,5 @@ Additionally, UC Berkeley’s partnership with **UCSF** provides access to one o
 5. Schwarz, E. L., *et al.* “Postnatal Pulmonary Artery Development from Transcript to Mechanics.” *In preparation* (2024).  
 6. Schwarz, E. L., *et al.* “Optimal neural operators for forecasting thoracic aortic aneurysm growth.” *In preparation* (2025).  
 7. Irons, L., Latorre, M., & Humphrey, J. D. “From transcript to tissue: multiscale modeling from cell signaling to matrix remodeling.” *Annals of Biomedical Engineering* (2021).
+
+-->

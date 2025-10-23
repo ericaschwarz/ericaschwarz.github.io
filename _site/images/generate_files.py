@@ -11,7 +11,7 @@ tile_size = (64, 64)  # width, height
 base_types = {
     "tree":  (80, 160, 80, 255),   # green
     "rock":  (120, 120, 130, 255), # gray-blue
-    "floor": (200, 180, 140, 255)  # tan
+    #"floor": (200, 180, 140, 255)  # tan
 }
 
 
@@ -24,25 +24,6 @@ shapes = [
     "vertical", "horizontal",
     "t_leftopen", "t_upopen", "t_rightopen", "t_downopen",
     "cross", 'full'
-]
-
-player_shapes = [
-    "idle_down_0",
-    "idle_down_1",
-    "idle_up_0",
-    "idle_up_1",
-    "idle_left_0",
-    "idle_left_1",
-    "idle_right_0",
-    "idle_right_1",
-    "walk_down_0",
-    "walk_down_1",
-    "walk_up_0",
-    "walk_up_1",
-    "walk_left_0",
-    "walk_left_1",
-    "walk_right_0",
-    "walk_right_1"
 ]
 
 # --- PNG helper functions ---
@@ -120,7 +101,7 @@ def pattern_for_shape(shape, color, size):
     overlay = np.zeros_like(arr[..., 0])
     mask = np.ones_like(arr[..., 1])
 
-    half = 36 // 2
+    half = 26
     overlay[(x * y) % 11 < 6] = 20
     cx, cy = w // 2, h // 2
 
@@ -155,6 +136,8 @@ def pattern_for_shape(shape, color, size):
         mask = ((abs(x - cx) < half) | ((abs(y - cy) < half) & (x < cx)))
     elif "end_right" in shape:
         mask = ((abs(x - cx) < half) | ((abs(y - cy) < half) & (x > cx)))
+    elif "cross" in shape:
+        mask = ((abs(x - cx) < half) & (abs(y - cy) < half))
 
     overlay[mask] = 40
 
@@ -176,33 +159,6 @@ for base, color in base_types.items():
         with open(filepath, "wb") as f:
             f.write(png_bytes)
         print(f"Created {filepath}")
-
-player_filenames = [
-    'player_idle_down_0.png',
-    'player_idle_up_0.png',
-    'player_idle_left_0.png',
-    'player_idle_right_0.png',
-    'player_walk_down_0.png',
-    'player_walk_down_1.png',
-    'player_walk_up_0.png',
-    'player_walk_up_1.png',
-    'player_walk_left_0.png',
-    'player_walk_left_1.png',
-    'player_walk_right_0.png',
-    'player_walk_right_1.png']
-
-for shape in player_shapes:
-    color = (10, 10, 10, 255)
-
-    filename = 'player_' + shape + '.png'
-    filepath = os.path.join(output_dir, filename)
-
-    arr = pattern_for_player_shape(shape, color, tile_size)
-    png_bytes = array_to_png_bytes(arr)
-
-    with open(filepath, "wb") as f:
-        f.write(png_bytes)
-    print(f"Created {filepath}")
 
 
 print("\nAll patterned PNGs created successfully!")

@@ -12,7 +12,7 @@ export class Player {
     this.moving = false;
     this.frame = 0;
     this.frameTimer = 0;
-    this.frameInterval = 2;
+    this.frameInterval = 3;
     this.animations = {};
   }
 
