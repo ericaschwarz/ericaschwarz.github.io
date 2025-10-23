@@ -78,6 +78,8 @@ Many of the initiators of intimal hyperplasia and inflammation that account for 
 To better understand how pharmacological interventions interact with biomechanical drivers of growth and remodeling, I will develop a multiscale framework that links cell-signaling dynamics to tissue-level remodeling behavior, with the ultimate goal of identifying novel pharmacological targets in vascular grafts.
 
 ### Approach
+I will develop a multiscale growth and remodeling (G&R) framework that couples cellular signaling pathways with tissue-level mechanics to predict how pharmacological and mechanical factors shape vascular graft adaptation.
+
 To create the next generation of G&R models, I will integrate mechanistic cell-signaling models into my FSG framework (Fig. 2). This will allow for prediction of how both mechanical forces and pharmacological interventions can affect the physiological function of vascular grafts.  
 
 The FSG framework currently relies only on the deformation-dependent material stiffness tensor to assemble the finite element solver tangent matrix, making it appropriate to integrate cell-signaling networks directly into the governing equations for kinematic growth and material properties without having to change the architecture of the finite element solver itself.  
