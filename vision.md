@@ -108,9 +108,18 @@ I have also leveraged machine learning to strengthen clinical decision-making. P
 
 ---
 
-## Future research
+<details>
+  <summary>
+  <span class="summary-title">Future research</span><br>
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div markdown="1">
 
 My long-term research program will extend cell-to-tissue simulation coupling to capture the impact of mechanosensitivity and exogenous factors on cellular gene expression. This research will inform pharmacological and surgical intervention strategies based on patient-specific geometries, hemodynamics, and eventually biomarkers that indicate patient-specific responses in modeled cell-signaling networks. In addition to direct clinical prediction, these developments will allow for the creation of synthetic datasets that mimic in vivo behavior and will greatly reduce the cost of training large-data models and transferring them to the clinical setting. In parallel, this research will create strong collaborations in medical uncertainty quantification and fundamental studies of cardiovascular biology. Initial stages of this future work will focus on applications in congenital heart defects, vascular graft design, and aneurysm forecasting.
+  </div>
+
+</details>
 
 --- 
 
