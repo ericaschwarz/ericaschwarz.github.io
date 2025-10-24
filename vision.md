@@ -34,16 +34,36 @@ My background in **mechanical engineering, bioengineering, and computer science*
 
 ---
 
-## Significance
+
+<details>
+  <summary>
+  <span class="summary-title">Significance</span><br>
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div markdown="1">
+
 The **FDA** and other leading medical organizations have recognized computational modeling as key component of accelerating medical innovation. 
 Physics-based simulations of cardiovascular systems are now routinely used to model **hemodynamics, tissue mechanics, and physiology**, but multiscale models are needed to predict **long-term, clinically relevant outcomes** across complex disease states.
 
+  </div>
+
+</details>
 ---
 
-## Approach
+<details>
+  <summary>
+  <span class="summary-title">Approach</span><br>
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div markdown="1">
 
 I complete the cell-to-tissue-to-organ simulation pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision making while simultaneously creating robust tools for continued research.
 
+  </div>
+
+</details>
 ---
 
 
@@ -205,8 +225,15 @@ This work will produce a novel artificial intellegince framework that utilizes p
 
 </details>
 ---
+<details>
+  <summary>
 
-## Funding
+  <span class="summary-title">Funding</span><br>
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div markdown="1">
 
 I have an established record of obtaining funding for my research. The first three years of my Ph.D. were funded by an NSF Graduate Research Fellowship. The final portion of my doctoral work was funded by the AHA Predoctoral Fellowship. In my postdoctoral research, I applied for and was approved for an NSF ACCESS resource award as the primary investigator.  
 
@@ -215,6 +242,10 @@ I will support my research aims as an assistant professor by applying for fundin
 This research is also appropriate for funding from private institutions such as the AHA, Additional Ventures, the Children’s Heart Foundation, and the Marfan Foundation. Given my success in obtaining funding for doctoral research, I will mentor my students to apply for external fellowships from NSF, AHA, HHMI, and NIH.  
 
 I will additionally apply to NSF ACCESS for resource awards that can supplement the computational resources available through the university high performance computing center.
+
+  </div>
+
+</details>
 
 <!--
 
