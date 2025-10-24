@@ -11,7 +11,11 @@ I have used **multiscale physics-based simulations** based on interpretable biol
 
 ### Research Pathway
 
-This research began with **robust FSG solvers and predictive frameworks** (2023–2024), then progressed to **machine learning-driven identification of cellular and biomechanical** drivers of disease (2024–2025), enabling cross-scale prediction of cardiovascular outcomes.  
+My foundation in machine learning was established as an undergraduate at Johns Hopkins, where I double majored in computer science (with a concentration in computational medicine) along with my biomedical engineering major. At that time, I completed courses in machine learning, computer vision, and surgical robotics, alongside computer science fundamentals. These early experiences gave me a lasting familiarity with computational tools that continued to shape my research vision as I moved into biomechanics.
+
+As artificial intelligence has become a central topic in many research fields, this background has been invaluable for integrating data-driven approaches into my work where they complement mechanistic insight. As I have developed projects at this intersection, it has become clear to me that these approaches can be used jointly to increase the predictive power, precision, and interpretability of both. With these insights in mind, I plan to use machine learning not as a catch-all solution, but as a targeted tool for advancing our understanding of complex biological systems.
+
+Currently, my multiscale work is focused on diving even more deeply into mechanistic models at the cellular level. I have established a **gene expression-to-tissue models utilizing RNA-sequencing data** for modeling developing pulmonary arteries, with the aim of providing insights into critical age ranges for surgical intervention in patients with congenital heart defects. I have also worked closely with top researchers in the field of artificial intelligence to generate in silico datasets for machine learning that will be translated into the clinical setting to predict disease outcomes. Through these collaborations, I have gained appreciation for how to use multiscale modeling and machine learning to responsibly and impactfully build models capable of advancing cardiovascular medicine.
 
 ### Selected Publications
 
