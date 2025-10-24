@@ -25,9 +25,9 @@ layout: default
   [Link](https://doi.org/10.1101/2025.10.08.681286)
 
 - **Neural Operators for Forecasting Thoracic Aortic Aneurysm Growth and Rupture**  
-  **Schwarz, E. L.**, **Cao, Q.**, Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)  
-  *In Preparation*  
-  [Link](/publications)
+  Cao, Q. *(co-first)*, **Schwarz, E. L.** *(co-first)*,  Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)
+  *bioRxiv, Submitted to Biomechanics and Modeling in Mechanobiology*  
+  [Link](https://doi.org/10.1101/2025.10.20.683467)
 
 ### Selected Publications 
 
