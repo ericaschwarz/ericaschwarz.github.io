@@ -179,17 +179,15 @@ Applying my FSG framework to intracranial aneurysms will make it possible to sim
 
 It has been hypothesized that oscillatory shear stress contributes to aneurysm initiation and progression. Despite this, oscillatory shear stress mediation of G&R has not previously been incorporated into constrained mixture approaches. To address this limitation, I will incorporate the phenomenological response of cells to oscillatory shear stress into the FSG framework.  
 
+ This contrasts with other approaches, such as physics-based neural networks, that seek to integrate physical governing equations into the neural network itself. This approach is powerful because it seeks to utilize the same format of data as expected from clinical inputs, but allows for expanded training possibilities. 
+
 This will be a novel application of constrained mixture theory and provide new, predictive insights into mechanisms of intracranial aneurysm growth and rupture. As previously established, simulated data can be used to supplement scarce or incomplete clinical data when training large-data models.  
 
 I will further the clinical impact of this work by training large-data neural operators on these models and using transfer learning to predict outcomes in clinical aneurysm cases.
 
 ### Outcomes
 
-This work will produce a novel artificial learning framework that utilizes physics-based aneurysm simulation as training data. This contrasts with other approaches, such as physics-based neural networks, that seek to integrate physical governing equations into the neural network itself. This approach is powerful because it seeks to utilize the same format of data as expected from clinical inputs, but allows for expanded training possibilities. As applications for artificial intelligence continue to be adapted to the clinical setting, this is an important approach to quantify and develop.
-
-Because the FSG simulations will allow for interpretable integration of specific hypothesis of aneurysm formation and progression, this framework will also allow for uncovering hypothetical drivers of aneurysmal disease. This will provide biomechanical insights and also recommend areas for experimental investigation.
-
-This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also elucidate biomechanical contributors to intracranial aneurysm growth and rupture.
+This work will produce a novel artificial intellegince framework that utilizes physics-based aneurysm simulation as training data. Because the FSG simulations will allow for interpretable integration of specific hypothesis of aneurysm formation and progression, this framework will also allow for uncovering hypothetical drivers of aneurysmal disease. This will provide biomechanical insights and also recommend areas for experimental investigation. This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also establish the foundation for expanded use of in silico datasets and machine learning to work together in many other clinical applications, including aortic aneurysm.
 
 <figure style="max-width: 90%; margin: auto; background-color: white; border-radius: 10px; padding: 10px;">
   <a href="/assets/figure-01.svg" target="_blank">
