@@ -234,7 +234,9 @@ This work will produce a novel artificial intellegince framework that utilizes p
   </div>
 
 </details>
+
 ---
+
 <details>
   <summary>
 
