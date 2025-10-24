@@ -25,7 +25,7 @@ Currently, my multiscale work is focused on diving even more deeply into mechani
   [Link](https://doi.org/10.1101/2025.06.03.657639)
 
 - **Neural Operators for Forecasting Thoracic Aortic Aneurysm Growth and Rupture**  
-  Cao, Q. *(co-first)*, **Schwarz, E. L.** *(co-first)*,  Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)
+  Cao, Q. *(co-first)*, **Schwarz, E. L.** *(co-first)*,  Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)  
   *In Preperation*  
   [Link](/multiscale)
 
