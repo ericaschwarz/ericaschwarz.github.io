@@ -26,13 +26,13 @@ Currently, my multiscale work is focused on diving even more deeply into mechani
 
 - **Neural Operators for Forecasting Thoracic Aortic Aneurysm Growth and Rupture**  
   Cao, Q. *(co-first)*, **Schwarz, E. L.** *(co-first)*,  Li, D. S., Goswami, S., Means, C. W., Assi, R., Humphrey, J. D., & Karniadakis, G. T. (2025)
-  *In Preperation*
-  [Link](https://doi.org/10.1101/2025.10.20.683467)
+  *In Preperation*  
+  [Link](/multiscale)
 
 - **Mechanisms Driving Thoracic Aortic Aneurysm Stability**  
   **Schwarz, E. L.**, Li, D. S., C. W. Means, R., Assi, & Humphrey, J. D. (2025)  
   *bioRxiv, Submitted to Biomechanics and Modeling in Mechanobiology*  
-  [Link](/multiscale)
+  [Link](https://doi.org/10.1101/2025.10.20.683467)
 
 - **A Cross-scale Causal Mapping Framework Pinpoints Macrophage Orchestrators of Balanced Arterial Development**  
   Han, J., Kong, D., **Schwarz, E. L.**, Takaesu, F., Lee, S., Kim, C., Yang, E., Park, M., Kim, E., Kim, W., Ramachandra, A. B., Manning, E. P., Humphrey, J. D., Park, H., & Davis, M. (2025)  
