@@ -49,6 +49,7 @@ Physics-based simulations of cardiovascular systems are now routinely used to mo
   </div>
 
 </details>
+
 ---
 
 <details>
@@ -64,6 +65,7 @@ I complete the cell-to-tissue-to-organ simulation pipeline using in silico model
   </div>
 
 </details>
+
 ---
 
 
@@ -88,7 +90,6 @@ Through this work, I demonstrated the clinical relevance of CFD modeling by enab
 </details>
 
 ---
-
 
 <details>
   <summary>
