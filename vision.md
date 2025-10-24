@@ -155,7 +155,7 @@ Using this framework, I will predict optimal drug pathways, delivery timings, an
 
 ---
 
-<details open>
+<details>
   <summary>
 
   <span class="summary-title">3. Forecasting Intracranial Aneurysm Growth and Rupture through Integrating Machine Learning and In Silico Model Datasets</span><br>
@@ -175,15 +175,11 @@ To address these limitations and enable the next generation of predictive aneury
 
 ### Approach
 
-Applying my FSG framework to intracranial aneurysms will make it possible to simulate evolving aneurysm wall composition and material properties in response to patient-specific hemodynamics.  
+The FSG framework I developed as part of my graduate research is capable of simulating evolving wall composition and material properties in response to patient-specific hemodynamics. Building on my postdoctoral work in thoracic aortic aneurysms, which reproduced clinically-relevant aneurysm phenotypes arising from diverse contributers to vascular injury, this effort will extend the framework to capture additional cellular and tissue responses that contribute to aneurysm formation observed in cerebral vessels. In particular, it will incorporate known mechanical stressors that drive maladaptive cellular behavior leading to aneurysmal remodeling.
 
-It has been hypothesized that oscillatory shear stress contributes to aneurysm initiation and progression. Despite this, oscillatory shear stress mediation of G&R has not previously been incorporated into constrained mixture approaches. To address this limitation, I will incorporate the phenomenological response of cells to oscillatory shear stress into the FSG framework.  
+An intial focus for multiscale modeling development will be integrating the role of oscillatory shear stress in aneurysm initiation and progression. Although high oscillatory shear indexe has long been hypothesized to influence disease progression, its contribution to aneurysmal growth and remodeling has not previously been able to be integrated into existing constrained mixture formulations. I will incorporate phenomenological representations of cellular responses to oscillatory shear stress into the FSG framework, leveraging the only finite-element implementation capable of coupling patient-specific, three-dimensional fluid dynamics to fully time-resolved constrained mixture theory. Having such high-fidelity spatial resolution is of particular interest in intracranial aneurysms, as they have a wide range of geometries and tortuosity that are thought to drive aneurysm progression, and the interacting flow field can not easily be captured using idealized models.
 
- This contrasts with other approaches, such as physics-based neural networks, that seek to integrate physical governing equations into the neural network itself. This approach is powerful because it seeks to utilize the same format of data as expected from clinical inputs, but allows for expanded training possibilities. 
-
-This will be a novel application of constrained mixture theory and provide new, predictive insights into mechanisms of intracranial aneurysm growth and rupture. As previously established, simulated data can be used to supplement scarce or incomplete clinical data when training large-data models.  
-
-I will further the clinical impact of this work by training large-data neural operators on these models and using transfer learning to predict outcomes in clinical aneurysm cases.
+The resulting simulations will provide mechanistic insights into aneurysm growth and rupture. They will also serve as high-fidelity in silico datasets to augment limited clinical data for machine learning. I will train large-data neural operator models on these simulations and apply transfer learning to predict outcomes in clinical aneurysm cases. This approach is distinct from physics-informed neural networks, which embed physical equations within the model itself. Instead, it uses simulated data that mirror the format of clinical inputs, enabling expanded training opportunities while maintaining direct compatibility with patient data. An initial resource to readily begin this work includes already existing compilations of intracranial geometries and outcomes. After viability of this approach is demonstrated, further collaborations with clinicians can be built to perform a prospective study to validate its predictive power.
 
 ### Outcomes
 
