@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Research Vision | Erica L. Schwarz, Ph.D.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Research Vision" />
+<meta name="author" content="Erica L. Schwarz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling." />
+<meta property="og:description" content="Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling." />
+<link rel="canonical" href="http://localhost:4000/vision.html" />
+<meta property="og:url" content="http://localhost:4000/vision.html" />
+<meta property="og:site_name" content="Erica L. Schwarz, Ph.D." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Research Vision" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Erica L. Schwarz"},"description":"Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling.","headline":"Research Vision","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/headshot_2024_high_contrast_square.png"},"name":"Erica L. Schwarz"},"url":"http://localhost:4000/vision.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b01341a5a5bf0d1f0cd16c6256cc61ac09de3f60">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="https://kit.fontawesome.com/b3c120bfee.js" crossorigin="anonymous"></script>
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+
+
+        <nav class="nav-tree">
+          <ul>
+            <li>
+                <div class="nav-parent">
+                  <a href="#" class="toggle-top" onclick="toggleTopNav(event)">
+                    <span class="menu-icon">☰</span> Menu
+                  </a>
+                </div>
+              <ul class="subnav" id="top-nav">
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/">Home</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/research">Research</a>
+                      
+                        <a href="#" class="toggle" onclick="toggleSubnav(event)">▾</a>
+                      
+                    </div>
+                    
+                      <ul class="subnav">
+                        
+                          <li><a href="/research/solver">Multiphysics Solvers</a></li>
+                        
+                          <li><a href="/research/translation">Clinical Translation</a></li>
+                        
+                          <li><a href="/research/multiscale">Machine Learning</a></li>
+                        
+                      </ul>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/publications">Publications</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/vision">Vision</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/teaching">Teaching</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/cv">CV</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/contact">Contact</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/surprise">Surprise me!</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <br>
+
+        <script>
+        function toggleSubnav(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const toggle = event.currentTarget;
+          const subnav = toggle.closest('li').querySelector('.subnav');
+          subnav.classList.toggle('expanded');
+          toggle.textContent = subnav.classList.contains('expanded') ? '▴' : '▾';
+        }
+
+
+        // Toggle the top-level "Menu" navigation
+        function toggleTopNav(event) {
+          event.preventDefault();
+          const topNav = document.getElementById('top-nav');
+          const isExpanded = topNav.classList.toggle('expanded');
+
+          const toggle = event.currentTarget;
+          const icon = toggle.querySelector('.menu-icon');
+
+          // Change the icon between ☰ (hamburger) and ✕ (close)
+          icon.textContent = isExpanded ? '✕' : '☰';
+        }
+
+        // Expand by default if on index page
+        document.addEventListener("DOMContentLoaded", function() {
+          if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
+            const topNav = document.getElementById('top-nav');
+            const toggle = document.querySelector('.toggle-top');
+            const icon = toggle.querySelector('.menu-icon');
+
+            topNav.classList.add('expanded');
+            icon.textContent = '✕'; // Show close icon
+          }
+        });
+        </script>
+
+        <style>
+        .nav-tree ul {
+          list-style: none;
+          padding-left: 0;
+          margin: 0;
+        }
+
+        .nav-tree li {
+          margin: 0.2em 0;
+        }
+
+        .nav-tree .nav-parent {
+          display: flex;
+          align-items: center;
+          gap: 0.1em;
+          font-size: 1.1em;
+        }
+
+        .nav-tree .toggle,
+        .nav-tree .toggle-top {
+          text-decoration: none;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-size: 1.0em;
+          line-height: 1;
+        }
+
+        /* Child links font size increase */
+        .nav-tree .subnav a {
+          font-size: 0.9em; /* adjust as desired */
+          text-decoration: none;
+        }
+
+        .nav-tree .subnav {
+          display: none;
+          margin-left: 0.0em;
+          border-left: 1px solid #ccc;
+          padding-left: 0.75em;
+        }
+
+        .nav-tree .subnav.expanded {
+          display: block;
+        }
+
+        </style>
+
+        <h1><a href="http://localhost:4000/">Erica L. Schwarz, Ph.D.</a></h1>
+
+        
+
+        
+        <p class="view"><a href="https://github.com/ericaschwarz/ericaschwarz.github.io">View the Project on GitHub <small>ericaschwarz/ericaschwarz.github.io</small></a></p>
+        
+
+        <!---->
+
+        
+
+        
+          <div class="social-links" style="display:flex; gap:0.8em; justify-content:center; margin:1em 0; font-size:0.9em;">
+            
+              <a href="https://github.com/schwarz-e" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-github" style="font-size:1.5em;"></i>
+                <span>GitHub</span>
+              </a>
+            
+            
+              <a href="https://linkedin.com/in/erica-schwarz-41886772" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-linkedin" style="font-size:1.5em;"></i>
+                <span>LinkedIn</span>
+              </a>
+            
+            
+              <a href="https://scholar.google.com/citations?user=s4mUv1AAAAAJ" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fas fa-graduation-cap" style="font-size:1.5em;"></i>
+                <span>Google Scholar</span>
+              </a>
+            
+            
+              <a href="https://orcid.org/0000-0003-3219-6653" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-orcid" style="font-size:1.5em;"></i>
+                <span>ORCID</span>
+              </a>
+            
+          </div>
+        
+  
+      </header>
+      <section>
+
+      <h1 id="research-vision">Research Vision</h1>
+
+<hr />
+
+<style>
+summary {
+  font-weight: 700;
+  font-size: 1.5em;        /* ≈ ## heading size */
+  cursor: pointer;
+  line-height: 1.2;
+  color: #267CB9;
+  margin-bottom: 0.5em;
+}
+summary:hover {
+  color: #069;
+}
+.summary-sub {
+  display: block;
+  font-size: 0.8em;               /* same as normal body text */
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+</style>
+
+<h2 id="vision">Vision</h2>
+
+<p>Cardiovascular disease is the leading cause of death in the United States. Many biomedical advancements have deepened our understanding of vascular biology. This includes the use of <strong>RNA-sequencing</strong> to identify changes in gene expression that both cause and are caused by disease. Despite this, no one has robustly translated these findings into clinically actionable models that can guide patient-specific treatment plans. This gap exists because it is difficult to bridge how cellular-level behavior alters tissue-level mechanics and ultimately affects whole-body cardiovascular performance. I will lead research that integrates multiscale data– from molecular and cellular measurements to organ-scale mechanics– into cardiovascular models that will generate <strong>actionable predictions</strong> of human-scale cardiovascular outcomes and identify the biomechanical drivers of disease.</p>
+
+<p>My research vision is to integrate new technologies, such as <strong>RNA-sequencing informed cell-signaling networks</strong> into physics-based simulations of <strong>computational fluid dynamics (CFD) and soft tissue growth and remodeling (G&amp;R)</strong>. These technologies provide an improved understanding of the mechanistic drivers of biological behavior, enabling models that capture both biochemical and hemodynamic influences on vascular disease. This will create predictive tools that clinicians can <strong>safely and reliably</strong> use in cardiovascular care. Such models will also provide <strong>robust, interpretable</strong> in silico datasets to train <strong>machine learning</strong> frameworks, accelerating their validation and translation into the clinical setting. Together, this portfolio of work will create a cell-to-tissue-to-organ modeling framework that will have wide-reaching utility for investigating cardiovascular diseases ranging from congenital heart defect treatment planning to intracranial aneurysm outcome forecasting.</p>
+
+<p>My background in <strong>mechanical engineering, bioengineering, and computer science</strong> strongly equips me to address these challenges, as demonstrated by my previous success in leading multi-disciplinary, multi-institutional projects.</p>
+
+<hr />
+
+<details>
+  <summary>
+  <span class="summary-title">Significance</span><br />
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div>
+
+    <p>The <strong>FDA</strong> and other leading medical organizations have recognized computational modeling as a key component of accelerating medical innovation. 
+Physics-based simulations of cardiovascular systems are now routinely used to model <strong>hemodynamics, tissue mechanics, and physiology</strong>, but multiscale models are needed to predict <strong>long-term, clinically relevant outcomes</strong> across complex disease states.</p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+  <span class="summary-title">Approach</span><br />
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div>
+
+    <p>I complete the cell-to-tissue-to-organ simulation pipeline using in silico models of cell-signaling, cardiovascular flow, and global blood circulation. Using my foundations in biology and medicine, I tailor the combination of mechanistic and phenomenological models to capture relevant biological detail while maintaining computational tractability. This approach yields insights into the initiation and progression of cardiovascular disease which aids clinical decision-making while simultaneously creating robust tools for continued research.</p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+  <span class="summary-title">Doctoral Research</span><br />
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div>
+
+    <p>I completed my Ph.D. at <strong>Stanford University</strong> under the supervision of Dr. Alison Marsden, a leader in the field of <strong>computational fluid dynamics</strong> (CFD). Here, I led a comprehensive analysis of the first U.S. clinical trial evaluating tissue-engineered vascular grafts (TEVGs) for the treatment of congenital heart defects (CHDs).</p>
+
+    <p>I coupled patient-specific CFD simulations with <strong>lumped parameter networks</strong> (LPNs) and identified geometric thresholds for symptomatic behavior (Fig. 1). These insights contributed to the renewal of the clinical trial that allowed for further use of TEVGs to treat CHDs.</p>
+
+    <p>To further this work, I developed a fully 3D fluid-solid-growth (FSG) framework capable of simulating mechanobiologically driven G&amp;R within a finite element fluid–structure interaction (FSI) solver. This enabled long-term, patient-specific predictions of hemodynamic evolution, wall morphology, tissue composition, and material properties.</p>
+
+    <p>Through this work, I demonstrated the clinical relevance of CFD modeling by enabling mechanobiologically motivated studies of vascular evolution in complex domains. I was nationally recognized for this contribution to computational mechanics as a finalist for the Melosh Medal Competition.</p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+  <span class="summary-title">Postdoctoral Research</span><br />
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div>
+
+    <p>During my work with Dr. Jay Humphrey at Yale, a leader in vascular biomechanics and mechanobiology, I developed a G&amp;R framework that incorporated time-resolved gene expression from RNA sequencing into a constrained mixture model of pulmonary artery development. Further development will use this work to investigate how hypoxia caused by CHDs disrupts pulmonary artery development.</p>
+
+    <p>I have also leveraged machine learning to strengthen clinical decision-making. Previously, the difficulty of acquiring high-fidelity clinical data has limited the use of large-data machine learning models to predict cardiovascular disease outcomes. To address this need in predicting thoracic aortic aneurysm growth, I used my FSG framework to generate cohorts of clinically relevant models and worked with machine learning experts to identify the optimal neural operators for forecasting long-term aneurysm growth. Future work will use these in silico datasets to train large-data neural network models and then transfer this learning to a smaller set of clinical data, accelerating clinical translation of machine learning tools.</p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+  <span class="summary-title">Future research</span><br />
+  <span class="summary-sub">Click to expand.</span>
+  </summary>
+
+  <div>
+
+    <p>My long-term research program will extend cell-to-tissue simulation coupling to capture the impact of mechanosensitivity and exogenous factors on cellular gene expression. It will also integrate how organ-scale hemodynamics grow and evolve over time, creating a true cell-to-tissue-to-organ framework. This research will inform pharmacological and surgical intervention strategies based on patient-specific geometries, hemodynamics, and eventually biomarkers that indicate patient-specific responses in modeled networks. In addition to direct clinical prediction, these developments will allow for the creation of synthetic datasets that mimic in vivo behavior and will greatly reduce the cost of training large-data machine learning models and transferring them to the clinical setting. In parallel, this research will create strong collaborations in medical uncertainty quantification and fundamental studies of cardiovascular biology. Initial stages of this future work will focus on applications in CHDs, vascular graft design, and aneurysm forecasting as detailed in the projects below.</p>
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+
+  <span class="summary-title">1. Predicting Outcomes in Congenital Heart Defect Patients through Multiscale, Multi-Organ Growth and Remodeling</span><br />
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div>
+
+    <h3 id="background">Background</h3>
+    <p>CFD studies of heart diseases have primarily centered around cardiovascular lesions and how they impact local hemodynamics. However, maladaptive outcomes of cardiovascular disease are clinically determined on a whole-body level. A salient example of this is CHDs such as single-ventricle physiology. While the primary outcome of single-ventricle physiology treatment, the Fontan procedure, is the direct impact on local hemodynamics, prominent sequelae include maladaptive remodeling of the liver, lungs, and heart that may lead to liver failure, pulmonary hypertension, and exercise intolerance. More recently, studies have used LPNs to model this whole-body flow, which includes organ-level hemodynamics, but they are not predictive of patient adaptation over time.</p>
+
+    <h3 id="approach">Approach</h3>
+    <p>LPNs are capable of representing whole-body cardiovascular behavior at high computational efficiency through reducing the order of the flow via a circuit analogy. The properties of these LPN elements depend directly on the geometries and material properties of the organ systems they represent with the capacity for patient-specific parameterization. However, they are typically used as static representations of cardiovascular behavior at a single point in time and do not account for how the lumped parameters will adapt under their cardiovascular load. I propose expanding the predictive capabilities of LPNs by integrating G&amp;R behavior directly into the LPN elements, which would represent how the body grows and develops in response to the mechanobiological perturbations caused by cardiovascular lesions.</p>
+
+    <p>Utilizing the low-dimensional properties of LPNs to model whole-body flow and integrating phenomenological G&amp;R trends (similar to those governing constrained mixture theory implemented in my FSG framework) will allow forecasting of organ-scale cardiovascular performance over time. This will transform static representations of whole-body performance to a dynamic system capable of accounting for how disruptions to a system sub-block propagate to changes throughout the body.</p>
+
+    <p>This integration provides a rich opportunity for ongoing collaboration with clinicians. Novel quantification of G&amp;R behavior can be formed from population-level data, including trends in pressures, heart rates, oxygen saturations, and blood flows (directly measured, if available, or allometrically calculated, if not). While integration of clinical data can be limited by the inconsistency of record-keeping, particularly in pediatric diseases, leveraging a large population of data from both healthy and diseased patients will allow trends in G&amp;R behavior to appear overall. These trends will inform the best-fit parameters of constrained mixture G&amp;R for each lumped system in the circulation. After establishing this governing behavior, coupling of LPNs to 3D models of cardiovascular lesions will allow the prediction of how specific geometries will affect the overall trajectory of disease. Additionally, gene expression information can be leveraged to inform G&amp;R behavior. This approach will be particularly relevant in conditions with known genetic origins (e.g., Marfan syndrome, Williams syndrome).</p>
+
+    <h3 id="outcomes">Outcomes</h3>
+    <p>This framework will identify mechanisms of exercise intolerance and organ failure and enable early identification of patients at risk for adverse outcomes. Initial investigations will identify mechanisms of liver disease, pulmonary hypertension, and heart failure in CHD patients, but such a system can be expanded to other pathways of investigation where there are known system-level effects of local hemodynamics that evolve over time, such as aortic coarctation (where local hemodynamics of the aorta cause adverse cardiac remodeling).</p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+
+  <span class="summary-title">2. Identifying Pharmacological Targets in Vascular Grafts through Multiscale, Multi-Cell Growth and Remodeling</span><br />
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div>
+
+    <h3 id="background-1">Background</h3>
+    <p>Vascular grafts (both tissue-engineered and autologous) are widely used to repair damaged blood vessels, but maintaining patency remains a major challenge. Clinicians have noted the propensity of TEVGs to stenose and occlude through a combination of mechanical cues, such as altered wall shear stress, and inflammatory responses, particularly macrophage infiltration. The same is true for autologous vein grafts often used in coronary artery bypass grafting (CABG). Identifying methods to improve the functionality of vascular grafts is of high clinical interest given the large number of patients affected.</p>
+
+    <p>Many of the initiators of intimal hyperplasia and inflammation that account for this narrowing arise at the cellular level and are driven by inflammatory signaling pathways that regulate smooth muscle proliferation and matrix deposition. Current therapies rely on anti-inflammatory drugs, an approach that can be combined with cardiovascular devices such as drug-eluting stents. However, these solutions are incomplete, and recurrent narrowing frequently necessitates reoperation.</p>
+
+    <p>To better understand how pharmacological interventions interact with biomechanical drivers of G&amp;R, I will develop a multiscale framework that links cell-signaling dynamics to tissue-level remodeling behavior, with the ultimate goal of identifying novel pharmacological targets in vascular grafts.</p>
+
+    <h3 id="approach-1">Approach</h3>
+    <p>I will develop a multiscale G&amp;R framework that couples mechanistic cell-signaling models with the FSG solver to predict how pharmacological and mechanical factors jointly influence vascular graft adaptation (Fig. 2). This framework will enable quantitative predictions of how targeted interventions alter cellular activity, extracellular matrix turnover, and overall graft function.</p>
+
+    <p>Because the FSG framework assembles its tangent matrix from the deformation-dependent stiffness tensor, it can integrate new governing equations for kinematic growth and material property evolution from cell-signaling networks within the existing FSG framework without altering the architecture of the finite element solver itself. This will allow me to leverage existing solvers and focus my approach on developing new cell-signaling pathways of interest. Recent studies have created models of macrophage and smooth muscle behavior, two critical classes of cells responsible for graft occlusion, and linked their dynamics to exogenous input. I will expand these classes to include other cell types implicated in inflammation and intimal hyperplasia, including endothelial cells and additional macrophage phenotypes. These models will initially be built based on published data, but will expand to incorporate new data gathered with experimental collaborators.</p>
+
+    <p>Using this multiscale framework, I will identify optimal targets for drug delivery that selectively inhibit macrophage activity and excessive cell proliferation in vascular grafts while preserving functional smooth muscle and endothelial cell activity. I will apply this model to two representative contexts: (i) TEVGs, focusing on the effects of angiotensin II receptor antagonists, which have been shown to inhibit pro-inflammatory signaling pathways, and (ii) autologous vein grafts for CABG, focusing on mTOR pathway inhibitors, which are currently used in drug-eluting stents to inhibit cell proliferation after coronary angioplasty.</p>
+
+    <h3 id="outcomes-1">Outcomes</h3>
+    <p>Using this framework, I will predict optimal drug pathways, delivery timings, and dosage strengths to promote the long-term patency of vascular grafts. This will improve patient health and lower the incidence of surgical revisions necessitated by graft occlusion. This work is also highly innovative as, together with my broader research portfolio, it will yield the first <em>cell-to-tissue-to-organ</em> model of evolving vessels.</p>
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+
+  <span class="summary-title">3. Forecasting Intracranial Aneurysm Growth and Rupture through Integrating Machine Learning and In Silico Model Datasets</span><br />
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div>
+
+    <h3 id="background-2">Background</h3>
+    <p>Intracranial aneurysms arise from weakened areas of the arterial wall in the brain. The rupture of an aneurysm occurs when mechanical forces exceed the strength of the vascular wall. Ruptured intracranial aneurysms carry severe risk with a mortality rate of 45% and a morbidity rate of 25%.</p>
+
+    <p>Because of this, there is intense clinical interest in predicting the growth and rupture of intracranial aneurysms. In recent years, considerable effort has been put towards using patient-specific CFD to correlate hemodynamic metrics such as wall shear stress and oscillatory stress to patient outcomes. However, these correlations are not predictive, and there has been limited success in finding thresholds for patient-specific clinical decision-making. Researchers have also turned to large-data machine learning models as another method of predicting outcomes. However, obtaining precision results is hampered by the scarcity of high-fidelity clinical data. High resolution imaging, flow, and tissue information that would increase predictive power are rarely available at sufficient scale for neural network training.</p>
+
+    <p>To address these limitations and enable the next generation of predictive aneurysm models, I will integrate physics-based G&amp;R simulations with large-data neural operators. By coupling hemodynamic and biomechanical drivers of aneurysm formation, growth, and rupture, these simulations will create rich datasets for neural network training. Transfer learning can then link simulated and clinical data, increasing predictive accuracy while reducing the need for extensive clinical data.</p>
+
+    <h3 id="approach-2">Approach</h3>
+
+    <p>The FSG framework I developed as part of my graduate research is capable of simulating evolving wall composition and material properties in response to patient-specific hemodynamics. Building on my postdoctoral work in thoracic aortic aneurysms, which reproduced clinically-relevant aneurysm phenotypes arising from diverse contributers to vascular injury, this effort will extend the framework to capture additional cellular and tissue responses that contribute to aneurysm formation observed in cerebral vessels. In particular, it will incorporate known mechanical stressors that drive maladaptive cellular behavior leading to aneurysmal remodeling.</p>
+
+    <p>An initial focus for multiscale modeling development will be integrating the role of oscillatory shear stress in aneurysm initiation and progression. Although high oscillatory shear index has long been hypothesized to influence disease progression, existing constrained mixture formulations have not previously incorporated its contribution to aneurysmal G&amp;R. I will incorporate phenomenological representations of cellular responses to oscillatory shear stress into the FSG framework, leveraging the only finite-element implementation capable of coupling patient-specific, three-dimensional fluid dynamics to fully time-resolved constrained mixture theory. Having such high-fidelity spatial resolution is of particular interest in intracranial aneurysms, as they have a wide range of geometries and high tortuosity that are thought to drive aneurysm progression, and idealized models cannot easily capture the resulting flow fields.</p>
+
+    <p>The resulting simulations will provide mechanistic insights into aneurysm growth and rupture. They will also serve as high-fidelity in silico datasets to augment limited clinical data for machine learning. I will train large-data neural operator models on these simulations and apply transfer learning to predict outcomes in clinical aneurysm cases. This approach is distinct from physics-informed neural networks, which embed physical equations within the model itself. Instead, it uses simulated data that mirror the format of clinical inputs, enabling expanded training opportunities while maintaining direct compatibility with patient data. An initial resource to readily begin this work includes already existing compilations of intracranial geometries and outcomes. After viability of this approach is demonstrated, I will build further collaborations with clinicians to perform a prospective study to validate its predictive power.</p>
+
+    <h3 id="outcomes-2">Outcomes</h3>
+
+    <p>This work will produce a novel machine learning framework, specifically large-data neural operator models, that utilizes physics-based aneurysm simulation as training data. Because the FSG simulations will allow for interpretable integration of specific hypotheses of aneurysm formation and progression, this framework will also allow for uncovering hypothetical drivers of aneurysmal disease. This will provide biomechanical insights and also recommend areas for further experimental investigation. This research will guide clinical decision-making and reduce the morbidity and mortality associated with intracranial aneurysms. It will also establish the foundation for expanded use of in silico datasets and machine learning to work together in many other clinical applications, including aortic aneurysm.</p>
+
+    <figure style="max-width: 90%; margin: auto; background-color: white; border-radius: 10px; padding: 10px;">
+  <a href="/assets/figure-01.svg" target="_blank">
+    <img src="/assets/figure-01.svg" alt="Diagram of aneurysms" style="width:100%; border-radius:10px; background-color:white;" />
+  </a>
+  <figcaption style="text-align:center; margin-top:8px;">
+    <em>
+      Different insult types contributing to disease progression can result in similar pre-aneurysmal lesions at intermediate times. Despite these initial geometrical similarities, continued progression can result in different outcomes, 
+      depending on the underlying mechanisms of insult.
+    </em>
+  </figcaption>
+</figure>
+
+    <p><br /></p>
+
+  </div>
+
+</details>
+
+<hr />
+
+<details>
+  <summary>
+
+  <span class="summary-title">Funding</span><br />
+  <span class="summary-sub">Click to expand.</span>
+
+  </summary>
+
+  <div>
+
+    <p>As an assistant professor, I will build a diverse portfolio of funding support to create a sustainable and robust research program that promotes high-impact discovery and student training. I have a consistent record of obtaining competitive funding for my research. The first three years of my Ph.D. were supported by an NSF Graduate Research Fellowship, and the final portion of my doctoral work was funded by an AHA Predoctoral Fellowship. During my postdoctoral training, I served as the principal investigator on an NSF ACCESS Resource Award.</p>
+
+    <p>The medical and engineering components of this work are well aligned with the funding priorities of the NIH, particularly the NHLBI and NIBIB. In addition to traditional early-career R21 mechanisms, I will apply for the Trailblazer R21, which specifically supports high-risk, high-reward research at the intersection of life sciences and engineering. The interdisciplinary scope of Project 3 is particularly well suited to this funding mechanism.</p>
+
+    <p>I will then pursue R01 grants to obtain long-term support. In addition to standard R01 mechanisms, I will apply for the Stephen I. Katz Early Stage Investigator Research Project Grant, which funds innovative projects in new directions for early-stage investigators. Project 2, which integrates multi-scale, multi-cell models with high-impact experimental validation through collaborative work, is ideally suited to this mechanism.</p>
+
+    <p>As early progress validates these efforts, I will apply for R35 awards to expand my research program. Because my aims form a complementary ecosystem of mechanistic and translational projects, the MIRA R35 and NHLBI Emerging Investigator R35 mechanisms are particularly appropriate as next steps.</p>
+
+    <p>This research is also highly competitive for funding from private foundations, including the AHA, Additional Ventures, the Children’s Heart Foundation, and the Marfan Foundation. The clinical and pediatric focus of Aim 1 aligns well with the AV Single Ventricle Research Fund, the AHA Innovative Project Award, and the CHF Independent Research Award. Aims 2 and 3, which examine the genetic and biomechanical mechanisms of aneurysm progression, directly support the goals of the Marfan Foundation.</p>
+
+    <p>Finally, several aspects of this work will yield generalizable frameworks and computational tools valuable to the broader scientific community. To support these efforts, I will apply to funding programs that promote tool and infrastructure development, including the NSF Cyberinfrastructure for Sustained Scientific Innovation (CSSI) Program and the NIH R21/R01 Biomedical Technology Development and Dissemination (BTDD) mechanisms.</p>
+
+  </div>
+
+</details>
+
+<!--
+Add collaboration section to each aim and tailor to specific institution.
+
+---
+
+## Selected References
+1. Schwarz, E. L., *et al.* “Hemodynamic performance of tissue-engineered vascular grafts…” *NPJ Regenerative Medicine* (2021).  
+2. Schwarz, E. L., *et al.* “A fluid–solid–growth solver for cardiovascular modeling.” *CMAME* (2023).  
+3. Schwarz, E. L., *et al.* “Postnatal Pulmonary Artery Development from Transcript to Mechanics.” *In preparation* (2024).  
+4. Schwarz, E. L., *et al.* “Optimal neural operators for forecasting thoracic aortic aneurysm growth.” *In preparation* (2025).
+
+-->
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/ericaschwarz">ericaschwarz</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+# Site settings
+title: Erica L. Schwarz, Ph.D.
+description: Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling.
+url: "https://ericaschwarz.github.io" # replace with your actual GitHub Pages URL
+author: Erica L. Schwarz
+
+# Theme settings
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+# Appearance
+logo: /assets/headshot_2024_high_contrast_square.png  # add a headshot in assets/
+show_downloads: false
+
+# Navigation links (appear in header)
+navigation:
+  - name: Home
+    link: /
+  - name: Research
+    link: /research
+    children:
+      - name: Multiphysics Solvers
+        link: /research/solver
+      - name: Clinical Translation
+        link: /research/translation
+      - name: Machine Learning
+        link: /research/multiscale
+  - name: Publications
+    link: /publications
+  - name: Vision
+    link: /vision
+  - name: Teaching
+    link: /teaching
+  - name: CV
+    link: /cv
+  - name: Contact
+    link: /contact
+  - name: Surprise me!
+    link: /surprise
+
+# Social media
+social_links:
+  github: schwarz-e
+  linkedin: erica-schwarz-41886772
+  scholar: https://scholar.google.com/citations?user=s4mUv1AAAAAJ
+  orcid: https://orcid.org/0000-0003-3219-6653
+
+markdown: kramdown

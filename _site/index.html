@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Erica L. Schwarz, Ph.D. | Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Erica L. Schwarz, Ph.D." />
+<meta name="author" content="Erica L. Schwarz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling." />
+<meta property="og:description" content="Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Erica L. Schwarz, Ph.D." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Erica L. Schwarz, Ph.D." />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Erica L. Schwarz"},"description":"Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling.","headline":"Erica L. Schwarz, Ph.D.","name":"Erica L. Schwarz, Ph.D.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/headshot_2024_high_contrast_square.png"},"name":"Erica L. Schwarz"},"url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b01341a5a5bf0d1f0cd16c6256cc61ac09de3f60">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="https://kit.fontawesome.com/b3c120bfee.js" crossorigin="anonymous"></script>
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+
+
+        <nav class="nav-tree">
+          <ul>
+            <li>
+                <div class="nav-parent">
+                  <a href="#" class="toggle-top" onclick="toggleTopNav(event)">
+                    <span class="menu-icon">☰</span> Menu
+                  </a>
+                </div>
+              <ul class="subnav" id="top-nav">
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/">Home</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/research">Research</a>
+                      
+                        <a href="#" class="toggle" onclick="toggleSubnav(event)">▾</a>
+                      
+                    </div>
+                    
+                      <ul class="subnav">
+                        
+                          <li><a href="/research/solver">Multiphysics Solvers</a></li>
+                        
+                          <li><a href="/research/translation">Clinical Translation</a></li>
+                        
+                          <li><a href="/research/multiscale">Machine Learning</a></li>
+                        
+                      </ul>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/publications">Publications</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/vision">Vision</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/teaching">Teaching</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/cv">CV</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/contact">Contact</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+                  <li>
+                    <div class="nav-parent">
+                      <a href="/surprise">Surprise me!</a>
+                      
+                    </div>
+                    
+                  </li>
+                
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <br>
+
+        <script>
+        function toggleSubnav(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const toggle = event.currentTarget;
+          const subnav = toggle.closest('li').querySelector('.subnav');
+          subnav.classList.toggle('expanded');
+          toggle.textContent = subnav.classList.contains('expanded') ? '▴' : '▾';
+        }
+
+
+        // Toggle the top-level "Menu" navigation
+        function toggleTopNav(event) {
+          event.preventDefault();
+          const topNav = document.getElementById('top-nav');
+          const isExpanded = topNav.classList.toggle('expanded');
+
+          const toggle = event.currentTarget;
+          const icon = toggle.querySelector('.menu-icon');
+
+          // Change the icon between ☰ (hamburger) and ✕ (close)
+          icon.textContent = isExpanded ? '✕' : '☰';
+        }
+
+        // Expand by default if on index page
+        document.addEventListener("DOMContentLoaded", function() {
+          if (window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html')) {
+            const topNav = document.getElementById('top-nav');
+            const toggle = document.querySelector('.toggle-top');
+            const icon = toggle.querySelector('.menu-icon');
+
+            topNav.classList.add('expanded');
+            icon.textContent = '✕'; // Show close icon
+          }
+        });
+        </script>
+
+        <style>
+        .nav-tree ul {
+          list-style: none;
+          padding-left: 0;
+          margin: 0;
+        }
+
+        .nav-tree li {
+          margin: 0.2em 0;
+        }
+
+        .nav-tree .nav-parent {
+          display: flex;
+          align-items: center;
+          gap: 0.1em;
+          font-size: 1.1em;
+        }
+
+        .nav-tree .toggle,
+        .nav-tree .toggle-top {
+          text-decoration: none;
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-size: 1.0em;
+          line-height: 1;
+        }
+
+        /* Child links font size increase */
+        .nav-tree .subnav a {
+          font-size: 0.9em; /* adjust as desired */
+          text-decoration: none;
+        }
+
+        .nav-tree .subnav {
+          display: none;
+          margin-left: 0.0em;
+          border-left: 1px solid #ccc;
+          padding-left: 0.75em;
+        }
+
+        .nav-tree .subnav.expanded {
+          display: block;
+        }
+
+        </style>
+
+        <h1><a href="http://localhost:4000/">Erica L. Schwarz, Ph.D.</a></h1>
+
+        
+          
+            <img src="/assets/headshot_2024_high_contrast_square.png" alt="Logo" />
+            <p>Computational biomechanical engineer studying vascular growth and remodeling using simulation and data-driven modeling.</p>
+          
+        
+
+        
+        <p class="view"><a href="https://github.com/ericaschwarz/ericaschwarz.github.io">View the Project on GitHub <small>ericaschwarz/ericaschwarz.github.io</small></a></p>
+        
+
+        <!---->
+
+        
+
+        
+          <div class="social-links" style="display:flex; gap:0.8em; justify-content:center; margin:1em 0; font-size:0.9em;">
+            
+              <a href="https://github.com/schwarz-e" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-github" style="font-size:1.5em;"></i>
+                <span>GitHub</span>
+              </a>
+            
+            
+              <a href="https://linkedin.com/in/erica-schwarz-41886772" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-linkedin" style="font-size:1.5em;"></i>
+                <span>LinkedIn</span>
+              </a>
+            
+            
+              <a href="https://scholar.google.com/citations?user=s4mUv1AAAAAJ" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fas fa-graduation-cap" style="font-size:1.5em;"></i>
+                <span>Google Scholar</span>
+              </a>
+            
+            
+              <a href="https://orcid.org/0000-0003-3219-6653" target="_blank" style="display:flex; flex-direction:column; align-items:center; text-decoration:none; color:inherit;">
+                <i class="fab fa-orcid" style="font-size:1.5em;"></i>
+                <span>ORCID</span>
+              </a>
+            
+          </div>
+        
+  
+      </header>
+      <section>
+
+      <h1 id="erica-l-schwarz-phd">Erica L. Schwarz, Ph.D.</h1>
+<p><em>Computational Mechanobiology • Biomechanics • Vascular Growth &amp; Remodeling • Neural Operators</em></p>
+
+<p>Welcome! I’m a postdoctoral researcher at Yale University studying <strong>vascular biomechanics</strong> through <strong>computational and data-driven models</strong>.</p>
+
+<p>My work bridges <strong>mechanical engineering, biology, and applied mathematics</strong> to understand and predict how vessels evolve over time.</p>
+
+<p>I am currently working on integrating <strong>constrained mixture theory</strong> of vascular growth and remodeling with <strong>neural operator frameworks</strong> to forecast aneurysm progression and identify biomechanical predictors of rupture risk.</p>
+
+<hr />
+
+<h2 id="research-vision">Research Vision</h2>
+<p>Computational modeling is transforming cardiovascular healthcare, yet current models fall short in predicting <strong>long-term, patient-specific outcomes</strong>.</p>
+
+<p>My vision is to develop <strong>next-generation multiscale models</strong> that integrate <strong>mechanistic growth and remodeling (G&amp;R)</strong> into <strong>computational fluid dynamics (CFD)</strong> simulations of complex cardiovascular geometries.</p>
+
+<p>This approach couples <strong>organ-scale hemodynamics</strong> with <strong>cell- and tissue-level remodeling</strong> to:</p>
+
+<ul>
+  <li>identify biomechanical causes of disease initiation and progression</li>
+  <li>enable precision treatment planning that reduces morbidity and mortality due to cardiovascular disease</li>
+  <li>and leverage physics-based simulations with nascent machine learning techniques to enable clinically actionable predictions.</li>
+</ul>
+
+<p><a href="vision">Explore the full research vision →</a></p>
+
+<hr />
+
+<p><a href="cv">📄 Download CV</a> • <a href="publications">📚 Publications</a> • <a href="research">🔬 Research</a></p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/ericaschwarz">ericaschwarz</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

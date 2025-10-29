@@ -1,0 +1,150 @@
+---
+title: Surprise
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise</title>
+  <style>
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 20px;
+    }
+    canvas {
+      margin-top: 20px;
+      touch-action: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    #gameContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    #controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      margin: 2px 0;
+    }
+    #controls button {
+      font-size: 48px;
+      margin: 1px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #555;
+      touch-action: manipulation;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #controls button:active,
+    #controls button:hover {
+      color: #333;
+    }
+    #dialogueBox {
+      width: 274px;
+      min-height: 120px;
+      background-color: #f8f8f8;
+      border: 4px solid #000;
+      border-radius: 8px;
+      padding: 5px 8px;
+      margin-top: 20px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #000;
+      box-shadow: 4px 4px 0 #333;
+      text-align: left;
+      position: relative;
+    }
+    #mazeCanvas {
+      border: 4px solid #000;
+      border-radius: 8px;
+      box-shadow: 4px 4px 0 #333;
+      background-color: #dcdcdc;
+    }
+    #winMessage {
+      margin: 0;
+      white-space: pre-line;
+      min-height: 40px;
+    }
+    .typing::after {
+      content: "";
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #000;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      animation: blinkCursor 0.8s steps(2, start) infinite;
+    }
+    @keyframes blinkCursor {
+      to { border-color: transparent; }
+    }
+    #dialogueChoices {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .dialogue-btn {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #333;
+      transition: all 0.1s ease-in-out;
+    }
+    .dialogue-btn:hover {
+      background: #dcdcdc;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="gameContainer">
+    <div id="dialogueBox">
+      <p id="winMessage">Explore my website. Each waypoint will take you to a new page. The maze is procedurally generated and will change each time you visit. Enjoy!</p>
+      <div id="dialogueChoices"></div>
+    </div>
+
+    <canvas id="mazeCanvas" width="290" height="290"></canvas>
+
+    <div id="controls">
+      <div class="row">
+        <button data-dir="up"><i class="fas fa-circle-up"></i></button>
+      </div>
+      <div class="row">
+        <button data-dir="left"><i class="fas fa-circle-left"></i></button>
+        <button data-dir="down"><i class="fas fa-circle-down"></i></button>
+        <button data-dir="right"><i class="fas fa-circle-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Only this one line runs your entire modular game -->
+  <script type="module" src="/scripts/main.js"></script>
+
+</body>
+</html>
