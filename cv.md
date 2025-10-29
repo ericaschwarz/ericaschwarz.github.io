@@ -1,175 +1,189 @@
-# Curriculum Vitae
+---
+layout: default
+title: "Curriculum Vitae"
+permalink: /cv/
+---
 
-A full version of my CV is available for download below.
+### A full version of my CV is available for download.
 
-📄 [Download CV (PDF)](/assets/CV.pdf)
+### 📄 [Download CV (PDF)](/assets/CV.pdf)
 
 ---
 
 ### Education
-- **Ph.D. in Bioengineering**, Stanford University, 2019-2023  
-  Advisor: Alison L. Marsden  
-  *Dissertation:* Creating a coupled framework for simulating full, three-dimensional constrained mixture growth and remodeling of soft tissues in a finite element fluid–structure interaction solver.
 
-- **M.S. in Bioengineering**, Stanford University, 2017-2019  
-  Advisor: Alison L. Marsden  
-  *Focus:* Quantifying the hemodynamic performance of tissue-engineered vascular grafts in Fontan patients using multiscale CFD.
+- **Ph.D. in Bioengineering**, *Stanford University* (2019–2023)  
+Advisor: Alison L. Marsden  
+*Dissertation:* Creating a novel finite element framework for simulating full, three-dimensional constrained mixture growth and remodeling of soft tissues.
 
-- **B.S. in Biomedical Engineering and Computer Science**, Johns Hopkins University, 2013-2017 
-  Advisor: Natalia A. Trayanova  
-  *Focus:* Utilizing graph theory to identify ablation targets in patients with left atrial flutter.
+- **M.S. in Bioengineering**, *Stanford University* (2017–2019)  
+Advisor: Alison L. Marsden  
+*Focus:* Quantifying hemodynamic performance of tissue-engineered vascular grafts using multiscale CFD.
+
+- **B.S. in Biomedical Engineering and B.S. in Computer Science**, *Johns Hopkins University* (2013–2017)  
+Advisor: Natalia A. Trayanova  
+*Focus:* Utilizing graph theory to identify ablation targets in patients with left atrial flutter.
 
 ---
 
 ### Research Appointments
-- **Postdoctoral Scholar**, Yale University, 2023–Present  
-  *Continuum Biomechanics Laboratory* — Advisor: Jay D. Humphrey  
-  Integrated gene expression data into growth and remodeling models of postnatal pulmonary arteries and generated aneurysm simulations for machine learning–based outcome prediction.
 
-- **Graduate Research Assistant**, Stanford University, 2017–2023  
-  *Cardiovascular Biomechanics Computation Laboratory* — Advisor: Alison L. Marsden  
-  Developed a 3D fluid–solid–growth framework for patient-specific vascular modeling and simulated cardiac physiology to assess surgical interventions.
+- **Postdoctoral Researcher**, *Yale University*, (2023–present)  
+Advisor: Jay D. Humphrey  
+  Integrated gene expression data into models of postnatal pulmonary artery growth and remodeling. Simulated aneurysm progression for ML-based outcome prediction.
 
-- **Graduate Research Assistant**, Stanford University, 2017  
-  *CamLab* — Advisor: David B. Camarillo  
-  Applied neural networks to improve accuracy of pulmonary catheter systems for robotic surgery applications.
+- **Graduate Researcher**, *Stanford University* (2017–2023)  
+Advisor: Alison L. Marsden  
+  Developed a 3D fluid–solid–growth framework for patient-specific vascular modeling. Simulated multiscale cardiac hemodynamics to assess surgical interventions.
 
-- **Undergraduate Research Assistant**, Applied Physics Laboratory, 2016–2017  
-  *Research and Exploratory Development Department* — Advisor: Philippe Burlina  
-  Designed a machine learning algorithm for ultrasound-based breast cancer detection and programmed a linear ultrasound imaging system.
+- **Graduate Researcher**, *Stanford University* (2017)  
+Advisor: David B. Camarillo  
+  Applied neural networks to improve accuracy of pulmonary catheter systems for robotic surgery.
 
-- **Undergraduate Research Assistant**, Johns Hopkins University, 2014–2017  
-  *Computational Cardiology Laboratory* — Advisor: Natalia A. Trayanova  
-  Modeled patient-specific atrial flutter and identified optimal ablation targets using graph theory and network algorithms.
+- **Undergraduate Researcher**, *Johns Hopkins University* (2014–2017)  
+Advisor: Natalia A. Trayanova  
+  Modeled patient-specific atrial flutter and identified optimal ablation targets using graph theory.
 
-- **Research Assistant**, University of Arizona, 2014  
-  *Soft Tissue Biomechanics Laboratory* — Advisor: Jonathan P. Vande Geest  
-  Evaluated coronary stent mechanics via finite element analysis and designed a nerve compression device using biaxial stretching.
+- **Undergraduate Researcher**, *University of Arizona* (2014)  
+Advisor: Jonathan P. Vande Geest  
+  Evaluated coronary stent mechanics via finite element analysis.
 
 ---
 
-### Grants & Fellowships
-- **American Heart Association Predoctoral Fellowship**, 2021–2023  
-  Fellowship supporting doctoral research in cardiovascular or cerebrovascular research.  
-  *$63,040 over two years.*
+### Funding and Awards
 
-- **National Science Foundation Graduate Research Fellowship**, 2017–2022  
-  Fellowship supporting graduate student research in science, technology, engineering, and mathematics.  
-  *$138,000 over three years.*
+- **American Heart Association Predoctoral Fellowship** (2021–2023)  
+  $63,000 supporting doctoral cardiovascular research
 
----
+- **National Science Foundation Graduate Research Fellowship** (2017–2022)  
+  $138,000 supporting graduate research in STEM
 
-### Selected Honors & Awards
-- **Vasculata Novel Insights in Vascular Biology Poster Award**, Yale University, 2024  
-- **Melosh Medal Finalist**, Stanford University, 2024  
-- **Siebel Scholar Award**, Stanford University, 2023  
-- **1st Place Tulane Business Model Competition**, Johns Hopkins University, 2017  
-- **Generation Google Scholar Award**, Google, 2015  
-- **Vredenburg Scholar Award** Johns Hopkins University, 2015  
-- **1st Place NIH DEBUT Challenge**, NIH, 2014
+- **NAVBO Vasculata Poster Award** (2024)  
+  Received the Novel Insights in Vascular Biology Poster Award
 
----
+- **Melosh Medal Finalist** (2023)  
+  Top national award in computational mechanics
 
-### Teaching & Mentorship
-**Teaching**
-- **Guest Lecturer**, “Mathematical Methods I”, Yale University (2024)  
-  Delivered a two-part series on vector calculus with application-based examples.
+- **Siebel Scholar Award** (2023)  
+  Top graduate student for academic excellence and leadership
 
-- **Guest Lecturer**, “Cardiovascular Fluid Mechanics”, University of California San Diego (2024)  
-  Taught soft-tissue growth and remodeling with emphasis on mechanotransduction modeling.
+- **Tulane Business Model Competition, 1st Place** (2017)  
+  Developed an innovative biomedical startup and commercialization strategy
 
-- **Guest Lecturer**, “Discover and Design in Biomedical Research”, Yale University (2023, 2024)  
-  Lectured on biomedical project execution with applications in congenital heart defect research.
+- **Generation Google Scholar Award** (2015)  
+  Exceptional computer science student for academic excellence and leadership
 
-- **Teaching Assistant**, “Computational Modeling in the Cardiovascular System”, Stanford University (2021)  
-  Led discussion sections on fluid dynamics, structural mechanics, and computational methods.
+- **Vredenburg Scholar Award** (2015)  
+  International research fellowship in biomedical engineering at NUS  
 
-- **Teaching Assistant**, “Bioengineering Senior Capstone Design I & II”, Stanford University (2018–2019)
-  Conducted lectures, provided feedback on project documents, and assisted in prototype construction.  
-  Guided student teams that won national engineering awards.
-
-**Research Supervision**
-- **Murat Khidoyatov**, Undergraduate Student, Yale University (2024)  
-  Implementing novel material models of tissue-engineered vascular graft behavior in the open-source finite element solver FEBio.
-
-- **Cole Anderson**, Graduate Student, Ohio State University (2023–2024)  
-  Improving tissue-engineered vascular graft performance using computational modeling.
-
-- **Zinan Hu**, Graduate Student, Stanford University (2021–2023)  
-  Creating a multiphysics finite element framework to evaluate design parameters of a 3D bioprinted, pulsatile conduit.
-
-- **Chris Chankyo Kim**, Undergraduate Student, Stanford University (2021–2022)  
-  Generating virtual reality models of congenital heart defects from clinical imaging data for clinician training.
-
-- **Aaron Panduro**, Undergraduate Student, California State University, Fresno (2020–2023)  
-  Investigating hemodynamic factors driving cerebral aneurysm growth using computational fluid dynamics. *(Joint project with Allyson Weiss)*
-
-- **Allyson Weiss**, Undergraduate Student, Stanford University (2020–2023)  
-  Investigating hemodynamic factors driving cerebral aneurysm growth using computational fluid dynamics. *(Joint project with Aaron Panduro)*
-
-- **Kyle Feliciano**, Undergraduate Student, Stanford University (2020–2022)  
-  Simulating aortic hemodynamics after fenestrated endovascular aneurysm repair to assess thrombotic risk.
+- **NIH DEBUT Challenge, 1st Place** (2014)  
+  Award for developing novel spinal probe design
 
 ---
 
-### Service & Outreach
-- **Yale Postdoctoral Association Committee Member**, Yale University (2024–2025)  
-  Organized monthly events fostering community, inclusion, and networking among postdocs.
+### Teaching
 
-- **Women and Gender Minorities in Science at Yale Mentor**, Yale University (2023–2024)  
-  Mentored a graduate student monthly, supporting academic and gender-related challenges.
+- **Cardiac Mechanics**, *Fairfield University* (2025)  
+  *Guest Lecturer*  
+  Introduced Navier–Stokes equations and Poiseuille flow.
 
-- **SimVascular Tutorial Series Presenter**, Stanford University (2020)  
-  Delivered workshops on SimVascular; tutorials uploaded to YouTube with 14K+ views.
+- **Biomedical Engineering Senior Seminar**, *Yale University* (2025)  
+  *Guest Lecturer*  
+  Moderated career development panel on academic trajectories.
 
-- **BioAIMS Advocacy Chair**, Stanford University (2018–2019)  
-  Led quarterly roundtables on social issues in biosciences. Organized events to implement initiatives, including voter registration and all-gender facilities info sessions.
+- **Mathematical Methods I**, *Yale University* (2024)  
+  *Guest Lecturer*  
+  Delivered two-part series introducing vector calculus.
 
-- **Redwood Peninsula Elementary Tutor**, Stanford University (2017–2018)  
-  Tutored elementary students weekly, developing activities to enhance learning and engagement.
+- **Cardiovascular Fluid Mechanics**, *UC San Diego* (2024)  
+  *Guest Lecturer*  
+  Taught module on soft-tissue growth and remodeling.
 
-- **Counselor and Presenter**, National Youth Science Camp (2017, 2019)  
-  Ran STEM activities for ~120 high school students over six-week sessions. Presented original research and led cardiac fluid simulation workshops.
+- **Discover and Design in Biomedical Research**, *Yale University* (2023–2024)  
+  *Guest Lecturer*  
+  Presented on research study design and execution using congenital heart defects as a case study.
 
-- **Girls Who Code Instructor**, Johns Hopkins University (2014)  
-  Taught elementary students coding during Computer Science Education Week. Created grade-specific activities to introduce computer science fundamentals.
+- **Computational Modeling in the Cardiovascular System**, *Stanford University* (2021)  
+  *Teaching Assistant*  
+  Led discussions on CFD and structural mechanics.
+
+- **Bioengineering Senior Capstone Design**, *Stanford University* (2018–2019)  
+  *Teaching Assistant*   
+  Mentored design teams through prototyping and competitions.
 
 ---
 
-### Papers in Preparation
-- **Schwarz, E.L.**, Ramachandra, A.B., Yeung, N., Manning, E.P., Weiss, D., & Humphrey, J.D. *Postnatal pulmonary artery development: From transcript to mechanics.* (To be submitted Dec 2024)  
-- **Schwarz, E.L.**, Cao, Q., Li, D.S., Goswami, S., Karniadakis, G.E., & Humphrey, J.D. *Optimal neural operators for forecasting thoracic aortic aneurysm growth.* (To be submitted Jan 2025)
+### Research Supervision
+
+- **Colin W. Means**, Graduate Researcher, *Yale University* (2025–present)  
+  Simulated vascular injury and aneurysm progression using finite element methods.
+
+- **Alexandria Regan**, High School Researcher, *Yale University* (2025)  
+  Performed quantitative histological analysis of pulmonary arteries.
+
+- **Murat Khidoyatov**, Undergraduate Researcher, *Yale University* (2024)  
+  Implemented constitutive material models within FEBio.
+
+- **Cole Anderson**, Graduate Researcher, *Ohio State University* (2023–2024)  
+  Modeled constitutive equations of tissue-engineered vascular grafts.
+
+- **Zinan Hu**, Graduate Researcher, *Stanford University* (2021–2023)  
+  Developed multiphysics finite element framework for bioprinted conduits.
+
+- **Chris Chankyo Kim**, Undergraduate Researcher, *Stanford University* (2021–2022)  
+  Created interactive VR models of congenital heart defects.
+
+- **Aaron Panduro & Allyson Weiss**, Undergraduate Researchers, *Stanford University and Fresno State* (2020–2023)  
+  Co-investigated hemodynamic differences in cerebral aneurysms.
+
+- **Kyle Feliciano**, Undergraduate Researcher, *Stanford University* (2020–2022)  
+  Simulated post-EVAR flow to study thrombotic risk.
+
+---
+
+### Service and Outreach
+
+- **Yale Postdoctoral Association**, *Yale University* (2024–2025)  
+  Organized networking events promoting inclusion and interdisciplinary engagement.
+
+- **Women and Gender Minorities in Science**, *Yale University* (2023–2024)  
+  Mentored graduate students on research and gender equity in STEM.
+
+- **SimVascular Tutorial Series**, *Stanford University / Online* (2020)  
+  Created video tutorials on cardiovascular simulation workflows ([Watch on YouTube](https://youtu.be/aX7lEGRhGxQ?si=B5U-u85wQ2MhzNXD)).
+
+- **Biomedical Association for the Interest of Minority Students**, *Stanford University* (2018–2019)  
+  Led diversity initiatives and advocacy programming.
+
+- **Redwood Peninsula Elementary**, *Redwood City, CA* (2017–2018)  
+  Led weekly STEM activities for elementary students.
+
+- **National Youth Science Camp**, *Monongahela National Forest, WV* (2017, 2019)  
+  Conducted workshops on cardiovascular modeling.
+
+- **Girls Who Code**, *Baltimore, MD* (2014)  
+  Taught introductory coding and algorithmic thinking.
 
 ---
 
 ### Selected Publications
-- Pfaller, M.R., Latorre, M., **Schwarz, E.L.**, Gerosa, F.M., Szafron, J.M., Humphrey, J.D., & Marsden, A.L. *FSGe: A fast and strongly-coupled 3D fluid-solid-growth interaction method.* **arXiv**, 2024.  
-- Turner, M.E., Blum, K.M., Watanabe, T., **Schwarz, E.L.**, et al. *Tissue engineered vascular grafts are resistant to dystrophic calcification.* **Nature Communications**, 2024.  
-- Weiss, A.J., Panduro, A.O., **Schwarz, E.L.**, et al. *A matched-pair case control study identifying hemodynamic predictors of cerebral aneurysm growth using CFD.* **Frontiers in Physiology**, 2023.  
-- **Schwarz, E.L.**, Pfaller, M.R., Szafron, J.M., Latorre, M., Lindsey, S.E., Breuer, C.K., Humphrey, J.D., & Marsden, A.L. *A fluid–solid-growth solver for cardiovascular modeling.* **CMAME**, 2023.  
-- **Schwarz, E.L.**, Pegolotti, L., Pfaller, M.R., & Marsden, A.L. *Beyond CFD: Emerging methodologies for predictive simulation in cardiovascular health and disease.* **Biophysics Reviews**, 2023.
+(<sup>†</sup> and <sup>‡</sup> denote equal contribution)
+
+1. **Schwarz EL**, Li DS, Means CW, Assi R, Humphrey JD. *Mechanisms driving thoracic aortic aneurysm stability*. **bioRxiv**, 2025. [DOI](https://doi.org/10.1101/2025.10.20.683467)  
+2. **Schwarz EL**, Ramachandra AB, Yeung N, Manning EP, Weiss D, Humphrey JD. *Postnatal pulmonary artery development from transcript to tissue*. **bioRxiv**, 2025. [DOI](https://doi.org/10.1101/2025.06.03.657639)  
+3. Cao Q<sup>†</sup>, **Schwarz EL**<sup>†</sup>, Li DS, Goswami S, Means CW, Assi R, Humphrey JD, Karniadakis GT. *Neural operators for forecasting thoracic aortic aneurysm growth and rupture*. *In preparation*, 2025.  
+4. Hu Z, Herrmann JE, **Schwarz EL**, Gerosa FM, et al. *Multiphysics simulations of a bioprinted pulsatile Fontan conduit*. **J Biomech Eng**, 2025. [DOI](https://asmedigitalcollection.asme.org/biomechanical/article-abstract/147/7/071001/1214591)  
+5. Turner ME, Blum KM, Watanabe T, **Schwarz EL**, et al. *Tissue engineered vascular grafts are resistant to dystrophic calcification*. **Nat Commun**, 2024. [DOI](https://www.nature.com/articles/s41467-024-46431-4)  
+6. Pfaller MR, Latorre M, **Schwarz EL**, et al. *FSGe: A fast and strongly coupled 3D fluid–solid–growth interaction method*. **Comput Methods Appl Mech Eng**, 2024. [DOI](https://www.sciencedirect.com/science/article/pii/S0045782524005152)  
+7. **Schwarz EL**, Pegolotti L, Pfaller MR, Marsden AL. *Beyond CFD: Emerging methodologies for predictive simulation in cardiovascular health and disease*. **Biophysics Reviews**, 2023. [DOI](https://pubs.aip.org/aip/bpr/article/4/1/011301/2879057)  
+8. **Schwarz EL**, Pfaller MR, Szafron JM, et al. *A fluid–solid–growth solver for cardiovascular modeling*. **Comput Methods Appl Mech Eng**, 2023. [DOI](https://www.sciencedirect.com/science/article/pii/S004578252300436X)
+
+*(Full publication list available on [Google Scholar](https://scholar.google.com/citations?user=s4mUv1AAAAAJ))*  
 
 ---
 
-### Selected Conference Presentations
-- **Postnatal Pulmonary Artery Development from Transcript to Mechanics – Poster** (2024) Single Ventricle Investigator Meeting
+### Invited Talks
 
-- **A Data-Informed Modeling of Murine Pulmonary Artery Development and Disease – Poster** (2024) Vasculata
+1. **A Fluid–Solid–Growth Solver for Cardiovascular Modeling**, *Melosh Medal Seminar, Duke University*, 2023.
 
-- **Developmental Characterization of the Aorta and Pulmonary Arteries – Poster** (2024) Additional Ventures Cures Collaborative
-
-- **A Computational Framework for Simulating the Growth and Remodeling of Patient-Specific Vessels – Oral** (2022) World Congress of Biomechanics
-
-- **Simulated Performance of a Pulsatile Fontan Conduit – Oral** (2021) Single Ventricle Investigators Meeting
-
-- **How Stenosis in Tissue Engineered Vascular Grafts Affects Performance in Fontan Patients – Poster** (2020) BioFluids
-
-- **The Effect of Tissue Engineered Vascular Graft Material Properties on Hemodynamics in Fontan Patients during Exercise – Poster** (2019) North American Vascular Biology Organization
-
-- **Patient-Specific Performance of Tissue-Engineered Vascular Grafts in Fontan Exercise Under Simulated Exercise Conditions – Oral** (2019) Biomedical Engineering Society Annual Meeting
-
-- **Quantifying Energy Loss, Growth, and Remodeling in Fontan Patients with Tissue Engineered Vascular Grafts – Oral** (2019) 6th International Conference on Clinical and Engineering Frontiers in Pediatric and Congenital Heart Disease
-
-- **Preliminary Study of Optimal Ultrasound Parameter Selection and Automated Breast Cancer Detection by Lesser Trained Operators – Poster** (2017) IEEE BHI
-
-- **Using Graph Theory to Predict Ablation Targets in Patient Specific Models of Left Atrial Flutter – Oral** (2016) Biomedical Engineering Society Annual Meeting
+---
