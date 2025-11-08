@@ -203,10 +203,14 @@ layout: default
       console.log("Muted autoplay OK; waiting for user unmute.");
     });
     
+    // --- Prevent sound icon clicks from affecting the game ---
     ["click", "pointerdown", "mousedown", "touchstart"].forEach(evtType => {
-      soundIcon.addEventListener(evtType, event => {
-        event.stopPropagation();
-      });
+      soundIcon.addEventListener(evtType, e => e.stopPropagation(), { passive: true });
+    });
+
+    // --- Prevent page scroll during game touches ---
+    ["touchstart", "touchmove"].forEach(evtType => {
+      mazeCanvas.addEventListener(evtType, e => e.preventDefault(), { passive: false });
     });
 
     // Toggle mute/unmute on icon click
