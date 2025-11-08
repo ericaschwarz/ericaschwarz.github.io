@@ -127,8 +127,8 @@ layout: default
 
     #soundIcon {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
+      bottom: 20px;
+      right: 20px;
       font-size: 26px;
       color: #000;
       cursor: pointer;
@@ -168,26 +168,28 @@ layout: default
 
   <!-- Music -->
   <script>
-    const backgroundMusic = new Audio('/assets/music.wav'); // update path as needed
+    // === Background Music Setup ===
+    const backgroundMusic = new Audio('/assets/audio/background.wav');
     backgroundMusic.loop = true;
     backgroundMusic.volume = 0.5;
+    backgroundMusic.muted = true; // start muted
 
-    // Try autoplay, fallback if blocked
-    backgroundMusic.play().catch(() => {
-      console.log("Autoplay blocked; music will start on first click.");
+    let isMuted = true;  // default state
+    let hasStarted = false;
+    const soundIcon = document.getElementById('soundIcon');
+
+    // Show muted icon initially
+    soundIcon.classList.remove('fa-volume-up');
+    soundIcon.classList.add('fa-volume-mute');
+
+    // Try to load silently (muted autoplay is allowed)
+    backgroundMusic.play().then(() => {
+      hasStarted = true;
+    }).catch(() => {
+      console.log("Muted autoplay OK; waiting for user unmute.");
     });
 
-    const soundIcon = document.getElementById('soundIcon');
-    let isMuted = false;
-
-    // Allow first click to start music if autoplay was blocked
-    window.addEventListener('click', () => {
-      if (backgroundMusic.paused && !isMuted) {
-        backgroundMusic.play();
-      }
-    }, { once: true });
-
-    // Toggle mute/unmute
+    // Toggle mute/unmute on icon click
     soundIcon.addEventListener('click', () => {
       isMuted = !isMuted;
       backgroundMusic.muted = isMuted;
@@ -195,6 +197,13 @@ layout: default
       // Toggle icon appearance
       soundIcon.classList.toggle('fa-volume-up', !isMuted);
       soundIcon.classList.toggle('fa-volume-mute', isMuted);
+
+      // If unmuted and playback hasn't started, start it now
+      if (!isMuted && !hasStarted) {
+        backgroundMusic.play().then(() => {
+          hasStarted = true;
+        }).catch(err => console.log("Playback blocked:", err));
+      }
     });
   </script>
 
