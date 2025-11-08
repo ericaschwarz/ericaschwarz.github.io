@@ -80,6 +80,7 @@ layout: default
       border-radius: 8px;
       box-shadow: 4px 4px 0 #333;
       background-color: #dcdcdc;
+      pointer-events: none;     /* canvas ignores clicks *through* icon */
     }
     #winMessage {
       margin: 0;
@@ -126,6 +127,7 @@ layout: default
     }
 
     #soundIcon {
+      pointer-events: auto;     /* icon receives clicks */
       position: absolute;
       bottom: 20px;
       right: 20px;
@@ -191,7 +193,11 @@ layout: default
 
     // Toggle mute/unmute on icon click
     soundIcon.addEventListener('click', (event) => {
-      event.stopPropagation(); // prevent click from triggering canvas/game events
+      ["click", "pointerdown", "mousedown", "touchstart"].forEach(evtType => {
+        soundIcon.addEventListener(evtType, event => {
+          event.stopPropagation();
+        });
+      });
 
       isMuted = !isMuted;
       backgroundMusic.muted = isMuted;
