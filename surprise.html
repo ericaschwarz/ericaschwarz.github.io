@@ -202,14 +202,15 @@ layout: default
     }).catch(() => {
       console.log("Muted autoplay OK; waiting for user unmute.");
     });
+    
+    ["click", "pointerdown", "mousedown", "touchstart"].forEach(evtType => {
+      soundIcon.addEventListener(evtType, event => {
+        event.stopPropagation();
+      });
+    });
 
     // Toggle mute/unmute on icon click
     soundIcon.addEventListener('click', (event) => {
-      ["click", "pointerdown", "mousedown", "touchstart"].forEach(evtType => {
-        soundIcon.addEventListener(evtType, event => {
-          event.stopPropagation();
-        });
-      });
 
       isMuted = !isMuted;
       backgroundMusic.muted = isMuted;
