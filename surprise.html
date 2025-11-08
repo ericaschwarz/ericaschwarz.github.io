@@ -23,6 +23,7 @@ layout: default
       -webkit-touch-callout: none;
     }
     #gameContainer {
+      position: relative; /* make icon position relative to this container */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -119,6 +120,23 @@ layout: default
       background: #dcdcdc;
       transform: translateY(-2px);
     }
+
+    #soundIcon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 26px;
+      color: #000;
+      cursor: pointer;
+      z-index: 5;
+      opacity: 0.8;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    #soundIcon:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -130,6 +148,7 @@ layout: default
     </div>
 
     <canvas id="mazeCanvas" width="290" height="290"></canvas>
+    <i id="soundIcon" class="fas fa-volume-up"></i>
 
     <div id="controls">
       <div class="row">
@@ -142,6 +161,38 @@ layout: default
       </div>
     </div>
   </div>
+
+  <!-- Music -->
+  <script>
+    const backgroundMusic = new Audio('/assets/music.wav'); // update path as needed
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.5;
+
+    // Try autoplay, fallback if blocked
+    backgroundMusic.play().catch(() => {
+      console.log("Autoplay blocked; music will start on first click.");
+    });
+
+    const soundIcon = document.getElementById('soundIcon');
+    let isMuted = false;
+
+    // Allow first click to start music if autoplay was blocked
+    window.addEventListener('click', () => {
+      if (backgroundMusic.paused && !isMuted) {
+        backgroundMusic.play();
+      }
+    }, { once: true });
+
+    // Toggle mute/unmute
+    soundIcon.addEventListener('click', () => {
+      isMuted = !isMuted;
+      backgroundMusic.muted = isMuted;
+
+      // Toggle icon appearance
+      soundIcon.classList.toggle('fa-volume-up', !isMuted);
+      soundIcon.classList.toggle('fa-volume-mute', isMuted);
+    });
+  </script>
 
   <!-- Only this one line runs your entire modular game -->
   <script type="module" src="/scripts/main.js"></script>
