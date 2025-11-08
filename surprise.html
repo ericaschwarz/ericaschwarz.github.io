@@ -126,6 +126,7 @@ layout: default
     }
 
     #soundIcon {
+      pointer-events: auto;     /* icon receives clicks */
       position: absolute;
       bottom: 20px;
       right: 20px;
@@ -135,6 +136,11 @@ layout: default
       z-index: 5;
       opacity: 0.6;
     }
+
+    #soundIcon:hover {
+      opacity: 1;
+    }
+
 
     #musicCredit {
       position: absolute;
