@@ -23,7 +23,6 @@ layout: default
       -webkit-touch-callout: none;
     }
     #gameContainer {
-      position: relative; /* make icon position relative to this container */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -121,6 +120,11 @@ layout: default
       transform: translateY(-2px);
     }
 
+    #canvasWrapper {
+      position: relative;
+      display: inline-block; /* shrink-wrap around the canvas */
+    }
+
     #soundIcon {
       position: absolute;
       bottom: 10px;
@@ -129,13 +133,11 @@ layout: default
       color: #000;
       cursor: pointer;
       z-index: 5;
-      opacity: 0.8;
-      transition: opacity 0.2s, transform 0.1s;
+      opacity: 0.6;
     }
 
     #soundIcon:hover {
       opacity: 1;
-      transform: scale(1.1);
     }
   </style>
 </head>
@@ -147,8 +149,10 @@ layout: default
       <div id="dialogueChoices"></div>
     </div>
 
-    <canvas id="mazeCanvas" width="290" height="290"></canvas>
-    <i id="soundIcon" class="fas fa-volume-up"></i>
+    <div id="canvasWrapper">
+      <canvas id="mazeCanvas" width="290" height="290"></canvas>
+      <i id="soundIcon" class="fas fa-volume-up"></i>
+    </div>
 
     <div id="controls">
       <div class="row">
