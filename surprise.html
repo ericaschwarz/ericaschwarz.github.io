@@ -169,7 +169,7 @@ layout: default
   <!-- Music -->
   <script>
     // === Background Music Setup ===
-    const backgroundMusic = new Audio('/assets/audio/background.wav');
+    const backgroundMusic = new Audio('/assets/background.wav');
     backgroundMusic.loop = true;
     backgroundMusic.volume = 0.5;
     backgroundMusic.muted = true; // start muted
@@ -190,15 +190,15 @@ layout: default
     });
 
     // Toggle mute/unmute on icon click
-    soundIcon.addEventListener('click', () => {
+    soundIcon.addEventListener('click', (event) => {
+      event.stopPropagation(); // prevent click from triggering canvas/game events
+
       isMuted = !isMuted;
       backgroundMusic.muted = isMuted;
 
-      // Toggle icon appearance
       soundIcon.classList.toggle('fa-volume-up', !isMuted);
       soundIcon.classList.toggle('fa-volume-mute', isMuted);
 
-      // If unmuted and playback hasn't started, start it now
       if (!isMuted && !hasStarted) {
         backgroundMusic.play().then(() => {
           hasStarted = true;
