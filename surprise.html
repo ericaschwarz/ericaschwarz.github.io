@@ -141,6 +141,15 @@ layout: default
     #soundIcon:hover {
       opacity: 1;
     }
+
+
+    #musicCredit {
+      position: absolute;
+      bottom: -20px; /* move below the canvas */
+      left: 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 12px;
+    }
   </style>
 </head>
 <body>
@@ -154,6 +163,9 @@ layout: default
     <div id="canvasWrapper">
       <canvas id="mazeCanvas" width="290" height="290"></canvas>
       <i id="soundIcon" class="fas fa-volume-up"></i>
+      <div id="musicCredit">
+        <a href="https://www.linkedin.com/in/reece-akana-83421713a/" target="_blank" rel="noopener noreferrer">Music by Reece V. Akana, Ph.D.</a>
+      </div>
     </div>
 
     <div id="controls">
