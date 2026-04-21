@@ -110,35 +110,7 @@ Advisor: Jonathan P. Vande Geest
 - **Bioengineering Senior Capstone Design**, *Stanford University* (2018–2019)  
   *Teaching Assistant*   
   Mentored design teams through prototyping and competitions.
-
----
-
-### Research Supervision
-
-- **Colin W. Means**, Graduate Researcher, *Yale University* (2025–present)  
-  Simulated vascular injury and aneurysm progression using finite element methods.
-
-- **Alexandria Regan**, High School Researcher, *Yale University* (2025)  
-  Performed quantitative histological analysis of pulmonary arteries.
-
-- **Murat Khidoyatov**, Undergraduate Researcher, *Yale University* (2024)  
-  Implemented constitutive material models within FEBio.
-
-- **Cole Anderson**, Graduate Researcher, *Ohio State University* (2023–2024)  
-  Modeled constitutive equations of tissue-engineered vascular grafts.
-
-- **Zinan Hu**, Graduate Researcher, *Stanford University* (2021–2023)  
-  Developed multiphysics finite element framework for bioprinted conduits.
-
-- **Chris Chankyo Kim**, Undergraduate Researcher, *Stanford University* (2021–2022)  
-  Created interactive VR models of congenital heart defects.
-
-- **Aaron Panduro & Allyson Weiss**, Undergraduate Researchers, *Stanford University and Fresno State* (2020–2023)  
-  Co-investigated hemodynamic differences in cerebral aneurysms.
-
-- **Kyle Feliciano**, Undergraduate Researcher, *Stanford University* (2020–2022)  
-  Simulated post-EVAR flow to study thrombotic risk.
-
+  
 ---
 
 ### Service and Outreach
