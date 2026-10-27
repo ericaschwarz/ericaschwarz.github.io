@@ -2,4 +2,4 @@
 
 ---
 
-**Email:** erica [dot] schwarz [at] yale [dot] edu
+**Email:** erica [dot] schwarz [at] austin [dot] utexas [dot] edu

@@ -1,7 +1,7 @@
 # Erica L. Schwarz, Ph.D.
 _Computational Mechanobiology • Biomechanics • Vascular Growth & Remodeling • Neural Operators_
 
-Welcome! I’m a postdoctoral researcher at Yale University studying **vascular biomechanics** through **computational and data-driven models**.
+Welcome! I’m an assistant professor at the University of Texas at Austin studying **vascular biomechanics** through **computational and data-driven models**.
 
 My work bridges **mechanical engineering, biology, and applied mathematics** to understand and predict how vessels evolve over time.
 
