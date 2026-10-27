@@ -28,8 +28,6 @@ navigation:
         link: /research/multiscale
   - name: Publications
     link: /publications
-  - name: Vision
-    link: /vision
   - name: Teaching
     link: /teaching
   - name: CV

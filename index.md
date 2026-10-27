@@ -20,8 +20,6 @@ This approach couples **organ-scale hemodynamics** with **cell- and tissue-level
 - enable precision treatment planning that reduces morbidity and mortality due to cardiovascular disease
 - and leverage physics-based simulations with nascent machine learning techniques to enable clinically actionable predictions.  
 
-[Explore the full research vision →](vision)
-
 ---
 
 [📄 Download CV](cv) • [📚 Publications](publications) • [🔬 Research](research)
