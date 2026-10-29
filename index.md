@@ -3,6 +3,7 @@ _Computational Mechanobiology • Biomechanics • Vascular Growth & Remodeling 
 
 <a href="https://ericaschwarz.github.io/prismlab/" aria-label="Visit the Predictive In Silico Medicine Lab website" style="display: block; margin: 1.5rem 0; padding: 1.25rem 1.5rem; background: #edf4fa; border: 1px solid #c5d8e8; border-left: 4px solid #267cb9; border-radius: 12px; color: #24445c; text-decoration: none;">
   <strong style="display: block; font-size: 1.3em; color: #175b8a;">Visit the PRISM Lab website</strong>
+  <span style="display: block; margin-top: 0.25rem;">The Predictive In Silico Medicine Lab at UT Austin</span>
   <span style="display: block; margin-top: 0.65rem;">Explore our research, meet the team, and learn about student and postdoctoral opportunities.</span>
   <span style="display: block; margin-top: 0.75rem; font-weight: 600; color: #175b8a;">Visit the lab website &rarr;</span>
 </a>
