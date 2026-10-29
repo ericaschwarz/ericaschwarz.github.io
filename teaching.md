@@ -16,7 +16,6 @@ As an assistant professor, I will apply this philosophy in fundamental mechanica
   <figcaption style="text-align:center;"><em>Presenting academic career pathways to senior students at Yale University.</em></figcaption>
 </figure>
 
-
 ---
 
 ## Mentoring Experience  
